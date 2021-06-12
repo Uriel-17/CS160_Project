@@ -6,8 +6,8 @@ USE cs160project;
 AccountType table and its stored procedures
 */
 CREATE TABLE accountType (
-	accountTypeId INT NOT NULL PRIMARY KEY,
-    accountTypeName VARCHAR(20)
+accountTypeId INT NOT NULL PRIMARY KEY,
+accountTypeName VARCHAR(20)
 );
 
 DELIMITER $$
@@ -36,7 +36,7 @@ INSERT INTO accountType VALUES (3, 'Administrator');
 User table and its stored procedures
 */
 CREATE TABLE user (
-	userId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(30) NOT NULL,
     password CHAR(64) NOT NULL,
     accountTypeId INT DEFAULT 1,
@@ -53,7 +53,7 @@ CREATE TABLE user (
     CONSTRAINT fk_accountType_user
     FOREIGN KEY (accountTypeId)
     REFERENCES accountType(accountTypeId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE SET NULL
     );
     
@@ -81,7 +81,7 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE PROCEDURE CreateUser(IN newusername VARCHAR(30),
-							IN newpassword CHAR(64),
+			    IN newpassword CHAR(64),
                             IN newaccountTypeId INT,
                             IN newprofileImage VARCHAR(500),
                             IN newfullname VARCHAR(50),
@@ -91,7 +91,7 @@ CREATE PROCEDURE CreateUser(IN newusername VARCHAR(30),
                             IN newcreatetime DATETIME,
                             IN newupdatetime DATETIME)
 BEGIN
-	INSERT INTO user (username, password, accountTypeId, profileImage, fullname, dateofbirth, email, phonenumber, createtime, updatetime)
+    INSERT INTO user (username, password, accountTypeId, profileImage, fullname, dateofbirth, email, phonenumber, createtime, updatetime)
     VALUES (newusername, newpassword, newaccountTypeId, newprofileImage, newfullname, newdateofbirth, newemail, newphonenumber, newcreatetime, newupdatetime);
 END $$
 DELIMITER ;
@@ -106,10 +106,10 @@ CREATE PROCEDURE UpdateUser(IN id INT,
                             IN newphonenumber VARCHAR(15),
                             IN newupdatetime DATETIME)
 BEGIN
-	UPDATE user
+    UPDATE user
     SET accountTypeId = newaccountTypeId,
-		profileImage = newprofileImage,
-		fullname = newfullname,
+	profileImage = newprofileImage,
+	fullname = newfullname,
         dateofbirth = newdateofbirth,
         email = newemail,
         phonenumber = newphonenumber,
@@ -121,7 +121,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE ChangePassword(IN id INT, IN newPassword CHAR(64))
 BEGIN
-	UPDATE user
+    UPDATE user
     SET password = newPassword
     WHERE userId = id;
 END $$
@@ -130,7 +130,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SetUserStatus(IN id INT, IN newStatus BOOL)
 BEGIN
-	UPDATE user
+    UPDATE user
     SET status = newStatus
     WHERE userId = id;
 END $$
@@ -147,7 +147,7 @@ DELIMITER ;
 Address table and its stored procedures
 */
 CREATE TABLE address (
-	addressId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    addressId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     addressType VARCHAR(20) DEFAULT 'Home',
     streetAddress VARCHAR(500) NOT NULL,
     secondAdress VARCHAR(100),
@@ -159,7 +159,7 @@ CREATE TABLE address (
     CONSTRAINT fk_user_address
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 
@@ -179,30 +179,30 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE PROCEDURE CreateAddress(IN newstreetAddress VARCHAR(500),
-								IN newsecondAdress VARCHAR(100),
+				IN newsecondAdress VARCHAR(100),
                                 IN newcity VARCHAR(100),
                                 IN newstate VARCHAR(100),
                                 IN newzipcode INT,
                                 IN newcountry VARCHAR(100),
                                 IN newuserId INT)
 BEGIN
-	INSERT INTO address (streetAddress, secondAdress, city, state, zipcode, country, userId)
+    INSERT INTO address (streetAddress, secondAdress, city, state, zipcode, country, userId)
     VALUES (newstreetAddress, newsecondAdress, newcity, newstate, newzipcode, newcountry, newuserId);
 END $$
 DELIMITER ;
 
 DELIMITER $$
 CREATE PROCEDURE UpdateAddress(IN id INT,
-								IN newstreetAddress VARCHAR(500),
-								IN newsecondAdress VARCHAR(100),
+				IN newstreetAddress VARCHAR(500),
+				IN newsecondAdress VARCHAR(100),
                                 IN newcity VARCHAR(100),
                                 IN newstate VARCHAR(100),
                                 IN newzipcode INT,
                                 IN newcountry VARCHAR(100))
 BEGIN
-	UPDATE address
+    UPDATE address
     SET streetAddress = newstreetAddress,
-		secondAddress = newsecondAdress,
+	secondAddress = newsecondAdress,
         city = newcity,
         state = newstate,
         zipcode = newzipcode,
@@ -225,7 +225,7 @@ CALL CreateAddress('2274 Ellena Dr', 'Apt #4', 'Santa Clara', 'California', 9505
 Category table and its stored procedures
 */
 CREATE TABLE category (
-	categoryId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    categoryId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     categoryname VARCHAR(100) NOT NULL,
     description VARCHAR(1000),
     image VARCHAR(500),
@@ -251,22 +251,22 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE CreateCategory(IN newcategoryname VARCHAR(100), IN newdescription VARCHAR(1000), IN newimage VARCHAR(500), IN newpriority INT, IN newcreatetime DATETIME, IN newupdatetime DATETIME)
 BEGIN
-	INSERT INTO category (categoryname, description, image, priority, createtime, updatetime)
+    INSERT INTO category (categoryname, description, image, priority, createtime, updatetime)
     VALUES (newcategoryname, newdescription, newimage, newpriority, newcreatetime, newupdatetime);
 END $$
 DELIMITER ;
 
 DELIMITER $$
 CREATE PROCEDURE UpdateCategory(IN id INT,
-								IN newcategoryname VARCHAR(100),
+				IN newcategoryname VARCHAR(100),
                                 IN newdescription VARCHAR(1000),
                                 IN newimage VARCHAR(500),
                                 IN newpriority INT,
                                 IN newupdatetime DATETIME)
 BEGIN
-	UPDATE category
+    UPDATE category
     SET categoryname = newcategoryname,
-		description = newdescription,
+	description = newdescription,
         image = newimage,
         priority = newpriority,
         updatetime = newupdatetime
@@ -285,26 +285,26 @@ DELIMITER ;
 Course table and its stored procedures
 */
 CREATE TABLE course (
-	courseId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	courseTitle VARCHAR(200) NOT NULL,
+    courseId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    courseTitle VARCHAR(200) NOT NULL,
     description VARCHAR(2000),
     categoryId INT,
     author VARCHAR(100) NOT NULL DEFAULT 'Anonymous',
     userId INT NOT NULL,
     url VARCHAR(1000),
     image VARCHAR(1000),
-	createtime DATETIME,
+    createtime DATETIME,
     updatetime DATETIME,
     CONSTRAINT fk_category_course
     FOREIGN KEY (categoryId)
     REFERENCES category(categoryId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE SET NULL,
         
-	CONSTRAINT fk_user_course
+    CONSTRAINT fk_user_course
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
     );
     
@@ -340,7 +340,7 @@ DELIMITER ;
 Comment table and its stored procedures
 */
 CREATE TABLE comment (
-	commentId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    commentId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     userId INT NOT NULL,
     courseId INT NOT NULL,
     detail VARCHAR(2000) not null,
@@ -349,13 +349,13 @@ CREATE TABLE comment (
     CONSTRAINT fk_user_comment
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE,
 	
     CONSTRAINT fk_course_comment
     FOREIGN KEY (courseId)
     REFERENCES course(courseId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
     );
 
@@ -374,13 +374,13 @@ CREATE TABLE rating (
     CONSTRAINT fk_user_rating
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE,
         
-	CONSTRAINT fk_course_rating
+    CONSTRAINT fk_course_rating
     FOREIGN KEY (courseId)
     REFERENCES course(courseId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 
@@ -388,7 +388,7 @@ CREATE TABLE rating (
 Report table and its stored procedures
 */
 CREATE TABLE report (
-	reportId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    reportId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     userId INT NOT NULL,
     courseId INT NOT NULL,
     detail VARCHAR(2000) NOT NULL,
@@ -397,13 +397,13 @@ CREATE TABLE report (
     CONSTRAINT fk_user_report
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE,
         
-	CONSTRAINT fk_course_report
+    CONSTRAINT fk_course_report
     FOREIGN KEY (courseId)
     REFERENCES course(courseId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 
@@ -411,20 +411,20 @@ CREATE TABLE report (
 Watch table and its stored procedures
 */
 CREATE TABLE watch (
-	watchId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	userId INT,
+    watchId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    userId INT,
     courseId INT NOT NULL,
     createtime DATETIME,
     CONSTRAINT fk_user_watch
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE SET NULL, 
         
-	CONSTRAINT fk_course_watch
+    CONSTRAINT fk_course_watch
     FOREIGN KEY (courseId)
     REFERENCES course(courseId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 
@@ -432,7 +432,7 @@ CREATE TABLE watch (
 Saved Course table and its stored procedures
 */
 CREATE TABLE savedCourse (
-	userId INT NOT NULL,
+    userId INT NOT NULL,
     courseId INT NOT NULL,
     createtime DATETIME,
     PRIMARY KEY (userId, courseId),
@@ -440,13 +440,13 @@ CREATE TABLE savedCourse (
     CONSTRAINT fk_user_savedCourse
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE, 
         
-	CONSTRAINT fk_course_savedCourse
+    CONSTRAINT fk_course_savedCourse
     FOREIGN KEY (courseId)
     REFERENCES course(courseId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 
@@ -454,7 +454,7 @@ CREATE TABLE savedCourse (
 Feedback table and its stored procedures
 */
 CREATE TABLE feedback (
-	feedbackId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    feedbackId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     userId INT,
     name VARCHAR(200) NOT NULL,
     email VARCHAR(200) NOT NULL,
@@ -464,7 +464,7 @@ CREATE TABLE feedback (
     CONSTRAINT fk_user_feedback
     FOREIGN KEY (userId)
     REFERENCES user(userId)
-		ON UPDATE CASCADE
+	ON UPDATE CASCADE
         ON DELETE SET NULL
 );
 
