@@ -12,7 +12,7 @@ function getAddressByUserId($userId) {
 // create a new address link to user by user id
 // zipcode is INT
 function createAddress($streetAddress, $secondAdress, $city, $state, $zipcode, $country, $userId) {
-	$sql = 'CALL CreateAddress("'.$streetAddress.'", "'.$secondAdress.'", "'.$city.'", '.$state.', '.$zipcode.', "'.$country.'", '.$userId.')';
+	$sql = 'CALL CreateAddress("'.$streetAddress.'", "'.$secondAdress.'", "'.$city.'", "'.$state.'", '.$zipcode.', "'.$country.'", '.$userId.')';
 	execute($sql);
 }
 
