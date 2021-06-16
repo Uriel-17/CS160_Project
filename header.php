@@ -40,7 +40,7 @@
                 echo '<li class="list-inline-item"><a href="login.php">Login</a></li>';
               }
               else if($userId == 2){
-                echo '<li class="list-inline-item"><a href="userprofile.php">User Profile</a></li>';
+                
 
               }
               else {
