@@ -1,5 +1,4 @@
 <?php
-include('footer.php');
 require_once 'credentials.php'; //NOTE this is my personal connection to the database. Your credentials.php is going to look different. 
 
 $connection = connect_database($servername, $username, $password, $database); // establishing connection to database
