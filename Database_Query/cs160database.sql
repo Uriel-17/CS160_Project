@@ -150,7 +150,7 @@ CREATE TABLE address (
     addressId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     addressType VARCHAR(20) DEFAULT 'Home',
     streetAddress VARCHAR(500) NOT NULL,
-    secondAdress VARCHAR(100),
+    secondAddress VARCHAR(100),
     city VARCHAR(100) NOT NULL,
     state VARCHAR(100) NOT NULL,
     zipcode INT NOT NULL,
