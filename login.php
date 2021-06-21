@@ -1,15 +1,15 @@
 <?php
-    $title = 'User Registration';
+    $title = 'User Login';
     $userId = 2;
     include('header.php');
 ?>
 
 <section class="py-5">
-    <div class="container py-4">
+    <div class="container py-3">
         <div class="row ">
             <div class="col-lg-9 container">
                 <!-- Leave comment-->
-                <h3 class="h4 my-4 py-4 text-center">Welcome back</h3>
+                <h3 class="h4 my-4 text-center">Welcome back</h3>
                 <form class="mb-5" action="registerHandler.php" method="post" enctype="multipart/form-data">
                     <div class="row justify-content-center align-items-center">
 
