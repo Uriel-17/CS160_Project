@@ -1,79 +1,181 @@
-const username = document.getElementById("username");
-const fullname = document.getElementById("fullname");
-const password = document.getElementById("password");
-const confirmpw = document.getElementById("cpw");
-const secondaddress = document.getElementById("secondaddress");
-const city = document.getElementById("city");
-const state = document.getElementById("state");
-const country = document.getElementById("country");
-const zipcode = document.getElementById("zipcode");
 const form = document.getElementById("form");
+document.getElementById("username").addEventListener("blur", validateUserName);
+document.getElementById("fullname").addEventListener("blur", validateFullName);
+document.getElementById("password").addEventListener("blur", validatePassword);
+document.getElementById("cpw").addEventListener("blur", confirmPassword);
+document
+  .getElementById("streetaddress")
+  .addEventListener("blur", validateAddress);
+const secondaddress = document.getElementById("secondaddress");
+const city = document
+  .getElementById("city")
+  .addEventListener("blur", validateCity);
+const state = document
+  .getElementById("state")
+  .addEventListener("blur", validateState);
+document.getElementById("country").addEventListener("blur", validateCountry);
+document.getElementById("zipcode").addEventListener("blur", validateZipcode);
+document.getElementById("phone").addEventListener("blur", validatePhone);
+document.getElementById("email").addEventListener("blur", validateEmail);
+
 const errorElement = document.getElementById("error");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
-});
-
-function checkInputs() {
-  //get values from inputs
-  const usernameValue = username.value.trim();
-  const fullnameValue = fullname.value.trim();
-  const passwordValue = password.value.trim();
-  const password2Value = confirmpw.value.trim();
-
-  if (usernameValue === "") {
-    //show error
-    //add error class
-    setErrorFor(username, "Username cannot be blank");
+function validateUserName() {
+  const username = document.getElementById("username");
+  console.log(username);
+  const re = /^[a-zA-Z ]{4,30}$/;
+  if (!re.test(username.value)) {
+    setErrorFor(username, "only alphabets with length 4-30");
   } else {
-    //add success class
-    setSuccessfor(username);
+    setSuccessFor(username);
   }
-
-  if (fullnameValue === "") {
-    //show error
-    //add error class
-    setErrorFor(fullname, "Full name cannot be blank");
+}
+function validateFullName() {
+  const fullname = document.getElementById("fullname");
+  console.log(fullname);
+  const re = /^[a-zA-Z ]{4,30}$/;
+  if (!re.test(fullname.value)) {
+    setErrorFor(fullname, "only alphabets with length 4-30");
   } else {
-    //add success class
-    setSuccessfor(fullname);
+    setSuccessFor(fullname);
   }
+}
 
-  if (emailValue === "") {
-    setErrorFor(email, "Email cannot be blank");
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "Email is not valid");
+function validatePassword() {
+  const password = document.getElementById("password");
+  const re = /^[a-zA-Z0-9!@#$%^&*_]{8,30}$/;
+  if (!re.test(password.value)) {
+    setErrorFor(
+      password,
+      "only alphabets, numbers or !@#$%^&*_  with length 8 - 30"
+    );
+  } else {
+    setSuccessFor(password);
+  }
+}
+
+function confirmPassword() {
+  const password = document.getElementById("password");
+  const password2 = document.getElementById("cpw");
+
+  if (password2.value !== password.value) {
+    setErrorFor(password2, "password doesn't match");
+  } else {
+    setSuccessFor(password2);
+  }
+}
+
+function validateAddress() {
+  const address = document.getElementById("streetaddress");
+  const re = /^[a-zA-Z0-9 ]+$/;
+
+  if (!re.test(address.value)) {
+    setErrorFor(address, "invalid address");
+  } else {
+    setSuccessFor(address);
+  }
+}
+
+function validateCity() {
+  const city = document.getElementById("city");
+  const re = /^[a-zA-Z ]+$/;
+
+  if (!re.test(city.value)) {
+    setErrorFor(city, "invalid city name");
+  } else {
+    setSuccessFor(city);
+  }
+}
+
+function validateState() {
+  const state = document.getElementById("state");
+  const re = /^[a-zA-Z ]+$/;
+
+  if (!re.test(state.value)) {
+    setErrorFor(state, "invalid state name");
+  } else {
+    setSuccessFor(state);
+  }
+}
+
+function validateCountry() {
+  const country = document.getElementById("country");
+  const re = /^[a-zA-Z ]+$/;
+
+  if (!re.test(country.value)) {
+    setErrorFor(country, "invalid country name");
+  } else {
+    setSuccessFor(country);
+  }
+}
+
+function validateZipcode() {
+  const zipcode = document.getElementById("zipcode");
+  const re = /^[0-9]{4,6}$/;
+
+  if (!re.test(zipcode.value)) {
+    setErrorFor(zipcode, "4-6 digts please");
+  } else {
+    setSuccessFor(zipcode);
+  }
+}
+
+function validatePhone() {
+  const phone = document.getElementById("phone");
+  const re = /^[0-9]{10,10}$/;
+
+  if (!re.test(phone.value)) {
+    setErrorFor(phone, "10 digts please");
+  } else {
+    setSuccessFor(phone);
+  }
+}
+
+function validateEmail() {
+  const email = document.getElementById("email");
+  const re = /^[0-9]{10,10}$/;
+
+  if (!isEmail(email.value)) {
+    setErrorFor(email, "invalid email");
   } else {
     setSuccessFor(email);
   }
-
-  if (passwordValue === "") {
-    setErrorFor(password, "Password cannot be blank");
-  } else {
-    setSuccessfor(password);
-  }
-
-  if (password2Value === "") {
-    setErrorFor(confirmpw, "Password cannot be blank");
-  } else if (password2value !== passwordValue) {
-    setErrorFor(confirmpw, "password doesn not match");
-  } else {
-    setSuccessFor(confirmpw);
-  }
 }
+
 function setErrorFor(input, message) {
   const formGroup = input.parentElement; //.form-group
+
   //add error message in error div on top of form
   errorElement.innerText = message;
 
   //add error class
-  formGroup.className = "form-group error";
+  if (
+    input == document.getElementById("city") ||
+    input == document.getElementById("state") ||
+    input == document.getElementById("zipcode") ||
+    input == document.getElementById("country")
+  ) {
+    formGroup.className = "form-group error col-xs-12 col-md-3";
+  } else {
+    formGroup.className = "form-group error col-xs-12 col-md-6";
+  }
 }
 
 function setSuccessFor(input) {
   const formGroup = input.parentElement; //.form-group
-  formGroup.className = "form-group success";
+  if (
+    input == document.getElementById("city") ||
+    input == document.getElementById("state") ||
+    input == document.getElementById("zipcode") ||
+    input == document.getElementById("country")
+  ) {
+    formGroup.className = "form-group success col-xs-12 col-md-3";
+  } else {
+    formGroup.className = "form-group success col-xs-12 col-md-6";
+  }
+  setTimeout(() => {
+    errorElement.innerText = "";
+  }, 1000);
 }
 
 function isEmail(email) {
