@@ -17,6 +17,7 @@ section {
   flex: 1 0 auto; /*allows the content to grow but not shrink */
 }
 
+/*header*/
 header {
   display: block;
   background-color: #102a43;
@@ -43,13 +44,46 @@ header h2 {
   color: #00897b;
 }
 
-/*footer*/
-#icon {
+/*search bar and search button*/
+.searchButton {
+  margin-top: 10px;
+  background-color: #00897b;
+  color: white;
+}
+.searchButton:hover {
+  background-color: #00897b;
+  color: black;
+}
+.searchBox {
+  margin-top: 10px;
+}
+
+/*header right side buttons: signup login userprofile*/
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons li a {
   text-decoration: none;
+  color: #00897b;
+  font-size: large;
+}
+/*footer*/
+.items ul li {
   list-style: none;
+}
+.items ul li a {
+  text-decoration: none;
+  color: #00897b;
+}
+.icons ul li a {
+  font-size: large;
+  padding-right: 10px;
+  color: #00897b;
 }
 
 /*login page*/
+/*login button*/
 .btn3 {
   border: none;
   outline: none;
@@ -74,6 +108,7 @@ header h2 {
 }
 .form-group.error input {
   border-color: #e74c3c;
+  background-color: lightsalmon;
 }
 
 /*
@@ -86,6 +121,8 @@ input:invalid {
   background-color: blueviolet;
 }
 */
+
+/*sign up button*/
 .btn1 {
   border: none;
   outline: none;

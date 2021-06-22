@@ -1,4 +1,3 @@
-const form = document.getElementById("form");
 document.getElementById("username").addEventListener("blur", validateUserName);
 document.getElementById("fullname").addEventListener("blur", validateFullName);
 document.getElementById("password").addEventListener("blur", validatePassword);
@@ -6,19 +5,19 @@ document.getElementById("cpw").addEventListener("blur", confirmPassword);
 document
   .getElementById("streetaddress")
   .addEventListener("blur", validateAddress);
-const secondaddress = document.getElementById("secondaddress");
-const city = document
-  .getElementById("city")
-  .addEventListener("blur", validateCity);
-const state = document
-  .getElementById("state")
-  .addEventListener("blur", validateState);
+document
+  .getElementById("secondaddress")
+  .addEventListener("blur", validateSecondAddress);
+document.getElementById("city").addEventListener("blur", validateCity);
+document.getElementById("state").addEventListener("blur", validateState);
 document.getElementById("country").addEventListener("blur", validateCountry);
 document.getElementById("zipcode").addEventListener("blur", validateZipcode);
 document.getElementById("phone").addEventListener("blur", validatePhone);
 document.getElementById("email").addEventListener("blur", validateEmail);
 
 const errorElement = document.getElementById("error");
+
+//var button = document.getElementById("signup");
 
 function validateUserName() {
   const username = document.getElementById("username");
@@ -30,6 +29,7 @@ function validateUserName() {
     setSuccessFor(username);
   }
 }
+
 function validateFullName() {
   const fullname = document.getElementById("fullname");
   console.log(fullname);
@@ -76,6 +76,16 @@ function validateAddress() {
   }
 }
 
+function validateSecondAddress() {
+  const secondaddress = document.getElementById("secondaddress");
+  const re = /^[a-zA-Z0-9 ]+$/;
+
+  if (!re.test(secondaddress.value)) {
+    setErrorFor(secondaddress, "invalid address");
+  } else {
+    setSuccessFor(secondaddress);
+  }
+}
 function validateCity() {
   const city = document.getElementById("city");
   const re = /^[a-zA-Z ]+$/;
@@ -146,7 +156,8 @@ function setErrorFor(input, message) {
   const formGroup = input.parentElement; //.form-group
 
   //add error message in error div on top of form
-  errorElement.innerText = message;
+  //errorElement.innerText = message;
+  input.setCustomValidity(message);
 
   //add error class
   if (
@@ -163,6 +174,8 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input) {
   const formGroup = input.parentElement; //.form-group
+  input.setCustomValidity("");
+
   if (
     input == document.getElementById("city") ||
     input == document.getElementById("state") ||

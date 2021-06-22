@@ -21,9 +21,9 @@
             <div class="row">
                 <div class="col-lg-9 container">
                     <!-- Leave comment-->
-                    <h3 class="h3 mb-4 text-center my-4">Sign Up Form</h3>
-                    <div id="error"></div>
-                    <form class="form mb-4 " id="form" action="registerHandler.php" method="post"
+                    <h3 class="h3 mb-4 text-center">Sign Up Form</h3>
+
+                    <form class="form mb-4" id="form" action="registerHandler.php" method="post"
                         enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-xs-12 col-md-6 ">
@@ -99,10 +99,10 @@
                             <div class="form-group col-lg-12 ">
                                 <div class="buttons">
 
-                                    <button class="btn1" type="submit">Sign
+                                    <button class="btn1" id="signup" action="index.php" href="index.php"
+                                        type="submit">Sign
                                         Up</button>
-                                    <a action="index.php" href="index.php" style="float:right;"><button
-                                            class="btn2">Cancel</button></a>
+                                    <a href="index.php" style="float:right;" class="btn2 btn remove">Cancel</a>
                                 </div>
                             </div>
                         </div>
