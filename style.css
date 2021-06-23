@@ -5,8 +5,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f1f1f1;
-}
-body {
   display: flex;
   flex-direction: column; /* creates rows out of the elements main and footer */
   height: 100vh;

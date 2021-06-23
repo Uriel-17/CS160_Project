@@ -3,6 +3,7 @@
     $userId = 1;
     include('header.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,6 @@
 </head>
 
 <body>
-
 
     <section class="py-4">
         <div class="container py-4">
@@ -48,12 +48,14 @@
                             </div>
 
                             <div class="form-group col-xs-12 col-md-6">
-                                <input class="form-control mb-2" type="date" name="birthday"
-                                    placeholder="Date of birth">
+                                <input class="form-control mb-2" type="date" name="birthday" title="Date of birth" max=<?php
+         echo date('Y-m-d');
+     ?>>
                             </div>
 
                             <div class="form-group col-xs-12 col-md-6">
-                                <input class="form-control bt-3 mb-2" type="file" name="image" placeholder="Image">
+                                <input class="form-control bt-3 mb-2" accept="image/*" type="file" name="image"
+                                    placeholder="Image">
                             </div>
 
                             <div class="form-group col-xs-12 col-md-6">

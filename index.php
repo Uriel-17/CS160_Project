@@ -4,7 +4,7 @@
     include('header.php');
 ?>
 
-<section class="py-5">
+<section class="index py-5">
 
     <!--container-->
     <div class="container">
