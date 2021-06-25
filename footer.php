@@ -18,7 +18,7 @@
 
 <body>
     <!--footer-->
-    <footer class="py-2" style="background-color: #334E68;">
+    <footer style="background-color: #334E68;">
         <div class="container text-center">
             <div class="row align-items-center">
                 <div class="items col-md-4 text-lg-left">

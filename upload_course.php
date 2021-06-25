@@ -1,7 +1,8 @@
 <?php
-    $title = 'upload course page';
-    $userId = 3;
-    include('header.php');
+
+$title = 'upload course page';
+$currentPage = 'upload_course';
+include('header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +21,13 @@
         <section class="profilebody">
             <div class="container">
                 <div class="row">
-                    <div class="profile-nav col-md-3">
+                    <div class="profile-nav col-lg-3">
                         <?php
                             include('profile_nav.php');
                         ?>
 
                     </div>
-                    <div class="profile-info col-md-9">
+                    <div class="profile-info col-lg-9">
                         <div class="panel">
                             <div class="bio-graph-heading">
                                 <h2>Uploaded Courses</h2>

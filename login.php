@@ -1,6 +1,8 @@
 <?php
+session_start();
+$_SESSION['pageId'] = 3;
     $title = 'User Login';
-    $userId = 2;
+   
     include('header.php');
 ?>
 

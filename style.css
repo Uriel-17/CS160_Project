@@ -69,6 +69,7 @@ header h2 {
 /*footer*/
 .items ul li {
   list-style: none;
+  font-size: 18px;
 }
 .items ul li a {
   text-decoration: none;

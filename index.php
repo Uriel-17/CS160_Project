@@ -1,6 +1,8 @@
 <?php
+session_start();
+$_SESSION['pageId'] = 1;
     $title = 'User Registration';
-    $userId = 4;
+   
     include('header.php');
 ?>
 
