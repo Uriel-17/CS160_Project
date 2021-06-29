@@ -20,7 +20,7 @@ function getUserIpAddress() {
 
 if (isset($_SESSION['currentIP'])) {
 	if ($_SESSION['currentIP'] != getUserIpAddress()) {
-		header("Location: logout.php");
+		header("Location: ../logout.php");
 	}
 }
 else {
