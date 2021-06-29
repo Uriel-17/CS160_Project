@@ -1,34 +1,41 @@
 <?php
-require_once('../db/dbhelper.php');
+require_once('db/dbhelper.php');
 
 // get all categories from database
 function getAllCategories() {
-	$sql = 'CALL GetAllCategories()';
+	$sql = 'SELECT * FROM category';
 	return executeResult($sql);
 }
 
 // get an category by its id
 function getCategoryById($id) {
-	$sql = 'CALL GetCategoryById('.$id.')';
+	$sql = 'SELECT * FROM category WHERE categoryId = '.$id;
 	return executeSingleResult($sql);
 }
 
 // priority is for sorting
 function createCategory($categoryName, $description, $image, $priority, $createtime, $updatetime) {
-	$sql = 'CALL CreateCategory("'.$categoryName.'", "'.$description.'", "'.$image.'", '.$priority.', "'.$createtime.'", "'.$updatetime.'")';
-	execute($sql);
+	$sql = 'INSERT INTO category (categoryname, description, image, priority, createtime, updatetime)
+    VALUES ("'.$categoryName.'", "'.$description.'", "'.$image.'", '.$priority.', "'.$createtime.'", "'.$updatetime.'")';
+	return execute($sql);
 }
 
 // update new category
 function updateCategory($id, $categoryName, $description, $image, $priority, $updatetime) {
-	$sql = 'CALL UpdateCategory('.$id.', "'.$categoryName.'", "'.$description.'", "'.$image.'", '.$priority.', "'.$updatetime.'")';
-	execute($sql);
+	$sql = 'UPDATE category
+    SET categoryname = "'.$categoryName.'",
+		description = "'.$description.'",
+        image = "'.$image.'",
+        priority = '.$priority.',
+        updatetime = "'.$updatetime.'"
+    WHERE categoryId = '.$id;
+	return execute($sql);
 }
 
 // delete category
 function deleteCategory($id) {
-	$sql = 'CALL DeleteCategory('.$id.')';
-	execute($sql);
+	$sql = 'DELETE FROM category WHERE categoryId = '.$id;
+	return execute($sql);
 }
 
 // get all categories in database but order by priority
