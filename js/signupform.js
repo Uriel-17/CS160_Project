@@ -67,7 +67,7 @@ function confirmPassword() {
 
 function validateAddress() {
   const address = document.getElementById("streetaddress");
-  const re = /^[a-zA-Z0-9 ]+$/;
+  const re = /^[a-zA-Z0-9, ]+$/;
 
   if (!re.test(address.value)) {
     setErrorFor(address, "invalid address");
@@ -78,7 +78,7 @@ function validateAddress() {
 
 function validateSecondAddress() {
   const secondaddress = document.getElementById("secondaddress");
-  const re = /^[a-zA-Z0-9 ]+$/;
+  const re = /^[a-zA-Z0-9, ]+$/;
 
   if (!re.test(secondaddress.value)) {
     setErrorFor(secondaddress, "invalid address");

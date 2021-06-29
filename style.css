@@ -4,7 +4,7 @@
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f1f1f1;
+  background-color: #302a27;
   display: flex;
   flex-direction: column; /* creates rows out of the elements main and footer */
   height: 100vh;
@@ -15,22 +15,63 @@ section {
   flex: 1 0 auto; /*allows the content to grow but not shrink */
 }
 
+/*register page*/
+.form-control {
+  background-color: #3b3a3a;
+  border: none;
+  color: #e7e7e7;
+}
+
+.form-group.success input {
+  background-color: #2b4d49;
+}
+.form-group.error input {
+  border-color: #e74c3c;
+  background-color: rgb(112, 61, 87);
+  color: #e0e0e0;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  background-color: #474747;
+  color: #dfdbdb;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: #dfdbdb !important;
+}
 /*header*/
 header {
   display: block;
-  background-color: #102a43;
+  background-color: #212121;
+}
+.items li a:hover {
+  color: rgb(39, 99, 49);
 }
 
 header h2 {
   position: absolute;
   margin-top: 20px;
   left: 10%;
-  color: #00897b;
+  color: #02d9c5;
 }
 
 .nav {
   position: absolute;
   width: 100%;
+}
+
+.navbar-light .navbar-brand {
+  color: #02d9c5;
 }
 
 .nav a {
@@ -39,46 +80,75 @@ header h2 {
   top: 30px;
   text-decoration: none;
   margin-right: 20px;
-  color: #00897b;
+  color: #02d9c5;
 }
 
 /*search bar and search button*/
+.searchBox {
+  font-size: 18px;
+  size: 50;
+}
 .searchButton {
-  margin-top: 10px;
-  background-color: #00897b;
-  color: white;
+  padding: 10px;
+  background-color: #02d9c5;
+  color: #064942;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
 }
 .searchButton:hover {
-  background-color: #00897b;
-  color: black;
-}
-.searchBox {
-  margin-top: 10px;
+  background-color: #02d9c5;
+  color: #e7e7e7;
 }
 
 /*header right side buttons: signup login userprofile*/
 .buttons {
   margin-top: 20px;
+  font-size: 18px;
+}
+.buttons li a {
+  padding: 10px;
+  background-color: #02d9c5;
+  color: #064942;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #064942;
+}
+.buttons li a:hover {
+  background-color: #02d9c5;
+  color: #e7e7e7;
 }
 
-.buttons li a {
-  text-decoration: none;
-  color: #00897b;
-  font-size: large;
-}
 /*footer*/
+footer {
+  background-color: #212121;
+}
+footer .row {
+  padding-top: 15px;
+}
+.icons ul li {
+  font-size: 20px;
+  margin: 0 10px 18px;
+}
+.icons ul li a {
+  color: #02d9c5;
+}
+
 .items ul li {
   list-style: none;
   font-size: 18px;
+  display: inline;
+  margin: 10px;
 }
 .items ul li a {
   text-decoration: none;
-  color: #00897b;
+  color: #02d9c5;
 }
-.icons ul li a {
-  font-size: large;
-  padding-right: 10px;
-  color: #00897b;
+/*login and sign up title*/
+.container .row h3 {
+  color: #02d9c5;
 }
 
 /*login page*/
@@ -88,61 +158,47 @@ header h2 {
   outline: none;
   height: 50px;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: #02d9c5;
+  color: #064942;
   border-radius: 4px;
   font-weight: bold;
 }
 
 .btn3:hover {
-  background-color: white;
-  border: 1px solid;
-  color: black;
+  background-color: #2b5a3c;
+  /* border: 1px solid; */
+  color: #179286;
 }
 
-/*register page*/
-
-.form-group.success input {
-  border-color: #2ecc71;
+/*footer*/
+.copyrights .copyright {
+  color: white;
+  font-size: 18px;
 }
-.form-group.error input {
-  border-color: #e74c3c;
-  background-color: lightsalmon;
-}
-
-/*
-input:valid {
-  border-color: #2ecc71;
-  background-color: aquamarine;
-}
-input:invalid {
-  border-color: #e74c3c;
-  background-color: blueviolet;
-}
-*/
 
 /*sign up button*/
 .btn1 {
   border: none;
   outline: none;
-
   height: 50px;
   width: 150px;
-  background-color: #00897b;
+  background-color: #1b615a;
   color: white;
-  border-radius: 4px;
+  border-radius: 30px;
   font-weight: bold;
+}
+.btn1:hover {
+  color: black;
 }
 
 .btn2 {
   border: none;
   outline: none;
-
   height: 50px;
   width: 150px;
-  background-color: #c62828;
+  background-color: #a33939;
   color: white;
-  border-radius: 4px;
+  border-radius: 30px;
   font-weight: bold;
 }
 

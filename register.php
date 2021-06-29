@@ -1,9 +1,8 @@
 <?php
-session_start();
-$_SESSION['pageId'] = 2;
+    session_start();
+    $_SESSION['pageId'] = 1;
     $title = 'User Registration';
-    
-    include('header.php');
+   include('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +50,8 @@ $_SESSION['pageId'] = 2;
 
                             <div class="form-group col-xs-12 col-md-6">
                                 <input class="form-control mb-2" type="date" name="birthday" title="Date of birth" max=<?php
-         echo date('Y-m-d');
-     ?>>
+                         echo date('Y-m-d');
+                         ?>>
                             </div>
 
                             <div class="form-group col-xs-12 col-md-6">
@@ -103,8 +102,7 @@ $_SESSION['pageId'] = 2;
                             <div class="form-group col-lg-12 ">
                                 <div class="buttons">
 
-                                    <button class="btn1" id="signup" action="index.php" href="index.php"
-                                        type="submit">Sign
+                                    <button class="btn1" id="signup" href="index.php" type="submit">Sign
                                         Up</button>
                                     <a href="index.php" style="float:right;" class="btn2 btn remove">Cancel</a>
                                 </div>

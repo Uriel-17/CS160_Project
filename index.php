@@ -1,16 +1,12 @@
 <?php
-session_start();
-$_SESSION['pageId'] = 1;
-    $title = 'User Registration';
-   
+    session_start();
+    $title = 'User Registration';  
     include('header.php');
 ?>
 
 <section class="index py-5">
-
     <!--container-->
     <div class="container">
-
         <!--slides-->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <h2 class="text-center">Categories</h2>

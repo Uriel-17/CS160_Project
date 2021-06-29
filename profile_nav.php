@@ -16,7 +16,7 @@
     <div class="panel">
         <div class="user-heading round">
             <a href="#">
-                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
+                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="dp" />
             </a>
             <h1>Carrie Zhang</h1>
             <p>yanqi.zhang@sjsu.edu</p>

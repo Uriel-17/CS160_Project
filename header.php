@@ -15,7 +15,7 @@
 <body>
     <!--header-->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light index-forward" style="background-color: #334e68">
+        <nav class="navbar navbar-expand-lg navbar-light index-forward">
             <div class="
             container
             d-flex
@@ -24,15 +24,15 @@
                 <a class="navbar-brand col-lg-2" href="index.php"><img src="~/img/logo.png" alt="logo" width="150"></a>
                 <form class="col-lg-8 d-md-block d-none">
                     <div class="row">
-                        <div class="searchBox col-lg-10">
-                            <input type="text" class="form-control" placeholder="Search.." />
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input" placeholder="Search.." />
                         </div>
                         <div class="col-lg-2 text-center">
-                            <button class="searchButton btn" type="submit">Search</button>
+                            <button class="searchButton" type="submit">Search</button>
                         </div>
                     </div>
                 </form>
-                <ul class="buttons col-lg-2">
+                <ul class="buttons col-lg-3">
 
                     <?php
                 if(isset($_SESSION['userId'])){
@@ -41,13 +41,14 @@
                     if(isset($_SESSION['pageId'])){
                         $sign_up_hidden = '';
                         $sign_in_hidden = '';
-                        if($_SESSION['pageId'] == 2){
+                        if($_SESSION['pageId'] == 1){
                             $sign_up_hidden='hidden';
-                        }else if($_SESSION['pageId'] == 3){
+                        }else if($_SESSION['pageId'] == 2){
                             $sign_in_hidden='hidden';
                         }
                         echo '<li class="list-inline-item"><a href="register.php" '.$sign_up_hidden.'>Sign up</a></li>
                         <li class="list-inline-item"><a href="login.php" '.$sign_in_hidden.'>Login</a></li>';
+                        
                     }
                     else{
                         echo '<li class="list-inline-item"><a href="register.php" >Sign up</a></li>

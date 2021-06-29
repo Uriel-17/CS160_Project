@@ -3,13 +3,13 @@
   padding: 20px;
   margin-bottom: 10px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #413e39;
   border-radius: 5px;
 }
 
 .profile-nav .user-heading {
   background: #00897b;
-  color: #fff;
+  color: #aaa8a4;
   border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
   padding: 30px;
@@ -68,7 +68,7 @@
 }
 
 .profile-nav ul li {
-  border-bottom: 1px solid #ebeae6;
+  border-bottom: 1px solid #12736a;
   margin-top: 0;
   line-height: 30px;
 }
@@ -79,21 +79,21 @@
   text-decoration: none;
 }
 
-.profile-nav ul li:last-child {
+/* .profile-nav ul li:last-child {
   border-bottom: none;
-}
+} */
 .profile-nav ul li a {
   border-radius: 0;
   -webkit-border-radius: 0;
   color: #89817f;
-  border-left: 1px solid #fff;
+  border-left: 1px solid #12736a;
   font-size: 17px;
 }
 .profile-nav ul li a:hover,
 .profile-nav ul li a:focus,
 .profile-nav ul li.active a {
   border-left: 5px solid #00897b;
-  color: #89817f !important;
+  color: #d1d0d0 !important;
 }
 .profile-nav ul li:last-child > a:last-child {
   border-radius: 0 0 4px 4px;
@@ -141,10 +141,11 @@
   margin: 0 0 20px;
 }
 .uploaded-course .card {
-  border: 1px solid rgba(202, 196, 196, 0.781);
+  background-color: #857f72;
+  border: 1px solid rgba(102, 97, 97, 0.781);
   padding: 15px;
   border-radius: 4px;
-  box-shadow: 5px 7px rgb(231, 228, 228);
+  box-shadow: 5px 7px #a59f91;
 }
 
 .upload-button {
@@ -167,4 +168,20 @@
 .save-button {
   border-radius: 4px;
   padding: 5px;
+}
+.panel-body label {
+  color: #7a7771;
+}
+.editBtn {
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 10px;
+}
+
+.panel-body form .row .input .col-sm-6 {
+  background-color: darkcyan;
+  color: white;
 }
