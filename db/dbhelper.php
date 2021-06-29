@@ -8,10 +8,11 @@ function execute($sql) {
 	// open connection to database
 	$con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 	//insert, update, delete
-	mysqli_query($con, $sql);
+	$result = mysqli_query($con, $sql);
 
 	//close connection
 	mysqli_close($con);
+	return $result;
 }
 
 // this method is for executing queries that request a return of a table of data
