@@ -24,15 +24,15 @@
                 <a class="navbar-brand col-lg-2" href="index.php"><img src="~/img/logo.png" alt="logo" width="150"></a>
                 <form class="col-lg-8 d-md-block d-none">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-8">
                             <input type="text" class="form-control input" placeholder="Search.." />
                         </div>
-                        <div class="col-lg-2 text-center">
+                        <div class="col-4 text-center">
                             <button class="searchButton" type="submit">Search</button>
                         </div>
                     </div>
                 </form>
-                <ul class="buttons col-lg-3">
+                <ul class="buttons col-lg-2">
 
                     <?php
                 if(isset($_SESSION['userId'])){
@@ -58,7 +58,21 @@
               
             ?>
 
+
                 </ul>
+                <!-- <div class="col-lg-2">
+                    <div class="dropdownbtn">
+                        <a class="dropbtn" href="userprofile.php">User Name</a>
+                        <div class="dropdown-content">
+                            <a href="userprofile.php"><i class="fa fa-edit"></i> Edit Profile</a>
+                            <a href="user_account.php">Account</a>
+                            <a href="saved_courses.php">Saved Courses</a>
+                            <a href="upload_course.php">Uploaded Courses</a>
+                            <a href="view_history.php">View History</a>
+                            <a href="index.php">Log Out</a>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </nav>
     </header>

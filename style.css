@@ -14,6 +14,51 @@ body {
 section {
   flex: 1 0 auto; /*allows the content to grow but not shrink */
 }
+/*dropdown button starts*/
+.dropbtn {
+  background-color: #02d9c5;
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  font-size: 19px;
+  border: none;
+  border-radius: 15px;
+}
+
+.dropdownbtn {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2e2e2e;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  font-size: 18px;
+  padding: 12px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #474747;
+}
+
+.dropdownbtn:hover .dropdown-content {
+  display: block;
+}
+
+.dropdownbtn:hover .dropbtn {
+  background-color: #3e8e41;
+}
+/*dropdown button ends*/
 
 /*register page*/
 .form-control {
@@ -89,7 +134,7 @@ header h2 {
   size: 50;
 }
 .searchButton {
-  padding: 10px;
+  padding: 7px;
   background-color: #02d9c5;
   color: #064942;
   font-size: 18px;
