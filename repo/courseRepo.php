@@ -1,6 +1,6 @@
 <?php
-require_once('../db/dbhelper.php');
-require_once('ratingRepo.php');
+require_once('db/dbhelper.php');
+//require_once('ratingRepo.php');
 
 function getAllCourses() {
 	$sql = 'SELECT * FROM course';
@@ -46,19 +46,19 @@ function deleteCourse($courseId) {
 	return execute($sql);
 }
 
-function computeAverageRating($courseId) {
-	$ratings = getRatingByCourseId($courseId);
-	$count = count($ratings);
-	$total = 0;
+// function computeAverageRating($courseId) {
+// 	$ratings = getRatingByCourseId($courseId);
+// 	$count = count($ratings);
+// 	$total = 0;
 
-	foreach ($ratings as $item) {
-		$total += $item['ratescore'];
-	}
+// 	foreach ($ratings as $item) {
+// 		$total += $item['ratescore'];
+// 	}
 
-	return $total / $count;
-}
+// 	return $total / $count;
+// }
 
-function computeNumberOfRatings($courseId) {
-	$ratings = getRatingByCourseId($courseId);
-	return count($ratings);
-}
+// function computeNumberOfRatings($courseId) {
+// 	$ratings = getRatingByCourseId($courseId);
+// 	return count($ratings);
+// }
