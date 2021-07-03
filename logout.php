@@ -1,7 +1,5 @@
 <?php 
-if (session_name() == null || session_name() == "") {
-	session_start();
-}
+session_start();
 
 unset($_SESSION);
 

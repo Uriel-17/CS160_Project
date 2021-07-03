@@ -1,21 +1,19 @@
 <?php
-require_once('repo/categoryRepo.php');
-    $title = 'HomePage';
-    $userId = 3;
+if (session_name() == ""){
+    session_start();
+}
+    
+    require_once('repo/categoryRepo.php');
+    $title = 'Index';  
     include('header.php');
 ?>
 
-<section class="py-5">
-
+<section class="index py-5">
     <!--container-->
     <div class="container">
-
         <!--slides-->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="col-12">
-                <i class="text-left" style="font-size: 1.5rem;">Categories</i>
-                <a class="text-right" style="float:right;">View All</a>
-            </div>
+            <h2 class="text-center">Categories</h2>
 
             <div class="carousel-inner">
                 <!--slides-->
@@ -39,7 +37,7 @@ require_once('repo/categoryRepo.php');
                         // code...
                         foreach ($subCate[$i] as $cate) {
                             echo '<div class="col-3 text-center">
-                                    <img src="images/category/'.$cate["image"].'" class="d-block w-100" alt="..." height="180" />
+                                    <img src="images/category/'.$cate["image"].'" class="d-block w-100" alt="..." />
                                     <a action="" href="#">'.$cate["categoryname"].'</a>
                                 </div>';
                         }
@@ -49,7 +47,7 @@ require_once('repo/categoryRepo.php');
                 }
                 ?>
             </div>
-            <button class="carousel-control-prev float-left" type="button" data-bs-target="#carouselExampleControls"
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
