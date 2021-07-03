@@ -22,7 +22,7 @@ const errorElement = document.getElementById("error");
 function validateUserName() {
   const username = document.getElementById("username");
   console.log(username);
-  const re = /^[a-zA-Z ]{4,30}$/;
+  const re = /^[a-zA-Z0-9]{4,30}$/;
   if (!re.test(username.value)) {
     setErrorFor(username, "only alphabets with length 4-30");
   } else {

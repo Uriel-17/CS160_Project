@@ -15,7 +15,7 @@
                     <div class="row justify-content-center align-items-center">
 
                         <div class="form-group col-lg-7 ">
-                            <input class="form-control my-3 p-2" type="email" name="email" placeholder="Username">
+                            <input class="form-control my-3 p-2" type="text" name="username" placeholder="Username">
                             <input class="form-control my-3 p-2" type="password" name="password" placeholder="******"
                                 required>
                             <a href="index.php"><button class="btn3 mt-3 mb-5 " type="submit">Login</button></a>

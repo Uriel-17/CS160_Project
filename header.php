@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="my_css/style.css" />
     <title><?php echo $title; ?></title>
 </head>
 
@@ -36,7 +36,19 @@
 
                     <?php
                 if(isset($_SESSION['userId'])){
-                 echo '<li class="list-inline-item"><a href="index.php">Log Out</a></li><li class="list-inline-item"><a href="userprofile.php">'.$_SESSION['fullname'].'</a></li>';
+                 echo '
+                 <div class="dropdownbtn">
+                        <a class="dropbtn" href="userprofile.php">'.$_SESSION['fullname'].'</a>
+                        <div class="dropdown-content">
+                            <a href="edit_profile.php"> Edit Profile</a>
+                            <a href="user_account.php">Account</a>
+                            <a href="saved_courses.php">Saved Courses</a>
+                            <a href="upload_course.php">Uploaded Courses</a>
+                            <a href="view_history.php">View History</a>
+                            <a href="index.php">Log Out</a>
+                        </div>
+                    </div>
+                 ';
                 }else{                   
                     if(isset($_SESSION['pageId'])){
                         $sign_up_hidden = '';
@@ -45,34 +57,34 @@
                             $sign_up_hidden='hidden';
                         }else if($_SESSION['pageId'] == 2){
                             $sign_in_hidden='hidden';
+                        }else if($_SESSION['pageId'] ==3){
+                          $sign_up_hidden = '';
+                        $sign_in_hidden = '';
+                      
                         }
                         echo '<li class="list-inline-item"><a href="register.php" '.$sign_up_hidden.'>Sign up</a></li>
                         <li class="list-inline-item"><a href="login.php" '.$sign_in_hidden.'>Login</a></li>';
                         
                     }
                     else{
-                        echo '<li class="list-inline-item"><a href="register.php" >Sign up</a></li>
-                        <li class="list-inline-item"><a href="login.php" >Login</a></li>';
-                    }
-            }
-              
-            ?>
-
-
-                </ul>
-                <!-- <div class="col-lg-2">
-                    <div class="dropdownbtn">
+                        echo '<div class="dropdownbtn">
                         <a class="dropbtn" href="userprofile.php">User Name</a>
                         <div class="dropdown-content">
-                            <a href="userprofile.php"><i class="fa fa-edit"></i> Edit Profile</a>
+                            <a href="edit_profile.php"> Edit Profile</a>
                             <a href="user_account.php">Account</a>
                             <a href="saved_courses.php">Saved Courses</a>
                             <a href="upload_course.php">Uploaded Courses</a>
                             <a href="view_history.php">View History</a>
                             <a href="index.php">Log Out</a>
                         </div>
-                    </div>
-                </div> -->
+                    </div>';
+                    }
+            }
+              
+            ?>
+                </ul>
+
+
             </div>
         </nav>
     </header>

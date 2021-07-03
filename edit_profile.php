@@ -21,60 +21,62 @@
                     </div>
                     <div class="panel-body bio-graph-info">
                         <form action="" method="post">
-                            <div class="row mt-4">
+                            <div class="form-group mt-4">
                                 <div class="col-sm-3">
                                     <label>Full Name</label>
                                 </div>
-                                <input class="col-sm-6  py-1" placeholder="Enter full name">
+                                <input class="form-control col-sm-6  py-1" placeholder="Enter full name"
+                                    pattern="[a-z]{1,15}">
                             </div>
                             <hr>
-                            <div class="row ">
+                            <div class="form-group">
                                 <div class="col-sm-3">
                                     <label>Email</label>
                                 </div>
-                                <input class="col-sm-6 py-1" placeholder="Enter new email">
+                                <input class="form-control col-sm-6 py-1" placeholder="Enter new email">
 
                             </div>
 
                             <hr>
-                            <div class="row">
+                            <div class="form-group">
                                 <div class="col-sm-3">
                                     <label>Phone</label>
                                 </div>
-                                <input class="col-sm-6 py-1" placeholder="Enter new phone number">
+                                <input class="form-control col-sm-6 py-1" placeholder="Enter new phone number">
                             </div>
                             <hr>
-                            <div class="row">
+                            <div class="form-group">
                                 <div class="col-sm-3">
                                     <label>Date of Birth</label>
                                 </div>
-                                <input class="col-sm-6 py-1" type="date" placeholder="Enter new birthday">
+                                <input class="form-control col-sm-6 py-1" type="date" placeholder="Enter new birthday">
                             </div>
-                        </form>
-                        <hr>
-                        <form action="" method="post">
-                            <div class="row ">
+                            <hr>
+
+                            <div class="form-group">
                                 <div class="col-sm-3">
                                     <label>Address</label>
                                 </div>
-                                <input class="col-sm-6 py-1 " placeholder="Enter new address">
+                                <input class="form-control col-sm-6 py-1 " placeholder="Enter new address" ">
 
                             </div>
                             <hr>
 
-                            <div class="row ">
-                                <div class="col-sm-12">
-                                    <a class="btn btn-info " href="#">Save</a>
+                            <div class=" form-group">
+                                <div class=" col-sm-12">
+                                    <button class="btn btn-info " type="submit" href="#">Save</button>
                                 </div>
                             </div>
-
+                        </form>
                     </div>
 
                 </div>
-                <div></div>
             </div>
         </div>
     </div>
+
+
+
 </section>
 <script type="text/javascript"></script>
 

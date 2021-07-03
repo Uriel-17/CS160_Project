@@ -9,7 +9,7 @@
 
 .profile-nav .user-heading {
   background: #00897b;
-  color: #aaa8a4;
+  color: white;
   border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
   padding: 30px;
@@ -51,7 +51,7 @@
 
 .profile-nav .user-heading .file:hover {
   background-color: #6899c2;
-  color: #90d1d0;
+  color: white;
 }
 
 .profile-nav .user-heading .file input {
@@ -85,7 +85,7 @@
 .profile-nav ul li a {
   border-radius: 0;
   -webkit-border-radius: 0;
-  color: #89817f;
+  color: white;
   border-left: 1px solid #12736a;
   font-size: 17px;
 }
@@ -166,8 +166,8 @@
   border-radius: 4px;
   padding: 5px;
 }
-.panel-body label {
-  color: #7a7771;
+.label {
+  color: #e8e4da;
 }
 .editBtn {
   text-decoration: none;

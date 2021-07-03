@@ -113,7 +113,7 @@
             </div>
         </div>
     </section>
-    <script src="js/signupform.js"></script>
+    <script src="my_js/signupform.js"></script>
 
 </body>
 
