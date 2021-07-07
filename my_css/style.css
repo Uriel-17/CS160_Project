@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,300&display=swap");
 * {
   padding: 0;
   margin: 0;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #302a27;
+  font-family: "Roboto", sans-serif;
+  background-color: #212121;
   display: flex;
   flex-direction: column; /* creates rows out of the elements main and footer */
   height: 100vh;

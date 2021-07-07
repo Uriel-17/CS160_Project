@@ -77,7 +77,7 @@ include('header.php');
                                 </li>
                             </ul>
                         </nav>
-                        <button class="upload-button btn-secondary">Upload your course</button>
+                        <a class="upload-button btn-secondary" href="upload.php">Upload your course</a>
                     </div>
                 </div>
                 <div></div>

@@ -26,7 +26,7 @@
                                     <label>Full Name</label>
                                 </div>
                                 <input class="form-control col-sm-6  py-1" placeholder="Enter full name"
-                                    pattern="[a-z]{1,15}">
+                                    pattern="[a-zA-Z0-9]{1,30}">
                             </div>
                             <hr>
                             <div class="form-group">
