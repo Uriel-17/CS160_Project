@@ -18,3 +18,7 @@ clear.onclick = function () {
   btn.style.display = "none";
   feild.value = "";
 };
+
+function togglePopup() {
+  document.getElementById("save").classList.toggle("active");
+}

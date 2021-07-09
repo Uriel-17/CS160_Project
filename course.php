@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="course.css" />
+    <link rel="stylesheet" href="my_js/course.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 
 </head>
@@ -24,6 +24,35 @@
             </div>
 
             <div class="video-description">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+
+                        <div class=" col-lg-6 text-center">
+
+                        </div>
+                        <div class="items col-lg-6 text-lg-right ">
+                            <div class="popup" id="save">
+                                <div class="overlay"></div>
+                                <div class="content">
+                                    <div class="close-btn" onclick="togglepopup()">&times;</div>
+                                    <h1>title</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quia
+                                        magni! Repellat, dolore hic. Perferendis quam deleniti sunt inventore
+                                        autem mollitia voluptates iusto cum sed, non eius corrupti labore
+                                        facere.</p>
+                                </div>
+                            </div>
+                            <ul class="buttons">
+                                <li>
+                                    <button class=" rate" onclick="togglepopup()">Rate</button>
+
+                                </li>
+                                <li> <button class="save" onclick="togglepopup()">Save </button></li>
+                                <li> <button class="report" onclick="togglepopup()">Report</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <h4 class="m-b-sm">Course Name</h4>
 
                 <p class="m-t-sm">Author</p>
