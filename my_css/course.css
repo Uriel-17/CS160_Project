@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
 .iframe-container {
   position: relative;
   width: 100%;
@@ -28,61 +30,6 @@
   font-size: 18px;
   display: inline;
   margin: 8px;
-}
-
-.popup .overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  display: none;
-}
-
-.popup .content {
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  background: rgb(80, 78, 78);
-  width: 600px;
-  height: 220px;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.popup .content .p {
-  margin-bottom: 20px;
-}
-
-.popup .close-btn {
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  background: #222;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 600px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50px;
-}
-
-.popup .active .overlay {
-  display: block;
-}
-
-.popup .active .content {
-  transition: all 300ms ease-in-out;
-  transform: translate(-50%, -50%) scale(1);
 }
 
 .container .comment-box {
@@ -144,4 +91,48 @@ button {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 5px;
+}
+
+/*star style*/
+.star-container {
+  position: relative;
+  width: 400px;
+  /* background: #111; */
+  padding: 20px 30px;
+  /* border: 1px solid #444; */
+  /* border-radius: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.star-container .star-widget input {
+  display: none;
+}
+.star-widget label {
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+.star-container .star-widget input:not(:checked) ~ label:hover,
+.star-container .star-widget input:not(:checked) ~ label:hover ~ label {
+  color: #fd4;
+}
+.star-container .star-widget input:checked ~ label {
+  color: #fd4;
+}
+.star-container .star-widget input#rate-5:checked ~ label {
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+.report-container .report-list {
+  color: black;
+  align-items: left;
+}
+.report-container .radio {
+  /* display: inline-flex; */
+  cursor: pointer;
 }

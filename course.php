@@ -9,8 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="my_js/course.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="my_css/course.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
 
 </head>
 
@@ -24,31 +26,119 @@
             </div>
 
             <div class="video-description">
-                <div class="container text-center">
-                    <div class="row align-items-center">
+                <div class="container">
+                    <div class="row ">
 
                         <div class=" col-lg-6 text-center">
 
                         </div>
-                        <div class="items col-lg-6 text-lg-right ">
-                            <div class="popup" id="save">
-                                <div class="overlay"></div>
-                                <div class="content">
-                                    <div class="close-btn" onclick="togglepopup()">&times;</div>
-                                    <h1>title</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quia
-                                        magni! Repellat, dolore hic. Perferendis quam deleniti sunt inventore
-                                        autem mollitia voluptates iusto cum sed, non eius corrupti labore
-                                        facere.</p>
-                                </div>
-                            </div>
+                        <div class="items col-lg-6">
+
                             <ul class="buttons">
                                 <li>
-                                    <button class=" rate" onclick="togglepopup()">Rate</button>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#rate">
+                                        Rate
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="rate" tabindex="-1" role="dialog"
+                                        aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="rate-title" style="color:black;">Rate
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="star-container">
+
+                                                        <div class="star-widget">
+                                                            <input type="radio" name="rate" id="rate-5">
+                                                            <label for="rate-5" class="fas fa-star"></label>
+                                                            <input type="radio" name="rate" id="rate-4">
+                                                            <label for="rate-4" class="fas fa-star"></label>
+                                                            <input type="radio" name="rate" id="rate-3">
+                                                            <label for="rate-3" class="fas fa-star"></label>
+                                                            <input type="radio" name="rate" id="rate-2">
+                                                            <label for="rate-2" class="fas fa-star"></label>
+                                                            <input type="radio" name="rate" id="rate-1">
+                                                            <label for="rate-1" class="fas fa-star"></label>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
 
                                 </li>
-                                <li> <button class="save" onclick="togglepopup()">Save </button></li>
-                                <li> <button class="report" onclick="togglepopup()">Report</button></li>
+                                <li> <button type="button" class="btn btn-primary">
+                                        Save
+                                    </button></li>
+                                <li> <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#report">
+                                        Report
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="report" tabindex="-1" role="dialog"
+                                        aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="report-title" style="color:black;">
+                                                        Report video</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="report-container">
+
+                                                        <div class="report-list">
+                                                            <input type="radio" name="report" id="report-1">
+                                                            <label for="report-1">Sexual content</label><br />
+                                                            <input type="radio" name="report" id="report-2">
+                                                            <label for="report-2">Violent or abusive
+                                                                content</label><br />
+                                                            <input type="radio" name="report" id="report-3">
+                                                            <label for="report-3">Hateful or abusive
+                                                                content</label><br />
+                                                            <input type="radio" name="report" id="report-4">
+                                                            <label for="report-4">Harassment of bullying</label><br />
+                                                            <input type="radio" name="report" id="report-5">
+                                                            <label for="report-5">Spam or misleading</label>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -125,6 +215,15 @@
         </div>
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
 <script src="my_js/course.js"></script>
 
 
