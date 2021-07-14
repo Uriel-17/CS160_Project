@@ -1,7 +1,5 @@
 <?php
-if (session_name() == "") {
-	session_start();
-}
+session_start();
 require_once("repo/courseRepo.php");
 
 $userId = 0;
@@ -58,25 +56,19 @@ else {
 }
 
 $image = '';
-if (isset($_FILES['image'])){
+if (!empty($_FILES)) {
 	$image = $_FILES['image']['name'];
 	$uploaddir = 'images/course_img/';
 	$uploadfile = $uploaddir . $image;
 
-	echo "<p>";
-
 	if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-	  echo "File is valid, and was successfully uploaded.\n";
+		continue;
 	} else {
-	   echo "Upload failed";
+		$_SESSION['message'] = 'failed';
+		header("Location: upload.php");
 	}
-
-	echo "</p>";
-	echo '<pre>';
-	echo 'Here is some more debugging info:';
-	print_r($_FILES);
-	print "</pre>";
 }
+
 
 $createtime = $updatetime = date('Y-m-d H:i:s');
 

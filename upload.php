@@ -27,24 +27,6 @@ require_once("repo/categoryRepo.php");
                     <div class="panel-upload-body upload-course-info">
 
                         <form role="form" action="uploadHandler.php" method="post" enctype="multipart/form-data">
-                            <!-- <div class="form-group">
-                                <label> Select a Catogory <span class="required">*</span></label>
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Course
-                                            Categories</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect">
-                                        <option selected>Choose...</option>
-                                        <option value="1">Java</option>
-                                        <option value="2">Python</option>
-                                        <option value="3">C++</option>
-                                        <option value="3">JavaScript</option>
-                                        <option value="3">PHP</option>
-                                        <option value="3">C</option>
-                                    </select>
-                                </div>
-                            </div> -->
                             <div class="form-group">
                                 <label>Course Catogory <span class="required">*</span></label>
                                 <div class="input-group">
@@ -92,7 +74,6 @@ require_once("repo/categoryRepo.php");
                             </div>
 
                             <div class="form-group">
-                                <!-- <input class="submit" type="submit" value="Upload" /> -->
                                 <button class="uploadBtn" type="submit">Upload</button>
                             </div>
                         </form>
