@@ -22,7 +22,7 @@
                 </div>
                 <ul>
                     <li class="<?php echo $currentPage == 'java' ?'active' : ''?>">
-                        <a href="java.php"> <i class="fa fa-java"></i> Java</a>
+                        <a href="?categoryId=<?php echo $category["categoryId"];?>"> <i class="fa fa-java"></i> Java</a>
                     </li>
                     <li class="<?php echo $currentPage == 'python' ?'active' : ''?>">
                         <a href="python.php" .php"> <i class="fa fa-python"></i> Python</a>
