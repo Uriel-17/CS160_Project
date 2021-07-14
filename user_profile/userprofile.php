@@ -6,7 +6,7 @@
 $title = 'profile page';
 $currentPage = 'userprofile';
 
-include('header.php');
+include('../shared_layout/header.php');
 ?>
 
 <section class="profilebody">
@@ -23,7 +23,7 @@ include('header.php');
                         <h2>Public profile</h2>
                         <h3>The information about yourself</h3>
                     </div>
-                    <div class="panel-body bio-graph-info">
+                    <div class="panel-body bio-graph-info text-light">
 
                         <div class="row mt-4">
                             <div class="col-sm-3">
@@ -88,5 +88,5 @@ include('header.php');
 
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>

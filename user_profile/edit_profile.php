@@ -2,7 +2,7 @@
   
     $title = 'Edit profile page'; 
     $currentPage = 'edit_profile';
-    include('header.php');
+    include('../shared_layout/header.php');
 ?>
 
 <section class="profilebody">
@@ -134,5 +134,5 @@
 
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>

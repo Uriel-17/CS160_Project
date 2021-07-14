@@ -1,0 +1,250 @@
+.profile-nav .panel,
+.profile-info .panel {
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #413e39;
+  border-radius: 5px;
+}
+
+.profile-nav .user-heading {
+  background: #00897b;
+  color: white;
+  border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 0 0;
+  padding: 30px;
+  text-align: center;
+}
+.profile-nav .user-heading.round a {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+.profile-nav .user-heading a img {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.profile-nav .user-heading h1 {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  padding-top: 20px;
+}
+.profile-nav .user-heading p {
+  font-size: 15px;
+}
+.profile-nav .user-heading .file h4 {
+  font-size: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.profile-nav .user-heading .file {
+  position: relative;
+  color: #4b6f8d;
+  background-color: #8dd7d6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-nav .user-heading .file:hover {
+  background-color: #6899c2;
+  color: white;
+}
+
+.profile-nav .user-heading .file input {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+.profile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.profile-nav ul li {
+  border-bottom: 1px solid #12736a;
+  margin-top: 0;
+  line-height: 30px;
+}
+.profile-nav ul li a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+/* .profile-nav ul li:last-child {
+  border-bottom: none;
+} */
+.profile-nav ul li a {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  color: white;
+  border-left: 1px solid #12736a;
+  font-size: 17px;
+}
+.profile-nav ul li a:hover,
+.profile-nav ul li a:focus,
+.profile-nav ul li.active a {
+  border-left: 5px solid #00897b;
+  color: #d1d0d0 !important;
+}
+.profile-nav ul li:last-child > a:last-child {
+  border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+}
+
+.profile-nav ul li a i {
+  font-size: 16px;
+  padding-right: 10px;
+  color: #bcb3aa;
+}
+
+/*right row heading*/
+.bio-graph-heading {
+  background: #00897b;
+  color: #fff;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.bio-graph-heading h2 {
+  font-size: 22px;
+}
+.bio-graph-heading h3 {
+  font-size: 18px;
+}
+
+.bio-graph-info h1 {
+  padding-top: 10px;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+/*upload course page*/
+.uploaded-course h1 {
+  padding-top: 10px;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+.uploaded-course .card {
+  background-color: #857f72;
+  border: 1px solid rgba(102, 97, 97, 0.781);
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 5px 7px #a59f91;
+}
+
+.upload-button {
+  margin-top: 20px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/*profile page*/
+
+.profile-info .panel .panel-body {
+  font-size: 19px;
+  padding-top: 10px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.save-button {
+  border-radius: 4px;
+  padding: 5px;
+}
+.label {
+  color: white;
+}
+.editBtn {
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 10px;
+}
+
+.panel-body form .row .input .col-sm-6 {
+  background-color: darkcyan;
+  color: white;
+}
+
+/*upload.php style starts*/
+.load-course-heading {
+  background: #00897b;
+  color: #fff;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /* -webkit-border-radius: 4px 4px 0 0; */
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.load-course-heading h2 {
+  font-size: 22px;
+}
+
+.load-course-heading h3 {
+  font-size: 18px;
+}
+
+.upload-course-info h1 {
+  padding-top: 10px;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+.upload-info .panel {
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #413e39;
+  border-radius: 5px;
+}
+
+.upload-info .panel .panel-body {
+  padding-left: 20px;
+}
+
+.upload-info .panel .panel-body {
+  font-size: 19px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.panel-upload-body .form-group {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.uploadBtn {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 150px;
+  background-color: #1b615a;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.uploadBtn:hover {
+  color: black;
+}
+/*upload.php style ends*/

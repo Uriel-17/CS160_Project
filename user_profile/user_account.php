@@ -1,7 +1,7 @@
 <?php
     $title = 'user account page';
     $currentPage = 'account';
-    include('header.php');
+    include('../shared_layout/header.php');
 ?>
 
 <section class="profilebody">
@@ -63,5 +63,5 @@
 <script type="text/javascript"></script>
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>

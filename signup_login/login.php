@@ -2,7 +2,7 @@
     session_start();
     $_SESSION['pageId'] = 2;
     $title = 'User Login';   
-    include('header.php');
+    include('../shared_layout/header.php');
 ?>
 
 <section class="py-5">
@@ -30,5 +30,5 @@
 </section>
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>

@@ -2,7 +2,7 @@
 
 $title = 'upload course page';
 $currentPage = 'upload_course';
-include('header.php');
+include('../shared_layout/header.php');
 ?>
 
 <section class="profilebody">
@@ -89,5 +89,5 @@ include('header.php');
 
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>

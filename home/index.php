@@ -2,7 +2,7 @@
     session_start();
     $_SESSION['pageId'] = 3;
     $title = 'User Registration';  
-    include('header.php');
+    include('../shared_layout/header.php');
 ?>
 
 <section class="index py-5">
@@ -10,23 +10,23 @@
     <div class="container">
         <!--slides-->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <h2 class="text-center">Categories</h2>
+            <h2 class="title text-center">Categories</h2>
 
             <div class="carousel-inner">
                 <!--slide1-->
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="java" />
+                            <img src="../images/code.jpg" class="d-block w-100" alt="java" />
                         </div>
                         <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="python" />
+                            <img src="../images/code.jpg" class="d-block w-100" alt="python" />
                         </div>
                         <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="c++" />
+                            <img src="../images/code.jpg" class="d-block w-100" alt="c++" />
                         </div>
                         <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="javascript" />
+                            <img src="../images/code.jpg" class="d-block w-100" alt="javascript" />
                         </div>
                     </div>
                 </div>
@@ -67,5 +67,5 @@
 </section>
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>

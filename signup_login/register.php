@@ -2,7 +2,7 @@
     session_start();
     $_SESSION['pageId'] = 1;
     $title = 'User Registration';
-   include('header.php');
+   include('../shared_layout/header.php');
 ?>
 
 <!DOCTYPE html>
@@ -113,7 +113,7 @@
             </div>
         </div>
     </section>
-    <script src="my_js/signupform.js"></script>
+    <script src="../my_js/signupform.js"></script>
 
 </body>
 
@@ -121,5 +121,5 @@
 
 
 <?php
-    include('footer.php');
+    include('../shared_layout/footer.php');
 ?>
