@@ -1,0 +1,70 @@
+.ratings i {
+  color: green;
+}
+
+.install span {
+  font-size: 12px;
+}
+
+.col-md-4 {
+  margin-top: 27px;
+}
+
+.card {
+  background-color: grey;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+h4 {
+  background-color: #02d9c5;
+  color: white;
+  font-size: 18px;
+  align-content: center;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.categories ul li {
+  border-bottom: 1px solid #12736a;
+  margin-top: 0;
+  line-height: 30px;
+}
+.categories ul li a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.categories ul li a {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  color: white;
+  border-left: 1px solid #12736a;
+  font-size: 17px;
+}
+.categories ul li a:hover,
+.categories ul li a:focus,
+.categories ul li.active a {
+  border-left: 5px solid #00897b;
+  color: #d1d0d0 !important;
+}
+.categories ul li:last-child > a:last-child {
+  border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+}
+
+.categories ul li a i {
+  font-size: 16px;
+  padding-right: 10px;
+  color: #bcb3aa;
+}
