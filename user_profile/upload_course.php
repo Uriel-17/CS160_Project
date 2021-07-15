@@ -27,7 +27,7 @@ include('../shared_layout/header.php');
                             <div class="col-md-4 my-1">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Courrse Name</h5>
+                                        <h5 class="card-title">Course Name</h5>
                                         <p class="card-text">
                                             Course Description.
                                         </p>
@@ -49,7 +49,7 @@ include('../shared_layout/header.php');
                             <div class="col-md-4 my-1">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Courrse Name</h5>
+                                        <h5 class="card-title">Course Name</h5>
                                         <p class="card-text">
                                             Course Description.
                                         </p>

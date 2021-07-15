@@ -14,7 +14,7 @@
 </head>
 
 <section>
-    <div class="container mt-3">
+    <div class="container mt-3" style="max-width:100%;">
         <div class="row">
             <div class="categories col-lg-2 text-lg-left">
                 <div class="title">
@@ -22,13 +22,13 @@
                 </div>
                 <ul>
                     <li class="<?php echo $currentPage == 'java' ?'active' : ''?>">
-                        <a href="java.php"> <i class="fa fa-java"></i> Java</a>
+                        <a href="#"> <i class="fa fa-java"></i> Java</a>
                     </li>
                     <li class="<?php echo $currentPage == 'python' ?'active' : ''?>">
-                        <a href="python.php" .php"> <i class="fa fa-python"></i> Python</a>
+                        <a href="#" .php"> <i class="fa fa-python"></i> Python</a>
                     </li>
                     <li class="<?php echo $currentPage == 'javascript' ?'active' : ''?>">
-                        <a href="javascript.php"> <i class="fa fa-javascript"></i> JavaScript </a>
+                        <a href="#"> <i class="fa fa-javascript"></i> JavaScript </a>
                     </li>
 
                 </ul>
