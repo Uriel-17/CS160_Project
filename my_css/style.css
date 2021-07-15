@@ -63,7 +63,7 @@ section {
 
 /*register page*/
 .form-control {
-  background-color: #3b3a3a;
+  background-color: #474747;
   border: none;
   color: #e7e7e7;
 }
@@ -80,7 +80,7 @@ section {
 .form-control:active,
 .form-control:focus,
 .form-control:focus:active {
-  background-color: #474747;
+  background-color: #666666;
   color: #dfdbdb;
 }
 
@@ -205,7 +205,7 @@ footer .row {
   width: 100%;
   background-color: #02d9c5;
   color: #064942;
-  border-radius: 50px;
+  border-radius: 5px;
   font-weight: bold;
 }
 

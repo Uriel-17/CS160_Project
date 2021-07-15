@@ -3,15 +3,11 @@
 }
 
 .install span {
-  font-size: 12px;
-}
-
-.col-md-4 {
-  margin-top: 27px;
+  font-size: 18px;
 }
 
 .card {
-  background-color: grey;
+  background-color: rgb(87, 86, 86);
 }
 
 .card a {

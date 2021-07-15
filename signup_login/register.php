@@ -104,7 +104,7 @@
 
                                     <button class="btn1" id="signup" href="index.php" type="submit">Sign
                                         Up</button>
-                                    <a href="index.php" style="float:right;" class="btn2 btn remove">Cancel</a>
+                                    <a href="../home/index.php" style="float:right;" class="btn2 btn remove">Cancel</a>
                                 </div>
                             </div>
                         </div>

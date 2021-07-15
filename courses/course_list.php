@@ -14,7 +14,7 @@
 </head>
 
 <section>
-    <div class="container mt-3">
+    <div class="container mt-3" style="max-width:100%;">
         <div class="row">
             <div class="categories col-lg-2 text-lg-left">
                 <div class="title">
@@ -47,8 +47,8 @@
                                 </div>
                             </div>
                             <h6>Description of the course </h6>
-                            <div class="d-flex justify-content-between install mt-3"><span
-                                    class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><a
+                                        href="">View&nbsp;<i class="fa fa-angle-right"></i></a></span></div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-2">
@@ -63,8 +63,8 @@
                                 </div>
                             </div>
                             <h6>Description of the course </h6>
-                            <div class="d-flex justify-content-between install mt-3"><span
-                                    class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><a
+                                        href="">View&nbsp;<i class="fa fa-angle-right"></i></a></span></div>
                         </div>
 
                     </div>
@@ -79,8 +79,8 @@
                                 </div>
                             </div>
                             <h6>Description of the course </h6>
-                            <div class="d-flex justify-content-between install mt-3"><span
-                                    class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><a
+                                        href="">View&nbsp;<i class="fa fa-angle-right"></i></a></span></div>
                         </div>
                     </div>
                     <div class="col-md-4 my-2">
@@ -94,8 +94,8 @@
                                 </div>
                             </div>
                             <h6>Description of the course </h6>
-                            <div class="d-flex justify-content-between install mt-3"><span
-                                    class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><a
+                                        href="">View&nbsp;<i class="fa fa-angle-right"></i></a></span></div>
                         </div>
                     </div>
                     <div class="col-md-4 my-2">
@@ -109,8 +109,8 @@
                                 </div>
                             </div>
                             <h6>Description of the course </h6>
-                            <div class="d-flex justify-content-between install mt-3"><span
-                                    class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><a
+                                        href="">View&nbsp;<i class="fa fa-angle-right"></i></a></span></div>
                         </div>
                     </div>
                     <div class="col-md-4 my-2">
@@ -124,8 +124,8 @@
                                 </div>
                             </div>
                             <h6>Description of the course </h6>
-                            <div class="d-flex justify-content-between install mt-3"><span
-                                    class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><a
+                                        href="">View&nbsp;<i class="fa fa-angle-right"></i></a></span></div>
                         </div>
                     </div>
                     <nav aria-label="Page navigation">

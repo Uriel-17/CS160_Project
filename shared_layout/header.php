@@ -21,7 +21,8 @@
             d-flex
             justify-content-center justify-content-lg-between
             align-items-center">
-                <a class="navbar-brand col-lg-2" href="index.php"><img src="~/img/logo.png" alt="logo" width="150"></a>
+                <a class="navbar-brand col-lg-2" href="../home/index.php"><img src="~/img/logo.png" alt="logo"
+                        width="150"></a>
                 <form class="col-lg-8 d-md-block d-none">
                     <div class="row">
                         <div class="col-8">
@@ -40,12 +41,12 @@
                  <div class="dropdownbtn">
                         <a class="dropbtn" href="userprofile.php">'.$_SESSION['fullname'].'</a>
                         <div class="dropdown-content">
-                            <a href="edit_profile.php"> Edit Profile</a>
-                            <a href="user_account.php">Account</a>
-                            <a href="saved_courses.php">Saved Courses</a>
-                            <a href="upload_course.php">Uploaded Courses</a>
-                            <a href="view_history.php">View History</a>
-                            <a href="index.php">Log Out</a>
+                            <a href="../user_profile/edit_profile.php"> Edit Profile</a>
+                            <a href="../user_profile/user_account.php">Account</a>
+                            <a href="../user_profile/saved_courses.php">Saved Courses</a>
+                            <a href="../user_profile/upload_course.php">Uploaded Courses</a>
+                            <a href="../user_profile/view_history.php">View History</a>
+                            <a href="../home/index.php">Log Out</a>
                         </div>
                     </div>
                  ';
@@ -62,20 +63,20 @@
                         $sign_in_hidden = '';
                       
                         }
-                        echo '<li class="list-inline-item"><a href="register.php" '.$sign_up_hidden.'>Sign up</a></li>
-                        <li class="list-inline-item"><a href="login.php" '.$sign_in_hidden.'>Login</a></li>';
+                        echo '<li class="list-inline-item"><a href="../signup_login/register.php" '.$sign_up_hidden.'>Sign up</a></li>
+                        <li class="list-inline-item"><a href="../signup_login/login.php" '.$sign_in_hidden.'>Login</a></li>';
                         
                     }
                     else{
                         echo '<div class="dropdownbtn">
                         <a class="dropbtn" href="userprofile.php">User Name</a>
                         <div class="dropdown-content">
-                            <a href="edit_profile.php"> Edit Profile</a>
-                            <a href="user_account.php">Account</a>
-                            <a href="saved_courses.php">Saved Courses</a>
-                            <a href="upload_course.php">Uploaded Courses</a>
-                            <a href="view_history.php">View History</a>
-                            <a href="index.php">Log Out</a>
+                            <a href="../user_profile/edit_profile.php"> Edit Profile</a>
+                            <a href="../user_profile/user_account.php">Account</a>
+                            <a href="../user_profile/saved_courses.php">Saved Courses</a>
+                            <a href="../user_profile/upload_course.php">Uploaded Courses</a>
+                            <a href="../user_profile/view_history.php">View History</a>
+                            <a href="../home/index.php">Log Out</a>
                         </div>
                     </div>';
                     }

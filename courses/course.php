@@ -34,6 +34,11 @@
 
                             <ul class="buttons">
                                 <li>
+                                    <span>45 ratings</span> <span class="ratings"><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                </li>
+                                <li>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-success" data-toggle="modal"
                                         data-target="#rate">
