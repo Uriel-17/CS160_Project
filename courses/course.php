@@ -1,8 +1,22 @@
 <?php
-  
-    $title = 'course-content page'; 
-    $currentPage = 'Course Page';
-    include('../shared_layout/header.php');
+if (!isset($_GET["id"])) {
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+    exit;
+}
+require_once('../repo/courseRepo.php');
+require_once('../Utilities/URL.php');
+$courseId = $_GET["id"];
+
+$course = getCourseById($courseId);
+if ($course == null || count($course) <= 0) {
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+    exit;
+}
+
+
+$title = 'Course-content page'; 
+$currentPage = 'Course Page';
+include('../shared_layout/header.php');
 ?>
 
 <head>
@@ -17,11 +31,30 @@
 <section class="course-body">
     <div class="container">
         <div class="video-content">
-
-            <div class="iframe-container">
-                <iframe class="embed-responsive-item"
-                    src="https://www.youtube.com/embed/3Kf-FlECN7M?showinfo=0"></iframe>
-            </div>
+          <input id="courseId" value="<?php echo $courseId?>" hidden />
+            <?php
+            if (isYoutube($course["url"])) {
+                $embed_url = toEmbed($course["url"]);
+                echo '<div class="iframe-container">
+                        <iframe class="embed-responsive-item"
+                            src="'.$embed_url.'"></iframe>
+                    </div>';
+            }
+            elseif (isEmbedYoutube($course["url"])) {
+                echo '<div class="iframe-container">
+                        <iframe class="embed-responsive-item"
+                            src="'.$course["url"].'"></iframe>
+                    </div>';
+            }
+            else {
+                echo '<div>
+                        <img src="images/course_img/'.$course["image"].'" alt="'.$course["courseTitle"].'">
+                    </div>';
+                echo '<div>
+                        <a href="'.$course["url"].'">'.$course["url"].'</a>
+                    </div>';
+            }
+            ?>
 
             <div class="video-description">
                 <div class="container">
@@ -60,17 +93,16 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="star-container">
-
                                                         <div class="star-widget">
-                                                            <input type="radio" name="rate" id="rate-5">
-                                                            <label for="rate-5" class="fas fa-star"></label>
-                                                            <input type="radio" name="rate" id="rate-4">
+                                                            <input type="radio" name="rate" id="rate-5" value="5">
+                                                            <label for="rate-5" class="fas fa-star" ></label>
+                                                            <input type="radio" name="rate" id="rate-4" value="4">
                                                             <label for="rate-4" class="fas fa-star"></label>
-                                                            <input type="radio" name="rate" id="rate-3">
+                                                            <input type="radio" name="rate" id="rate-3" value="3">
                                                             <label for="rate-3" class="fas fa-star"></label>
-                                                            <input type="radio" name="rate" id="rate-2">
+                                                            <input type="radio" name="rate" id="rate-2" value="2">
                                                             <label for="rate-2" class="fas fa-star"></label>
-                                                            <input type="radio" name="rate" id="rate-1">
+                                                            <input type="radio" name="rate" id="rate-1" value="1">
                                                             <label for="rate-1" class="fas fa-star"></label>
 
                                                         </div>
@@ -80,7 +112,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    <input type="button" id="save_rate" class="btn btn-primary" value="Save changes"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,10 +122,10 @@
 
 
                                 </li>
-                                <li> <button type="button" class="btn btn-success">
-                                        Save
-                                    </button></li>
-                                <li> <button type="button" class="btn btn-success" data-toggle="modal"
+                                <li style="float:right">
+                                    <input type="button" id="save_course" class="btn btn-primary" value="Save" />
+                                </li>
+                                <li style="float:right"> <button type="button" class="btn btn-primary" data-toggle="modal"
                                         data-target="#report">
                                         Report
                                     </button>
@@ -114,17 +146,15 @@
                                                     <div class="report-container">
 
                                                         <div class="report-list">
-                                                            <input type="radio" name="report" id="report-1">
+                                                            <input type="radio" name="report" id="report-1" value="Sexual content">
                                                             <label for="report-1">Sexual content</label><br />
-                                                            <input type="radio" name="report" id="report-2">
-                                                            <label for="report-2">Violent or abusive
-                                                                content</label><br />
-                                                            <input type="radio" name="report" id="report-3">
-                                                            <label for="report-3">Hateful or abusive
-                                                                content</label><br />
-                                                            <input type="radio" name="report" id="report-4">
+                                                            <input type="radio" name="report" id="report-2" value="Violent or abusive content">
+                                                            <label for="report-2">Violent or abusive content</label><br />
+                                                            <input type="radio" name="report" id="report-3" value="Hateful or abusive content">
+                                                            <label for="report-3">Hateful or abusive content</label><br />
+                                                            <input type="radio" name="report" id="report-4" value="Harassment of bullying">
                                                             <label for="report-4">Harassment of bullying</label><br />
-                                                            <input type="radio" name="report" id="report-5">
+                                                            <input type="radio" name="report" id="report-5" value="Spam or misleading">
                                                             <label for="report-5">Spam or misleading</label>
 
                                                         </div>
@@ -134,25 +164,22 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Cancel</button>
-                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    <input type="button" id="save_report" class="btn btn-primary" value="Save changes"/>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
 
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <h4 class="m-b-sm">Course Name</h4>
+                <h4 class="m-b-sm"><?php echo $course["courseTitle"];?></h4>
 
-                <p class="m-t-sm">Author</p>
+                <p class="m-t-sm">Author: <?php echo $course["author"];?></p>
                 <h5 class="m-b-sm">Course Description</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, adipisci recusandae. Accusamus
-                    libero quos a ad magnam ipsam quibusdam beatae iste officiis? Ea esse sed, veniam omnis a
-                    illum quisquam!</p>
+                <p><?php echo $course["description"];?></p>
 
             </div>
         </div>
@@ -221,16 +248,82 @@
 </section>
 <script src="../my_js/course.js"></script>
 
-<!--need this slim.min.js to make modal work -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
 </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var courseId = $("#courseId").val()
+        var ratingNumber = 0
+        var report_detail = ""
+
+        $(".star-widget input").click(function () {
+            ratingNumber = $(this).val()
+            
+        })
+
+        $("#save_rate").click(function () {
+            $.ajax({
+            type: "POST",
+            url: "/CS160_Project/ratingHandler.php",
+            data: { "courseId" : courseId, "rate" : ratingNumber},
+            success: function () {
+                    window.alert("Success")
+                },
+                failure: function () {
+                    window.alert("Failed")
+                },
+                error: function () {
+                    window.alert("Error")
+                }
+        })
+        })
+
+        $("#save_course").click(function () {
+            $.ajax({
+            type: "POST",
+            url: "/CS160_Project/saveCourseHandler.php",
+            data: { "courseId" : courseId},
+            success: function () {
+                    $("#save_course").val("Saved")
+                },
+                failure: function () {
+                    window.alert("Failed")
+                },
+                error: function () {
+                    window.alert("Error")
+                }
+        })
+        })
+
+        $(".report-list input").click(function () {
+            report_detail = $(this).val()
+            
+        })
+
+        $("#save_report").click(function () {
+            $.ajax({
+            type: "POST",
+            url: "/CS160_Project/reportHandler.php",
+            data: { "courseId" : courseId, "report" : report_detail},
+            success: function () {
+                    window.alert("Success")
+                },
+                failure: function () {
+                    window.alert("Failed")
+                },
+                error: function () {
+                    window.alert("Error")
+                }
+        })
+        })
+        
+    })
 </script>
 
 
