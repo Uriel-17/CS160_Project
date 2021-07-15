@@ -1,6 +1,6 @@
 <?php
   
-    $title = 'upload page'; 
+    $title = 'Upload page'; 
     $currentPage = 'edit_profile';
     include('../shared_layout/header.php');
 ?>
@@ -24,20 +24,23 @@
                     </div>
                     <div class="panel-upload-body upload-course-info text-light">
 
-                        <form role="form" action="" method="post">
+                        <form role="form" action="uploadHandler.php" method="post" enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label for="categories">Course Catogory <span class="required">*</span></label>
                                 <div class="input-group">
-                                    <select class="form-control" id="categories" required>
+                                    <select class="form-control" id="categories" name="categoryid" required>
                                         <option value="">Please Select a Category
                                         </option>
-                                        <option value="java">Java</option>
-                                        <option value="c++">C++</option>
-                                        <option value="python">Python</option>
-                                        <option value="javascript">JavaScript</option>
-                                        <option value="haskell">Haskell</option>
-                                        <option value="c">C</option>
+                                        <!-- Start of php code for category list -->
+                                        <?php
+                                        $categoryList = getAllCategoriesInOrder();
+                                        if (!empty($categoryList)) {
+                                            foreach($categoryList as $category) {
+                                                echo '<option value="'.$category["categoryId"].'">'.$category["categoryname"].'</option>';
+                                            }
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -71,7 +74,7 @@
 
                             <div class="form-group">
                                 <!-- <input class="submit" type="submit" value="Upload" /> -->
-                                <button class="uploadBtn" href="upload_course.php" type="submit">Upload</button>
+                                <button class="uploadBtn" type="submit">Upload</button>
                             </div>
                         </form>
 
