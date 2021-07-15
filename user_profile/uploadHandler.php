@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once("repo/courseRepo.php");
+require_once("../repo/courseRepo.php");
 
 $userId = 0;
 if (isset($_SESSION["userId"])) {
 	$userId = $_SESSION["userId"];
 }
 else {
-	header("Location: logout.php");
+	header("Location: ../logout.php");
 }
 
 $categoryId = '';
@@ -60,7 +60,7 @@ if (!empty($_FILES)) {
 	if ($_FILES['image']['name'] != "")
 	{
 		$image = $_FILES['image']['name'];
-		$uploaddir = 'images/course_img/';
+		$uploaddir = '../images/course_img/';
 		$uploadfile = $uploaddir . $image;
 
 		if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
