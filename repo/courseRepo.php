@@ -17,6 +17,16 @@ function getCoursesByUserId($userId) {
 	return executeResult($sql);
 }
 
+function getCoursesCountByUserId($userId) {
+	$sql = 'SELECT courseId, count(courseId) as total FROM course WHERE userId = '.$userId;
+	return executeSingleResult($sql);
+}
+
+function getCoursesLimitByUserId($userId, $index, $limit) {
+	$sql = 'SELECT * FROM course WHERE userId = '.$userId.' limit '.$index.', '.$limit;
+	return executeResult($sql);
+}
+
 function getCoursesByCategoryId($categoryId) {
 	$sql = 'SELECT * FROM course WHERE categoryId = '.$categoryId;
 	return executeResult($sql);
@@ -46,19 +56,19 @@ function deleteCourse($courseId) {
 	return execute($sql);
 }
 
-// function computeAverageRating($courseId) {
-// 	$ratings = getRatingByCourseId($courseId);
-// 	$count = count($ratings);
-// 	$total = 0;
+function computeAverageRating($courseId) {
+	$ratings = getRatingByCourseId($courseId);
+	$count = count($ratings);
+	$total = 0;
 
-// 	foreach ($ratings as $item) {
-// 		$total += $item['ratescore'];
-// 	}
+	foreach ($ratings as $item) {
+		$total += $item['ratescore'];
+	}
 
-// 	return $total / $count;
-// }
+	return $total / $count;
+}
 
-// function computeNumberOfRatings($courseId) {
-// 	$ratings = getRatingByCourseId($courseId);
-// 	return count($ratings);
-// }
+function computeNumberOfRatings($courseId) {
+	$ratings = getRatingByCourseId($courseId);
+	return count($ratings);
+}
