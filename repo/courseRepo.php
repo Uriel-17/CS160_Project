@@ -1,6 +1,6 @@
 <?php
-require_once('db/dbhelper.php');
-//require_once('ratingRepo.php');
+require_once('../db/dbhelper.php');
+require_once('ratingRepo.php');
 
 function getAllCourses() {
 	$sql = 'SELECT * FROM course';
@@ -23,7 +23,7 @@ function getCoursesCountByUserId($userId) {
 }
 
 function getCoursesLimitByUserId($userId, $index, $limit) {
-	$sql = 'SELECT * FROM course WHERE userId = '.$userId.' limit '.$index.', '.$limit;
+	$sql = 'SELECT * FROM course WHERE userId = '.$userId.' ORDER BY createtime DESC LIMIT '.$index.', '.$limit;
 	return executeResult($sql);
 }
 

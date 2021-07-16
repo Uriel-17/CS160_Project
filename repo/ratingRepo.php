@@ -1,5 +1,5 @@
 <?php 
-require_once('db/dbhelper.php');
+require_once('../db/dbhelper.php');
 
 function getAllRatings() {
 	$sql = 'SELECT * FROM rating';
