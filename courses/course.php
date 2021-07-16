@@ -108,10 +108,14 @@ include('../shared_layout/header.php');
                                                         </div>
                                                     </div>
 
+                                                    <div class="text-center">
+                                                        <p id="result" style="color: black;"></p>
+                                                    </div>
+
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
+                                                        data-dismiss="modal" id="close_rate">Close</button>
                                                     <input type="button" id="save_rate" class="btn btn-primary" value="Save changes"/>
                                                 </div>
                                             </div>
@@ -159,11 +163,14 @@ include('../shared_layout/header.php');
 
                                                         </div>
                                                     </div>
+                                                    <div class="text-center">
+                                                        <p id="report_result" style="color: black;"></p>
+                                                    </div>
 
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cancel</button>
+                                                        data-dismiss="modal" id="close_report" >Cancel</button>
                                                     <input type="button" id="save_report" class="btn btn-primary" value="Save changes"/>
                                                 </div>
                                             </div>
@@ -246,7 +253,6 @@ include('../shared_layout/header.php');
         </div>
     </div>
 </section>
-<script src="../my_js/course.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
@@ -254,6 +260,7 @@ include('../shared_layout/header.php');
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -270,24 +277,31 @@ include('../shared_layout/header.php');
         $("#save_rate").click(function () {
             $.ajax({
             type: "POST",
-            url: "/CS160_Project/ratingHandler.php",
+            url: "/CS160_Project/courseHandler/ratingHandler.php",
             data: { "courseId" : courseId, "rate" : ratingNumber},
-            success: function () {
-                    window.alert("Success")
+            success: function (result) {
+                    $("#result").show()
+                    $("#result").text(result)
+                    $("#save_rate").hide()
                 },
-                failure: function () {
-                    window.alert("Failed")
+                failure: function (result) {
+                    $("#result").text(result)
                 },
-                error: function () {
-                    window.alert("Error")
+                error: function (result) {
+                    $("#result").text(result)
                 }
         })
+        })
+
+        $("#close_rate").click(function () {
+            $("#save_rate").show()
+            $("#result").hide()
         })
 
         $("#save_course").click(function () {
             $.ajax({
             type: "POST",
-            url: "/CS160_Project/saveCourseHandler.php",
+            url: "/CS160_Project/courseHandler/saveCourseHandler.php",
             data: { "courseId" : courseId},
             success: function () {
                     $("#save_course").val("Saved")
@@ -309,7 +323,7 @@ include('../shared_layout/header.php');
         $("#save_report").click(function () {
             $.ajax({
             type: "POST",
-            url: "/CS160_Project/reportHandler.php",
+            url: "/CS160_Project/courseHandler/reportHandler.php",
             data: { "courseId" : courseId, "report" : report_detail},
             success: function () {
                     window.alert("Success")
