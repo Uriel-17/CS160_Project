@@ -5,8 +5,9 @@
 // }
 $title = 'profile page';
 $currentPage = 'userprofile';
-
+require_once('../userHandler/userProfileBackend.php'); 
 include('../shared_layout/header.php');
+
 ?>
 
 <section class="profilebody">
@@ -30,7 +31,7 @@ include('../shared_layout/header.php');
                                 <label class="mb-0">Full Name</label>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Yanqi Zhang
+                                 <?php echo $fullName; ?>
                             </div>
                         </div>
                         <hr>
@@ -39,7 +40,7 @@ include('../shared_layout/header.php');
                                 <label class="mb-0">Email</label>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                yanqi.zhang@sjsu.edu
+                                <?php echo $email; ?>
                             </div>
                         </div>
                         <hr>
@@ -48,7 +49,7 @@ include('../shared_layout/header.php');
                                 <label class="mb-0">Phone</label>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                (239) 816-9029
+                                <?php echo $phone; ?>
                             </div>
                         </div>
                         <hr>
@@ -57,7 +58,7 @@ include('../shared_layout/header.php');
                                 <label class="mb-0">Date of Birth</label>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                6/22/2021
+                                <?php echo $DOB; ?>
                             </div>
                         </div>
                         <hr>
@@ -66,7 +67,7 @@ include('../shared_layout/header.php');
                                 <label class="mb-0">Address</label>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Bay Area, San Francisco, CA
+                                <?php echo $address; ?>
                             </div>
                         </div>
                         <hr>
@@ -84,7 +85,7 @@ include('../shared_layout/header.php');
         </div>
     </div>
 </section>
-<script type="text/javascript"></script>
+
 
 
 <?php

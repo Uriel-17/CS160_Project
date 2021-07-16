@@ -48,7 +48,7 @@ include('../shared_layout/header.php');
                                                     <p class="card-text">
                                                         '.$course["description"].'
                                                     </p>
-                                                    <a href="course.php?id='.$course["courseId"].'" class="btn btn-primary">Click to watch</a>
+                                                    <a href="../courses/course.php?id='.$course["courseId"].'" class="btn btn-primary">Click to watch</a>
                                                 </div>
                                             </div>
                                         </div>';
@@ -94,7 +94,6 @@ include('../shared_layout/header.php');
         </div>
     </div>
 </section>
-<script type="text/javascript"></script>
 
 
 <?php

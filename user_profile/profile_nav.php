@@ -1,3 +1,7 @@
+<?php
+    require_once('../userHandler/userProfileBackend.php'); 
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +19,10 @@
     <div class="panel">
         <div class="user-heading round">
             <a href="#">
-                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="dp" />
+                <img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" alt="dp" />
             </a>
-            <h1>Carrie Zhang</h1>
-            <p>yanqi.zhang@sjsu.edu</p>
+            <h1><?php echo $fullName; ?></h1>
+            <p><?php echo $email; ?></p>
             <div class="file">
                 <h4>Change Photo</h4>
                 <input type="file" name="file" />

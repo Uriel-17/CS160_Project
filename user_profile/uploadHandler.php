@@ -7,7 +7,7 @@ if (isset($_SESSION["userId"])) {
 	$userId = $_SESSION["userId"];
 }
 else {
-	header("Location: ../logout.php");
+	header("Location: ../signup_login/logout.php");
 }
 
 $categoryId = '';

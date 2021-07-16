@@ -1,8 +1,6 @@
 <?php
-    session_start();
-    $_SESSION['pageId'] = 2;
-    $title = 'User Login';   
-    include('../shared_layout/header.php');
+$title = 'User Login';   
+include('../shared_layout/header.php');
 ?>
 
 <section class="py-5">
@@ -11,7 +9,7 @@
             <div class="col-lg-9 container">
                 <!-- Leave comment-->
                 <h3 class="h3 my-4 text-center">Welcome back</h3>
-                <form class="mb-5" action="registerHandler.php" method="post" enctype="multipart/form-data">
+                <form class="mb-5" action="../userHandler/loginBackend.php" method="post" enctype="multipart/form-data">
                     <div class="row justify-content-center align-items-center">
 
                         <div class="form-group col-lg-7 ">

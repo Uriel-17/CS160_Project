@@ -1,3 +1,7 @@
+<?php
+require_once("../session/session_ini.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,47 +43,30 @@
                 if(isset($_SESSION['userId'])){
                  echo '
                  <div class="dropdownbtn">
-                        <a class="dropbtn" href="userprofile.php">'.$_SESSION['fullname'].'</a>
+                        <a class="dropbtn" href="../user_profile/userprofile.php">'.$_SESSION['fullname'].'</a>
                         <div class="dropdown-content">
                             <a href="../user_profile/edit_profile.php"> Edit Profile</a>
                             <a href="../user_profile/user_account.php">Account</a>
                             <a href="../user_profile/saved_courses.php">Saved Courses</a>
                             <a href="../user_profile/upload_course.php">Uploaded Courses</a>
                             <a href="../user_profile/view_history.php">View History</a>
-                            <a href="../home/index.php">Log Out</a>
+                            <a href="../signup_login/logout.php">Log Out</a>
                         </div>
                     </div>
                  ';
                 }else{                   
-                    if(isset($_SESSION['pageId'])){
+                    $sign_up_hidden = '';
+                    $sign_in_hidden = '';
+                    if($title == 'User Registration'){
+                        $sign_up_hidden='hidden';
+                    }else if($title == 'User Login'){
+                        $sign_in_hidden='hidden';
+                    }else {
                         $sign_up_hidden = '';
                         $sign_in_hidden = '';
-                        if($_SESSION['pageId'] == 1){
-                            $sign_up_hidden='hidden';
-                        }else if($_SESSION['pageId'] == 2){
-                            $sign_in_hidden='hidden';
-                        }else if($_SESSION['pageId'] ==3){
-                          $sign_up_hidden = '';
-                        $sign_in_hidden = '';
-                      
-                        }
-                        echo '<li class="list-inline-item"><a href="../signup_login/register.php" '.$sign_up_hidden.'>Sign up</a></li>
+                    }
+                    echo '<li class="list-inline-item"><a href="../signup_login/register.php" '.$sign_up_hidden.'>Sign up</a></li>
                         <li class="list-inline-item"><a href="../signup_login/login.php" '.$sign_in_hidden.'>Login</a></li>';
-                        
-                    }
-                    else{
-                        echo '<div class="dropdownbtn">
-                        <a class="dropbtn" href="userprofile.php">User Name</a>
-                        <div class="dropdown-content">
-                            <a href="../user_profile/edit_profile.php"> Edit Profile</a>
-                            <a href="../user_profile/user_account.php">Account</a>
-                            <a href="../user_profile/saved_courses.php">Saved Courses</a>
-                            <a href="../user_profile/upload_course.php">Uploaded Courses</a>
-                            <a href="../user_profile/view_history.php">View History</a>
-                            <a href="../home/index.php">Log Out</a>
-                        </div>
-                    </div>';
-                    }
             }
               
             ?>
@@ -91,7 +78,9 @@
     </header>
 
     <!-- JavaScript -->
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="../js/bootstrap.min.js"></script>
 </body>
 

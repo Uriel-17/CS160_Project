@@ -1,8 +1,6 @@
 <?php
-    session_start();
-    $_SESSION['pageId'] = 1;
-    $title = 'User Registration';
-   include('../shared_layout/header.php');
+$title = 'User Registration';
+include('../shared_layout/header.php');
 ?>
 
 <!DOCTYPE html>
