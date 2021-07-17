@@ -77,10 +77,10 @@ $createtime = $updatetime = date('Y-m-d H:i:s');
 $insert_result = createCourse($coursename, $description, $categoryId, $author, $userId, $URL, $image, $createtime, $updatetime);
 if ($insert_result === false) {
 	$_SESSION['message'] = 'failed';
-	header("Location: upload_course.php");
+	header("Location: upload.php");
 }
 else {
 	$_SESSION['message'] = 'success';
-	header("Location: upload.php");
+	header("Location: upload_course.php");
 }
 ?>
