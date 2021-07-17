@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() != PHP_SESSION_ACTIVE) {
+  session_start();
+}
 
 $token = $_SESSION['userId']; 
 require_once '../server/credentials.php'; //NOTE this is my personal connection to the database. Your credentials.php is going to look different. 
