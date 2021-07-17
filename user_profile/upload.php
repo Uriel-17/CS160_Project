@@ -25,7 +25,8 @@
                     </div>
                     <div class="panel-upload-body upload-course-info text-light">
 
-                        <form role="form" action="uploadHandler.php" method="post" enctype="multipart/form-data">
+                        <form role="form" action="../userHandler/uploadHandler.php" method="post"
+                            enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label for="categories">Course Catogory <span class="required">*</span></label>
