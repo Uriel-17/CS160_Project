@@ -2,6 +2,7 @@
   
     $title = 'Upload page'; 
     $currentPage = 'edit_profile';
+    require_once("../repo/categoryRepo.php");
     include('../shared_layout/header.php');
 ?>
 
