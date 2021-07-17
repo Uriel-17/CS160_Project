@@ -83,4 +83,5 @@ else {
 	$_SESSION['message'] = 'success';
 	header("Location: ../user_profile/upload_course.php");
 }
+
 ?>
