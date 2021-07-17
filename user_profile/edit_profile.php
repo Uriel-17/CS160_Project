@@ -36,8 +36,8 @@
                                 unset($_SESSION['message']); 
                             }
                         }                   
-                   ?> 
-                    <div class="panel-body bio-graph-info">
+                   ?>
+                    <div class="panel-body bio-graph-info text-light">
                         <form action="../userHandler/edit_profileBackend.php" method="post">
                             <div class="form-group mt-4">
                                 <div class="col-sm-3">
@@ -52,7 +52,7 @@
                                     <label>Email</label>
                                 </div>
                                 <input class="form-control col-sm-6 py-1" placeholder="Enter new email"
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name = "email">
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email">
 
                             </div>
 
@@ -62,15 +62,15 @@
                                     <label>Phone</label>
                                 </div>
                                 <input class="form-control col-sm-6 py-1" placeholder="Enter new phone number"
-                                    pattern="[0-9]{8,12}" title="not valid phone number" name = "phoneNumber">
+                                    pattern="[0-9]{8,12}" title="not valid phone number" name="phoneNumber">
                             </div>
                             <hr>
                             <div class="form-group">
                                 <div class="col-sm-3">
                                     <label>Date of Birth</label>
                                 </div>
-                                <input class="form-control col-sm-6 py-1" name = "DOB" type="date" placeholder="Enter new birthday"
-                                    title="Date of birth" max=<?php
+                                <input class="form-control col-sm-6 py-1" name="DOB" type="date"
+                                    placeholder="Enter new birthday" title="Date of birth" max=<?php
                          echo date('Y-m-d');
                          ?>>
                             </div>
@@ -80,7 +80,7 @@
                                 <div class="col-sm-3">
                                     <label>Address</label>
                                 </div>
-                                <input class="form-control col-sm-6 py-1" name = "address" placeholder="Enter new address"
+                                <input class="form-control col-sm-6 py-1" name="address" placeholder="Enter new address"
                                     pattern="[a-zA-Z0-9, ]{4,50}">
 
                             </div>
@@ -89,8 +89,8 @@
                                 <div class="col-sm-3">
                                     <label>Second Address</label>
                                 </div>
-                                <input class="form-control col-sm-6 py-1" name = "secondaryAddress" placeholder="Enter new second address"
-                                    pattern="[a-zA-Z0-9, ]{4,50}">
+                                <input class="form-control col-sm-6 py-1" name="secondaryAddress"
+                                    placeholder="Enter new second address" pattern="[a-zA-Z0-9, ]{4,50}">
 
                             </div>
                             <hr>
@@ -99,7 +99,7 @@
                                     <label>City</label>
                                 </div>
                                 <input class="form-control col-sm-6 py-1 " placeholder="Enter new city"
-                                    pattern="[a-zA-Z, ]{4,20}" name = "city">
+                                    pattern="[a-zA-Z, ]{4,20}" name="city">
 
                             </div>
 
@@ -109,7 +109,7 @@
                                     <label>State</label>
                                 </div>
                                 <input class="form-control col-sm-6 py-1 " placeholder="Enter new state"
-                                    pattern="[a-zA-Z, ]{2,20}" name = "state">
+                                    pattern="[a-zA-Z, ]{2,20}" name="state">
 
                             </div>
                             <hr>
@@ -118,7 +118,7 @@
                                     <label>Zipcode</label>
                                 </div>
                                 <input class="form-control col-sm-6 py-1 " placeholder="Enter new zipcode"
-                                    pattern="[0-9,- ]{4,6}" name = "zipCode">
+                                    pattern="[0-9,- ]{4,6}" name="zipCode">
 
                             </div>
                             <hr>
@@ -127,7 +127,7 @@
                                     <label>Country</label>
                                 </div>
                                 <input class="form-control col-sm-6 py-1 " placeholder="Enter new country"
-                                    pattern="[a-zA-Z ]{2,20}" name = "country">
+                                    pattern="[a-zA-Z ]{2,20}" name="country">
 
                             </div>
                             <hr>
