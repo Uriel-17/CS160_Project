@@ -1,10 +1,11 @@
 <?php
+session_start();
 require_once '../server/credentials.php'; //NOTE this is my personal connection to the database. Your credentials.php is going to look different. 
 
 $connection = connect_database($servername, $username, $password, $database); // establishing connection to database
 
 insertData($connection, $userTable, $addressTable); 
-
+header("Location: ../home/index.php");
 
 /**
  * InsertData is going to be getting the values from the user and inserting them 
