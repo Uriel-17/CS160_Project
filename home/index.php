@@ -1,55 +1,53 @@
 <?php
+if (session_name() == ""){
     session_start();
-    $_SESSION['pageId'] = 3;
-    $title = 'User Registration';  
-    include('../shared_layout/header.php');
+}
+    
+require_once('../repo/categoryRepo.php');
+$title = 'Index';  
+include('../shared_layout/header.php');
 ?>
-
 <section class="index py-5">
     <!--container-->
     <div class="container">
         <!--slides-->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <h2 class="title text-center">Categories</h2>
+            <div class="col-12">
+                <i class="text-left" style="font-size: 1.5rem; color: white;">Categories</i>
+                <a class="text-right" style="float:right;">View All</a>
+            </div>
 
             <div class="carousel-inner">
-                <!--slide1-->
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="../images/code.jpg" class="d-block w-100" alt="java" />
-                        </div>
-                        <div class="col-3">
-                            <img src="../images/code.jpg" class="d-block w-100" alt="python" />
-                        </div>
-                        <div class="col-3">
-                            <img src="../images/code.jpg" class="d-block w-100" alt="c++" />
-                        </div>
-                        <div class="col-3">
-                            <img src="../images/code.jpg" class="d-block w-100" alt="javascript" />
-                        </div>
-                    </div>
-                </div>
-                <!--end of slide 1-->
+                <!--slides-->
+                <?php
+                $slide_limit = 4;
+                $listCate = getAllCategoriesInOrder();
+                if ($listCate != null && count($listCate) > 0) {
+                    $subCate = array_chunk($listCate, $slide_limit);
+                    $count = count($listCate);
+                    $slide = ceil($count / $slide_limit);
+                    for ($i=0; $i < $slide; $i++) { 
+                        if ($i == 0) {
+                            echo '<div class="carousel-item active">
+                                    <div class="row">';
+                        }
+                        else{
+                            echo '<div class="carousel-item">
+                                    <div class="row">';
+                        }
 
-                <!--slide2-->
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="java" />
-                        </div>
-                        <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="python" />
-                        </div>
-                        <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="java" />
-                        </div>
-                        <div class="col-3">
-                            <img src="images/code.jpg" class="d-block w-100" alt="java" />
-                        </div>
-                    </div>
-                </div>
-                <!--end of slide 2-->
+                        // code...
+                        foreach ($subCate[$i] as $cate) {
+                            echo '<div class="col-3 text-center">
+                                    <img src="../images/category/'.$cate["image"].'" class="d-block w-100" alt="..." />
+                                    <a action="" href="#">'.$cate["categoryname"].'</a>
+                                </div>';
+                        }
+                        echo '</div>
+                    </div>';
+                    }
+                }
+                ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
