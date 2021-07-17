@@ -22,7 +22,7 @@ include('../shared_layout/header.php');
                     <!-- Leave comment-->
                     <h3 class="h3 mb-4 text-center">Sign Up Form</h3>
 
-                    <form class="form mb-4" id="form" action="registerHandler.php" method="post"
+                    <form class="form mb-4" id="form" action="../userHandler/registerHandler.php" method="post"
                         enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-xs-12 col-md-6 ">
