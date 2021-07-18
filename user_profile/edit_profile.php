@@ -44,7 +44,9 @@
                                     <label>Full Name</label>
                                 </div>
                                 <input class="form-control col-sm-6  py-1" placeholder="Enter full name"
-                                    pattern="[a-zA-Z ]{4,30}" title="4 - 30 characters please" name="fullName">
+                                    pattern="[a-zA-Z0-9 ]{4,30}"
+                                    title="4 - 30 characters and/or numbers, no specail characters please"
+                                    name="fullName">
                             </div>
                             <hr>
                             <div class="form-group">

@@ -31,7 +31,7 @@ include('../shared_layout/header.php');
                                 <label class="mb-0">Full Name</label>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                 <?php echo $fullName; ?>
+                                <?php echo $fullName; ?>
                             </div>
                         </div>
                         <hr>

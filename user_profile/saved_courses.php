@@ -6,7 +6,7 @@
 ?>
 
 <section class="profilebody">
-    <div class="container">
+    <div class="container" style=" max-width:100%;">
         <div class="row">
             <div class="profile-nav col-lg-3">
                 <?php
@@ -22,76 +22,159 @@
                     </div>
 
                     <div class="panel-body uploaded-course">
-
                         <div class="row">
-                            <div class="col-md-4 my-1">
-                                <div class="card">
+                            <div class="col-sm-4 my-1">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../images/code.jpg" alt="Card image"
+                                        style="width:100%">
                                     <div class="card-body">
                                         <h5 class="card-title">Course Name</h5>
-                                        <p class="card-text">
-                                            Course Description.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Click to watch</a>
+                                        <p class="card-text">Course Description Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit. </p>
+                                        <a href="#">Learn</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 my-1">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Courre Name</h5>
-                                        <p class="card-text">
-                                            Course Description.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Click to watch</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 my-1">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Courre Name</h5>
-                                        <p class="card-text">
-                                            Course Description.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Click to watch</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="col-md-4 my-1">
-                                <div class="card">
+                            <div class="col-sm-4 my-1">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../images/code.jpg" alt="Card image"
+                                        style="width:100%">
                                     <div class="card-body">
                                         <h5 class="card-title">Course Name</h5>
-                                        <p class="card-text">
-                                            Course Description.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Click to watch</a>
+                                        <p class="card-text">Course Description Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit.</p>
+                                        <a href="#">Learn</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 my-1">
-                                <div class="card">
+                            <div class="col-sm-4 my-1">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../images/code.jpg" alt="Card image"
+                                        style="width:100%">
                                     <div class="card-body">
                                         <h5 class="card-title">Course Name</h5>
-                                        <p class="card-text">
-                                            Course Description.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Click to watch</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 my-1">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Course Name</h5>
-                                        <p class="card-text">
-                                            Course Description.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Click to watch</a>
+                                        <p class="card-text">Course Description Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit.</p>
+                                        <a href="#">Learn</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="row my-2">
+                            <div class="col-sm-4 my-1">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../images/code.jpg" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Course Name</h5>
+                                        <p class="card-text">Course Description Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit. </p>
+                                        <a href="#">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 my-1">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../images/code.jpg" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Course Name</h5>
+                                        <p class="card-text">Course Description Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit.</p>
+                                        <a href="#">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 my-1">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../images/code.jpg" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Course Name</h5>
+                                        <p class="card-text">Course Description Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit.</p>
+                                        <a href="#">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="row">
+                            <div class="col-sm-4 my-1">
+                                <div class="card img-fluid" style="width:250px">
+                                    <img class="card-img-top"
+                                        src="https://www.tutorialspoint.com/avro/images/apache-avro-mini-logo.jpg"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">Course Name</h4>
+                                        <p class="card-text">Course Description</p>
+                                        <a href="#" class="btn btn-info">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-1">
+                                <div class="card img-fluid" style="width:250px">
+                                    <img class="card-img-top"
+                                        src="https://www.tutorialspoint.com/avro/images/apache-avro-mini-logo.jpg"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">Course Name</h4>
+                                        <p class="card-text">Course Description</p>
+                                        <a href="#" class="btn btn-info">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-1">
+                                <div class="card img-fluid" style="width:250px">
+                                    <img class="card-img-top"
+                                        src="https://www.tutorialspoint.com/avro/images/apache-avro-mini-logo.jpg"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">Course Name</h4>
+                                        <p class="card-text">Course Description</p>
+                                        <a href="#" class="btn btn-info">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 my-1">
+                                <div class="card img-fluid" style="width:250px">
+                                    <img class="card-img-top"
+                                        src="https://www.tutorialspoint.com/avro/images/apache-avro-mini-logo.jpg"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">Course Name</h4>
+                                        <p class="card-text">Course Description</p>
+                                        <a href="#" class="btn btn-info">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-1">
+                                <div class="card img-fluid" style="width:250px">
+                                    <img class="card-img-top"
+                                        src="https://www.tutorialspoint.com/avro/images/apache-avro-mini-logo.jpg"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">Course Name</h4>
+                                        <p class="card-text">Course Description</p>
+                                        <a href="#" class="btn btn-info">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-1">
+                                <div class="card img-fluid" style="width:250px">
+                                    <img class="card-img-top"
+                                        src="https://www.tutorialspoint.com/avro/images/apache-avro-mini-logo.jpg"
+                                        alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">Course Name</h4>
+                                        <p class="card-text">Course Description</p>
+                                        <a href="#" class="btn btn-info">Learn</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                         <nav aria-label="Page navigation">
                             <ul class="pagination m-2 justify-content-center">
                                 <li class="page-item">
