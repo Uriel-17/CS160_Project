@@ -4,6 +4,7 @@ if (!isset($_GET["id"])) {
     exit;
 }
 require_once('../repo/courseRepo.php');
+require_once("../repo/saveRepo.php");
 require_once('../Utilities/URL.php');
 $courseId = $_GET["id"];
 
@@ -31,7 +32,7 @@ include('../shared_layout/header.php');
 <section class="course-body">
     <div class="container">
         <div class="video-content">
-          <input id="courseId" value="<?php echo $courseId?>" hidden />
+            <input id="courseId" value="<?php echo $courseId?>" hidden />
             <?php
             if (isYoutube($course["url"])) {
                 $embed_url = toEmbed($course["url"]);
@@ -67,9 +68,10 @@ include('../shared_layout/header.php');
 
                             <ul class="buttons">
                                 <li>
-                                    <span>45 ratings</span> <span class="ratings"><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                    <span>45 ratings</span> <span class="ratings"><i id="start-one"
+                                            class="fa fa-star"></i><i id="star-two" class="fa fa-star"></i><i
+                                            id="star-three" class="fa fa-star"></i><i id="star-four"
+                                            class="fa fa-star"></i><i id="star-five" class="fa fa-star"></i></span>
                                 </li>
                                 <li>
                                     <!-- Button trigger modal -->
@@ -95,7 +97,7 @@ include('../shared_layout/header.php');
                                                     <div class="star-container">
                                                         <div class="star-widget">
                                                             <input type="radio" name="rate" id="rate-5" value="5">
-                                                            <label for="rate-5" class="fas fa-star" ></label>
+                                                            <label for="rate-5" class="fas fa-star"></label>
                                                             <input type="radio" name="rate" id="rate-4" value="4">
                                                             <label for="rate-4" class="fas fa-star"></label>
                                                             <input type="radio" name="rate" id="rate-3" value="3">
@@ -114,9 +116,10 @@ include('../shared_layout/header.php');
 
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal" id="close_rate">Close</button>
-                                                    <input type="button" id="save_rate" class="btn btn-primary" value="Save changes"/>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                        id="close_rate">Close</button>
+                                                    <input type="button" id="save_rate" class="btn btn-primary"
+                                                        value="Save changes" />
                                                 </div>
                                             </div>
                                         </div>
@@ -127,10 +130,24 @@ include('../shared_layout/header.php');
 
                                 </li>
                                 <li style="float:right">
-                                    <input type="button" id="save_course" class="btn btn-primary" value="Save" />
+                                    <?php 
+                                    if (isset($_SESSION["userId"])) {
+                                        $check_save = getSavedCourse($_SESSION["userId"], $courseId);
+                                        if ($check_save != null && count($check_save) > 0) {
+                                            echo '<input type="button" id="save_course" class="btn btn-primary" value="Unsave" />';
+                                        }
+                                        else {
+                                            echo '<input type="button" id="save_course" class="btn btn-primary" value="Save" />';
+                                        }
+                                    }
+                                    else {
+                                        echo '<input type="button" id="save_course" class="btn btn-primary" value="Save" />';
+                                    }
+                                    ?>
+
                                 </li>
-                                <li style="float:right"> <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#report">
+                                <li style="float:right"> <button type="button" class="btn btn-primary"
+                                        data-toggle="modal" data-target="#report">
                                         Report
                                     </button>
                                     <!-- Modal -->
@@ -150,15 +167,22 @@ include('../shared_layout/header.php');
                                                     <div class="report-container">
 
                                                         <div class="report-list">
-                                                            <input type="radio" name="report" id="report-1" value="Sexual content">
+                                                            <input type="radio" name="report" id="report-1"
+                                                                value="Sexual content">
                                                             <label for="report-1">Sexual content</label><br />
-                                                            <input type="radio" name="report" id="report-2" value="Violent or abusive content">
-                                                            <label for="report-2">Violent or abusive content</label><br />
-                                                            <input type="radio" name="report" id="report-3" value="Hateful or abusive content">
-                                                            <label for="report-3">Hateful or abusive content</label><br />
-                                                            <input type="radio" name="report" id="report-4" value="Harassment of bullying">
+                                                            <input type="radio" name="report" id="report-2"
+                                                                value="Violent or abusive content">
+                                                            <label for="report-2">Violent or abusive
+                                                                content</label><br />
+                                                            <input type="radio" name="report" id="report-3"
+                                                                value="Hateful or abusive content">
+                                                            <label for="report-3">Hateful or abusive
+                                                                content</label><br />
+                                                            <input type="radio" name="report" id="report-4"
+                                                                value="Harassment of bullying">
                                                             <label for="report-4">Harassment of bullying</label><br />
-                                                            <input type="radio" name="report" id="report-5" value="Spam or misleading">
+                                                            <input type="radio" name="report" id="report-5"
+                                                                value="Spam or misleading">
                                                             <label for="report-5">Spam or misleading</label>
 
                                                         </div>
@@ -169,9 +193,10 @@ include('../shared_layout/header.php');
 
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal" id="close_report" >Cancel</button>
-                                                    <input type="button" id="save_report" class="btn btn-primary" value="Save changes"/>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                        id="close_report">Cancel</button>
+                                                    <input type="button" id="save_report" class="btn btn-primary"
+                                                        value="Save changes" />
                                                 </div>
                                             </div>
                                         </div>
@@ -264,80 +289,99 @@ include('../shared_layout/header.php');
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        var courseId = $("#courseId").val()
-        var ratingNumber = 0
-        var report_detail = ""
+$(document).ready(function() {
+    var courseId = $("#courseId").val()
+    var ratingNumber = 0
+    var report_detail = ""
 
-        $(".star-widget input").click(function () {
-            ratingNumber = $(this).val()
-            
-        })
+    $(".star-widget input").click(function() {
+        ratingNumber = $(this).val()
 
-        $("#save_rate").click(function () {
-            $.ajax({
+    })
+
+    $("#save_rate").click(function() {
+        $.ajax({
             type: "POST",
             url: "/CS160_Project/courseHandler/ratingHandler.php",
-            data: { "courseId" : courseId, "rate" : ratingNumber},
-            success: function (result) {
-                    $("#result").show()
-                    $("#result").text(result)
-                    $("#save_rate").hide()
-                },
-                failure: function (result) {
-                    $("#result").text(result)
-                },
-                error: function (result) {
-                    $("#result").text(result)
-                }
+            data: {
+                "courseId": courseId,
+                "rate": ratingNumber
+            },
+            success: function(result) {
+                $("#result").show()
+                $("#result").text(result)
+                $("#save_rate").hide()
+            },
+            failure: function(result) {
+                $("#result").show()
+                $("#result").text(result)
+            },
+            error: function(result) {
+                $("#result").show()
+                $("#result").text(result)
+            }
         })
-        })
+    })
 
-        $("#close_rate").click(function () {
-            $("#save_rate").show()
-            $("#result").hide()
-        })
+    $("#close_rate").click(function() {
+        $("#save_rate").show()
+        $("#result").hide()
+    })
 
-        $("#save_course").click(function () {
-            $.ajax({
+    $("#save_course").click(function() {
+        $.ajax({
             type: "POST",
             url: "/CS160_Project/courseHandler/saveCourseHandler.php",
-            data: { "courseId" : courseId},
-            success: function () {
-                    $("#save_course").val("Saved")
-                },
-                failure: function () {
-                    window.alert("Failed")
-                },
-                error: function () {
-                    window.alert("Error")
-                }
+            data: {
+                "courseId": courseId
+            },
+            success: function(result) {
+                $("#save_course").val(result)
+            },
+            failure: function() {
+                window.alert("Failed")
+            },
+            error: function() {
+                window.alert("Error")
+            }
         })
-        })
+    })
 
-        $(".report-list input").click(function () {
-            report_detail = $(this).val()
-            
-        })
+    $(".report-list input").click(function() {
+        report_detail = $(this).val()
 
-        $("#save_report").click(function () {
-            $.ajax({
+    })
+
+    $("#save_report").click(function() {
+        $.ajax({
             type: "POST",
             url: "/CS160_Project/courseHandler/reportHandler.php",
-            data: { "courseId" : courseId, "report" : report_detail},
-            success: function () {
-                    window.alert("Success")
-                },
-                failure: function () {
-                    window.alert("Failed")
-                },
-                error: function () {
-                    window.alert("Error")
-                }
+            data: {
+                "courseId": courseId,
+                "report": report_detail
+            },
+            success: function(result) {
+                $("#report_result").show()
+                $("#report_result").text(result)
+                $("#save_report").hide()
+            },
+            failure: function() {
+                $("#report_result").show()
+                $("#report_result").text(result)
+            },
+            error: function() {
+                $("#report_result").show()
+                $("#report_result").text(result)
+            }
         })
-        })
-        
     })
+
+    $("#close_rate").click(function() {
+        $("#save_report").show()
+        $("#report_result").hide()
+    })
+
+})
 </script>
 
 
