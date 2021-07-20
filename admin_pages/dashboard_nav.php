@@ -16,7 +16,8 @@
     <div class="panel">
         <div class="user-heading round">
             <a href="#">
-                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="dp" />
+                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="dp"
+                    style='width:100%;height:100%;' />
             </a>
             <h1>Administrator</h1>
             <p>some@email</p>
@@ -27,9 +28,7 @@
         </div>
 
         <ul>
-            <li class="<?php echo $currentPage == 'dashboard' ?'active' : ''?>">
-                <a href="dashboard.php"> <i class="fa fa-user"></i> Dashboard</a>
-            </li>
+
             <li class="<?php echo $currentPage == 'users' ?'active' : ''?>">
                 <a href="users.php"> <i class="fa fa-edit"></i> Users</a>
             </li>

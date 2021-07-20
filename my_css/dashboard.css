@@ -3,7 +3,7 @@
   padding: 20px;
   margin-bottom: 10px;
   margin-top: 10px;
-  background-color: #413e39;
+  background-color: #494949;
   border-radius: 5px;
 }
 
@@ -12,7 +12,7 @@
   color: white;
   border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
 }
 .profile-nav .user-heading.round a {
@@ -133,118 +133,114 @@
   margin: 0 0 20px;
 }
 
-/*upload course page*/
-.uploaded-course h1 {
-  padding-top: 10px;
-  font-size: 22px;
-  font-weight: 300;
-  margin: 0 0 20px;
-}
-.uploaded-course .card {
-  background-color: #857f72;
-  border: 1px solid rgba(102, 97, 97, 0.781);
-  padding: 15px;
-  border-radius: 4px;
-  box-shadow: 5px 7px #a59f91;
-}
-
-.upload-button {
-  margin-top: 20px;
-  border-radius: 4px;
-  padding: 5px;
-}
-
-/*profile page*/
-
-.profile-info .panel .panel-body {
-  font-size: 19px;
-  padding-top: 10px;
-  font-weight: bold;
-  padding-left: 20px;
-}
-.save-button {
-  border-radius: 4px;
-  padding: 5px;
-}
-.label {
-  color: white;
-}
-.editBtn {
-  text-decoration: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  background-color: darkcyan;
-  color: white;
-  border-radius: 10px;
-}
-
-.panel-body form .row .input .col-sm-6 {
-  background-color: darkcyan;
+/*admin table*/
+.table-wrapper {
   color: white;
 }
 
-/*upload.php style starts*/
-.load-course-heading {
-  background: #00897b;
-  color: #fff;
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  /* -webkit-border-radius: 4px 4px 0 0; */
+table td,
+thead {
   font-size: 16px;
-  font-weight: 300;
-}
-
-.load-course-heading h2 {
-  font-size: 22px;
-}
-
-.load-course-heading h3 {
-  font-size: 18px;
-}
-
-.upload-course-info h1 {
-  padding-top: 10px;
-  font-size: 22px;
-  font-weight: 300;
-  margin: 0 0 20px;
-}
-
-.upload-info .panel {
-  padding: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  background-color: #413e39;
-  border-radius: 5px;
-}
-
-.upload-info .panel .panel-body {
-  padding-left: 20px;
-}
-
-.upload-info .panel .panel-body {
-  font-size: 19px;
-  padding-top: 10px;
-  font-weight: bold;
-}
-
-.panel-upload-body .form-group {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.uploadBtn {
-  border: none;
-  outline: none;
-  height: 50px;
-  width: 150px;
-  background-color: #1b615a;
   color: white;
-  border-radius: 30px;
-  font-weight: bold;
+}
+.table-tile {
+  border-bottom: 1px solid white;
 }
 
-.uploadBtn:hover {
-  color: black;
+.table-title .btn i {
+  float: left;
+  font-size: 23px;
+  margin-right: 5px;
+  margin-top: 3px;
 }
-/*upload.php style ends*/
+.table-title .btn span {
+  float: left;
+  margin-top: 2px;
+}
+
+table.table tr th,
+table .table tr td {
+  border-color: #333232;
+  padding: 10px 15px;
+  vertical-align: middle;
+}
+table.table tr th:last-child {
+  width: 60px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgb(83, 83, 83);
+}
+table.table-striped tbody tr:hover {
+  background-color: rgb(109, 107, 107);
+}
+
+table.table td a {
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+  outline: none !important;
+}
+
+table.table td a.edit {
+  color: #ffc107;
+}
+table.table td a.delete {
+  color: rgb(204, 59, 59);
+}
+table.table td a:hover {
+  color: darkcyan;
+}
+
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+
+.pagination li a {
+  border: none;
+  font-size: 14px;
+  min-width: 30px;
+  min-height: 30px;
+  color: rgb(139, 139, 139);
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 4px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+.pagination li a:hover {
+  color: #666;
+}
+
+.pagination li.active a,
+.pagination li.acitve a.page-link {
+  background-color: #02d9c5 !important;
+}
+.pagination li.disabled i {
+  color: #ccc;
+}
+
+.pagination li.active a:hover {
+  background-color: darkcyan;
+}
+
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px;
+}
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.modal-body input {
+  background-color: rgb(236, 236, 236);
+  color: rgb(26, 25, 25);
+}
+
+.modal-body input:hover,
+input.active,
+input.focus {
+  background-color: silver;
+  color: white;
+}
