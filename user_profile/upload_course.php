@@ -41,14 +41,17 @@ include('../shared_layout/header.php');
                             if ($count > 0) {
                                 $listCourse = getCoursesLimitByUserId($userId, $index, $page_limit);
                                 foreach ($listCourse as $course) {
-                                    echo '<div class="col-md-4 my-1">
-                                            <div class="card">
+                                    echo '<div class="col-sm-4 my-1">
+                                            <div class="card text-center">
+                                                <a href="../courses/course.php?id='.$course["courseId"].'">
+                                                    <img class="card-img-top" src="../images/course_img/'.$course["image"].'" alt="Card image"
+                                                    style="width:100%">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">'.$course["courseTitle"].'</h5>
-                                                    <p class="card-text">
-                                                        '.$course["description"].'
-                                                    </p>
-                                                    <a href="../courses/course.php?id='.$course["courseId"].'" class="btn btn-primary">Click to watch</a>
+                                                    <a href="../courses/course.php?id='.$course["courseId"].'">
+                                                        <p class="card-title">'.$course["courseTitle"].'</p>
+                                                    </a>
+                                                    <p class="card-text">'.$course["description"].'</p>
                                                 </div>
                                             </div>
                                         </div>';
