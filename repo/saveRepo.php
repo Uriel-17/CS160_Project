@@ -12,9 +12,19 @@ function getSavedCoursesByUserId($userId) {
 	return executeResult($sql);
 }
 
+function getSavedCoursesCountByUserId($userId) {
+	$sql = 'SELECT courseId, count(courseId) as total FROM savedcourse WHERE userId = '.$userId;
+	return executeSingleResult($sql);
+}
+
 function getSavedCourse($userId, $courseId) {
 	$sql = 'SELECT * FROM savedcourse WHERE courseId = '.$courseId.' AND userId = '.$userId;
 	return executeSingleResult($sql);
+}
+
+function getSavedCourses($userId, $index, $limit) {
+	$sql = 'SELECT * FROM course WHERE courseId IN (SELECT courseId FROM savedcourse WHERE userId = '.$userId.' ORDER BY createtime DESC) LIMIT '.$index.', '.$limit;
+	return executeResult($sql);
 }
 
 function createSavedCourse($userId, $courseId, $createtime) {
