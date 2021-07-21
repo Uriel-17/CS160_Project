@@ -19,38 +19,55 @@
                         <h3>Edit your account settings here.</h3>
                     </div>
                     <div class="panel-body bio-graph-info">
+                        <?php 
+                            
+                                if(isset($_SESSION['message'])) {
 
-                        <form action="" method="post" class="text-light">
+                                    if($_SESSION['message'] === 'error') {
+                                    
+                                        echo '<div>Sorry Try Again</div>'; 
+                                        
+                                        unset($_SESSION['message']);  
+
+                                    } else {
+
+                                        echo '<div>Password Successfully Changed!</div>'; 
+                                        // success 
+                                        
+                                        unset($_SESSION['message']); 
+                                    }
+                                }
+                                
+                                ?> 
+
+                        <form action="../userHandler/user_accountBackend.php" method="post" class="text-light">
                             <div class="row mt-4">
-                                <div class="col-sm-3">
-                                    <label>Current Password</label>
-                                </div>
-                                <input class="col-sm-6  py-1" placeholder="Enter current password">
-                            </div>
-                            <hr>
-                            <div class="row ">
-                                <div class="col-sm-3">
-                                    <label>New Password</label>
-                                </div>
-                                <input class="col-sm-6 py-1" placeholder="Enter new password"
-                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                        <div class="col-sm-3">
+                                            <label>Current Password</label>
+                                        </div>
+                                        <input class="col-sm-6  py-1" type="password" name = "inputPassword" id = "inputPassword" placeholder="Enter current password">
+                                    </div>
+                                    <hr>
+                                    <div class="row ">
+                                        <div class="col-sm-3">
+                                            <label>New Password</label>
+                                        </div>
+                                        <input class="col-sm-6 py-1" type="password" name = "newPassword" id = "newPassword" placeholder="Enter new password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
-
-                            </div>
-
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>Confirm Password</label>
-                                </div>
-                                <input class="col-sm-6 py-1" placeholder="Retype new password">
-                            </div>
-                            <hr>
-                            <div class="row ">
-                                <div class="col-sm-12">
-                                    <button class="btn btn-success" type="submit" href="#">Save</button>
-                                </div>
-                            </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>Confirm Password</label>
+                                        </div>
+                                        <input class="col-sm-6 py-1" type="password" placeholder="Retype new password">
+                                    </div>
+                                    <hr>
+                                    <div class="row ">
+                                        <div class="col-sm-12">
+                                            <button class="btn1" id="save" type="submit">Save</button>
+                                        </div>
+                                    </div>
                         </form>
                     </div>
 
