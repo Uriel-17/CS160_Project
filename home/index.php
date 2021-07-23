@@ -14,7 +14,7 @@ include('../shared_layout/header.php');
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="col-12">
                 <i class="text-left" style="font-size: 1.5rem; color: white;">Categories</i>
-                <a class="text-right" style="float:right;">View All</a>
+                <a class="text-right" href="../courses/course_list.php" style="float:right;">View All</a>
             </div>
 
             <div class="carousel-inner">
@@ -39,8 +39,8 @@ include('../shared_layout/header.php');
                         // code...
                         foreach ($subCate[$i] as $cate) {
                             echo '<div class="col-3 text-center">
-                                    <img src="../images/category/'.$cate["image"].'" class="d-block w-100" alt="..." />
-                                    <a action="" href="#">'.$cate["categoryname"].'</a>
+                                    <a href="../courses/course_list.php?categoryId='.$cate["categoryId"].'"><img src="../images/category/'.$cate["image"].'" class="d-block w-100" alt="..." /></a>
+                                    <a href="../courses/course_list.php?categoryId='.$cate["categoryId"].'">'.$cate["categoryname"].'</a>
                                 </div>';
                         }
                         echo '</div>
