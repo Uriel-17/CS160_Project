@@ -21,14 +21,13 @@
             </a>
             <h1>Administrator</h1>
             <p>some@email</p>
-            <div class="file">
-                <h4>Change Photo</h4>
-                <input type="file" name="file" />
-            </div>
+
         </div>
 
         <ul>
-
+            <li class="<?php echo $currentPage == 'dashboard' ?'active' : ''?>">
+                <a href="dashboard.php"> <i class="fa fa-edit"></i> dashboard</a>
+            </li>
             <li class="<?php echo $currentPage == 'users' ?'active' : ''?>">
                 <a href="users.php"> <i class="fa fa-edit"></i> Users</a>
             </li>

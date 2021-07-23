@@ -49,7 +49,7 @@ include('../shared_layout/header.php');
             }
             else {
                 echo '<div>
-                        <img src="images/course_img/'.$course["image"].'" alt="'.$course["courseTitle"].'">
+                        <img src="../images/course_img/'.$course["image"].'" alt="'.$course["courseTitle"].'">
                     </div>';
                 echo '<div>
                         <a href="'.$course["url"].'">'.$course["url"].'</a>

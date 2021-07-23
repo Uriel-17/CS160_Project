@@ -5,7 +5,7 @@
 ?>
 
 <section class="profilebody">
-    <div class="container" style="max-width:100%;">
+    <div class="container">
 
         <div class="row">
             <div class="profile-nav col-lg-3">

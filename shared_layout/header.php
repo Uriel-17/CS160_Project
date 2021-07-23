@@ -25,8 +25,8 @@ require_once("../session/session_ini.php");
             d-flex
             justify-content-center justify-content-lg-between
             align-items-center">
-                <a class="navbar-brand col-lg-2" href="../home/index.php"><img src="~/img/logo.png" alt="logo"
-                        width="150"></a>
+                <a class="navbar-brand col-lg-2" href="../home/index.php"><img src="../images/logo-alt.PNG"
+                        width="130px" alt="logo" width="150"></a>
                 <form class="col-lg-8 d-md-block d-none">
                     <div class="row">
                         <div class="col-8">

@@ -1,7 +1,7 @@
  <?php
 
-$title = 'admin dashboard';
-$currentPage = 'users';
+$title = '_admin_feedback';
+$currentPage = 'feedback';
 
 include('../shared_layout/header.php');
 ?>
@@ -22,14 +22,14 @@ include('../shared_layout/header.php');
              <div class="profile-info col-lg-10">
                  <div class="panel">
                      <div class="bio-graph-heading">
-                         <h2>Administrator Dashboard</h2>
+                         <h2>Feedback</h2>
 
                      </div>
                      <div class="table-wrapper text-light">
                          <div class="table-title">
                              <div class="row my-2">
                                  <div class="col-sm-4">
-                                     <h5>Manage <b>Users</b></h5>
+                                     <h5>Manage <b>Feedback</b></h5>
                                  </div>
                                  <div class="search-container col-sm-4">
                                      <form action="" method="post">
@@ -41,7 +41,7 @@ include('../shared_layout/header.php');
                                      <a href="#deleteUserModal" class=" btn btn-danger" data-toggle="modal"><i
                                              class="material-icons">&#xe15c;</i>Delete</a>
                                      <a href="#addUserModal" class=" btn btn-success" data-toggle="modal"><i
-                                             class="material-icons">&#xe147;</i>Add New Users</a>
+                                             class="material-icons">&#xe147;</i>Add New Feedback</a>
 
                                  </div>
                              </div>
@@ -57,13 +57,11 @@ include('../shared_layout/header.php');
 
                                              </span>
                                          </th>
+                                         <th>Feedback Id</th>
                                          <th>User Id</th>
-                                         <th>AccountType Id</th>
-                                         <th>User Name</th>
-                                         <th>Full Name</th>
-                                         <th>Date of Birth</th>
+                                         <th>Name</th>
                                          <th>Email</th>
-                                         <th>Phone Number</th>
+                                         <th>Detail</th>
                                          <th>Create Time</th>
                                          <th>Update Time</th>
                                          <th>Action</th>
@@ -79,11 +77,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -105,11 +101,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -131,11 +125,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -157,11 +149,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -183,11 +173,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -209,11 +197,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -235,11 +221,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -261,11 +245,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -287,11 +269,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -313,11 +293,9 @@ include('../shared_layout/header.php');
                                          </td>
                                          <td>1</td>
                                          <td>1</td>
-                                         <td>Carrie</td>
-                                         <td>Yanqi Zhang</td>
-                                         <td>7/17/2021</td>
-                                         <td>yanqi.zhang@sjsu.edu</td>
-                                         <td>5107171052</td>
+                                         <td>name</td>
+                                         <td>email</td>
+                                         <td>detail</td>
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
                                          <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
@@ -331,30 +309,6 @@ include('../shared_layout/header.php');
                                  </tbody>
                              </table>
                          </div>
-                         <!-- <div class="clearfix">
-                             <div class="hint-text">Showing <b>6</b> out of <b>100</b> entries</div>
-                             <ul class="pagination">
-                                 <li class="page-item disabled"><a href="#" class="page-link">previous</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                 <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">next</a></li>
-                             </ul>
-                         </div> -->
-                         <!-- <div class="clearfix">
-                             <div class="hint-text">Showing <b>6</b> out of <b>100</b> entries</div>
-                             <ul class="pagination">
-                                 <li class="page-item disabled"><a href="#" class="page-link">previous</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                 <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                 <li class="page-item"><a href="#" class="page-link">next</a></li>
-                             </ul>
-                         </div> -->
 
                          <!--Add modal-->
                          <div id="addUserModal" class="modal fade">
@@ -362,7 +316,7 @@ include('../shared_layout/header.php');
                                  <div class="modal-content" style="color:black;">
                                      <form action="">
                                          <div class="modal-header">
-                                             <h5 class="modal-title">Add User
+                                             <h5 class="modal-title">Add Feedback
                                              </h5>
                                              <button type="button" class="close" data-dismiss="modal" aria-label="close"
                                                  aria-hidden="true">&times;
@@ -370,25 +324,27 @@ include('../shared_layout/header.php');
                                          </div>
                                          <div class="modal-body">
                                              <div class="form-group">
+                                                 <label for="feedbackId">Feedback Id</label>
+                                                 <input type="text" id="feedbackId" class="form-control" required>
+                                             </div>
+                                             <div class="form-group">
                                                  <label for="userId">User Id</label>
                                                  <input type="text" id="userId" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="userName">User Name</label>
-                                                 <input type="text" id="userName" class="form-control" required>
+                                                 <label for="name">Name</label>
+                                                 <input type="text" id="name" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="fullName">Full Name</label>
-                                                 <input type="text" id="fullName" class="form-control" required>
+                                                 <label for="email">Email</label>
+                                                 <input type="email" id="email" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="dateOfBirth">Date of Birth</label>
-                                                 <input type="text" id="dateOfBirth" class="form-control" required>
+                                                 <label for="detail">Detail</label>
+                                                 <input type="text" id="detail" class="form-control" required>
                                              </div>
-                                             <div class="form-group">
-                                                 <label for="phoneNum">Phone Number</label>
-                                                 <input type="text" id="phoneNum" class="form-control" required>
-                                             </div>
+
+
                                              <div class="form-group">
                                                  <label for="createTime">Create Time</label>
                                                  <input type="text" id="createTime" class="form-control" required>
@@ -414,7 +370,7 @@ include('../shared_layout/header.php');
                                  <div class="modal-content" style="color:black;">
                                      <form action="">
                                          <div class="modal-header">
-                                             <h5 class="modal-title">Edit User Info
+                                             <h5 class="modal-title">Edit Feedback Info
                                              </h5>
                                              <button type="button" class="close" data-dismiss="modal" aria-label="close"
                                                  aria-hidden="true">&times;
@@ -422,28 +378,24 @@ include('../shared_layout/header.php');
                                          </div>
                                          <div class="modal-body">
                                              <div class="form-group">
+                                                 <label for="feedbackId">Feedback Id</label>
+                                                 <input type="text" id="feedbackId" class="form-control" required>
+                                             </div>
+                                             <div class="form-group">
                                                  <label for="userId">User Id</label>
                                                  <input type="text" id="userId" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="userName">User Name</label>
-                                                 <input type="text" id="userName" class="form-control" required>
+                                                 <label for="name">Name</label>
+                                                 <input type="text" id="name" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="fullName">Full Name</label>
-                                                 <input type="text" id="fullName" class="form-control" required>
+                                                 <label for="email">Email</label>
+                                                 <input type="email" id="email" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="dateOfBirth">Date of Birth</label>
-                                                 <input type="text" id="dateOfBirth" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="phoneNum">Phone Number</label>
-                                                 <input type="text" id="phoneNum" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="createTime">Create Time</label>
-                                                 <input type="text" id="createTime" class="form-control" required>
+                                                 <label for="detail">Detail</label>
+                                                 <input type="text" id="detail" class="form-control" required>
                                              </div>
                                              <div class="form-group">
                                                  <label for="updateTime">Update Time</label>
@@ -467,7 +419,7 @@ include('../shared_layout/header.php');
                              <div class="modal-dialog">
                                  <div class="modal-content" style="color:black;">
                                      <div class="modal-header">
-                                         <h5 class="modal-title" style="color:black;">Delete User
+                                         <h5 class="modal-title" style="color:black;">Delete Feedback
                                          </h5>
                                          <button type="button" class="close" data-dismiss="modal" aria-label="close"
                                              aria-hidden="true">&times;

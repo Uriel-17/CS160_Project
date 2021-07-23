@@ -157,6 +157,9 @@
 
 .card {
   margin: 1px;
+  width: 15rem;
+  height: 20rem;
+  overflow-y: auto;
   background-color: #5c5c5c;
   box-shadow: 0 0 10px 10px rgba(36, 36, 36, 0.2);
 }
@@ -174,7 +177,7 @@
 }
 
 .card-body a:hover {
-  color: darkgreen;
+  color: rgb(8, 139, 8);
 }
 
 .upload-button {

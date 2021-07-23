@@ -6,7 +6,7 @@ include('../shared_layout/header.php');
 ?>
 
 <section class="profilebody">
-    <div class="container" style=" max-width:100%;">
+    <div class="container">
         <div class="row">
             <div class="profile-nav col-lg-3">
                 <?php
@@ -51,7 +51,7 @@ include('../shared_layout/header.php');
                                                     <a href="../courses/course.php?id='.$course["courseId"].'">
                                                         <p class="card-title">'.$course["courseTitle"].'</p>
                                                     </a>
-                                                    <p class="card-text">'.$course["description"].'</p>
+                                                     <p class="card-text">'.$course["description"].'</p>
                                                 </div>
                                             </div>
                                         </div>';
