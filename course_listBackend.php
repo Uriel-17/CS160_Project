@@ -8,7 +8,9 @@ require_once('../repo/courseRepo.php');
 $connection = connect_database($servername, $username, $password, $database); // establishing connection to database
 
 
-
+/**
+ * Calls a helper function and returns an array of objects. Iterates through the courses array 
+ */
 function getCourses($categoryID) {
 
   $cards = true; 
@@ -33,6 +35,10 @@ function getCourses($categoryID) {
 
 }
 
+/**
+ * Prints a single card to the UI. Checks to see an image exists. If there is no image
+ * then the img tag is removed. 
+ */
 function printCard($course) {
   
   if($course['image'] != '') {
@@ -70,6 +76,9 @@ function printCard($course) {
   }
 }
 
+/**
+ * Prints out a div displaying the message 'No Courses Available' 
+ */
 function noCard() {
 
   echo '<div class="">
@@ -82,6 +91,9 @@ function noCard() {
 
 }
 
+/**
+ * Prints out the pagination if there are courses in the database
+ */
 function printPagination($noCard) {
 
   if($noCard == true) {
@@ -109,6 +121,9 @@ function printPagination($noCard) {
 
 }
 
+/**
+ * Prints the left menu, displaying all of the categories in the database. 
+ */
 function getCategories($categoryID) {
 
   $categories = getAllCategories(); 
