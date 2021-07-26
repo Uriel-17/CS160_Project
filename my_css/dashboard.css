@@ -247,6 +247,7 @@ input.focus {
 
 .search-container input[type="text"] {
   padding: 6px;
+  color: black;
   margin-top: 8px;
   font-size: 17px;
   border: none;
@@ -261,4 +262,28 @@ input.focus {
 }
 .search-container button:hover {
   background: #ccc;
+}
+
+/*welcome page*/
+.nav-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+  align-items: center;
+}
+.nav-body .body-welcome h3 {
+  align-self: center;
+}
+.container .row .nav-body .body-welcome h3 {
+  color: white;
+}
+.nav-body img {
+  width: 800px;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+.nav-body p {
+  color: white;
+  font-size: 20px;
 }

@@ -26,29 +26,29 @@
 
         <ul>
             <li class="<?php echo $currentPage == 'dashboard' ?'active' : ''?>">
-                <a href="dashboard.php"> <i class="fa fa-edit"></i> dashboard</a>
+                <a href="dashboard.php"> <i class="fas fa-home"></i> Dashboard</a>
             </li>
             <li class="<?php echo $currentPage == 'users' ?'active' : ''?>">
-                <a href="users.php"> <i class="fa fa-edit"></i> Users</a>
+                <a href="users.php"> <i class="fas fa-user-tie"></i> Users</a>
             </li>
             <li class="<?php echo $currentPage == 'categories' ?'active' : ''?>">
-                <a href="categories.php"> <i class="fa fa-user-circle"></i> Categories </a>
+                <a href="categories.php"> <i class="fas fa-folder-open"></i> Categories </a>
             </li>
 
             <li class="<?php echo $currentPage == 'all_courses' ?'active' : ''?>">
-                <a href="all_courses.php"> <i class="fa fa-save"></i> Courses </a>
+                <a href="all_courses.php"> <i class="fas fa-book"></i> Courses </a>
             </li>
             <li class="<?php echo $currentPage == 'comments' ?'active' : ''?>">
-                <a href="comments.php"> <i class="fa fa-arrow-up"></i> Comments </a>
+                <a href="comments.php"> <i class="far fa-comment"></i> Comments </a>
             </li>
             <li class="<?php echo $currentPage == 'ratings' ?'active' : ''?>">
-                <a href="ratings.php"> <i class="fa fa-arrow-up"></i> Ratings </a>
+                <a href="ratings.php"> <i class="far fa-star"></i> Ratings </a>
             </li>
             <li class="<?php echo $currentPage == 'reports' ?'active' : ''?>">
-                <a href="reports.php"> <i class="fa fa-history"></i> Reports </a>
+                <a href="reports.php"> <i class="far fa-flag"></i> Reports </a>
             </li>
             <li class="<?php echo $currentPage == 'feedback' ?'active' : ''?>">
-                <a href="feedback.php"> <i class="fa fa-history"></i> Feedback </a>
+                <a href="feedback.php"> <i class="far fa-comment-alt"></i> Feedback </a>
             </li>
         </ul>
     </div>

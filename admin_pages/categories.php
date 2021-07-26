@@ -22,7 +22,7 @@ include('../shared_layout/header.php');
              <div class="profile-info col-lg-10">
                  <div class="panel">
                      <div class="bio-graph-heading">
-                         <h2>Categories</h2>
+                         <h1>Categories</h1>
 
                      </div>
                      <div class="table-wrapper text-light">

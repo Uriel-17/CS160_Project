@@ -22,7 +22,7 @@ include('../shared_layout/header.php');
              <div class="profile-info col-lg-10">
                  <div class="panel">
                      <div class="bio-graph-heading">
-                         <h2>Categories</h2>
+                         <h1>Ratings</h1>
 
                      </div>
                      <div class="table-wrapper text-light">
@@ -40,8 +40,7 @@ include('../shared_layout/header.php');
                                  <div class="col-sm-4">
                                      <a href="#deleteUserModal" class=" btn btn-danger" data-toggle="modal"><i
                                              class="material-icons">&#xe15c;</i>Delete</a>
-                                     <a href="#addUserModal" class=" btn btn-success" data-toggle="modal"><i
-                                             class="material-icons">&#xe147;</i>Add New Rating</a>
+
 
                                  </div>
                              </div>
@@ -80,9 +79,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -103,9 +100,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -126,9 +121,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -149,9 +142,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -172,9 +163,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -195,9 +184,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -218,9 +205,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -241,9 +226,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -264,9 +247,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -287,9 +268,7 @@ include('../shared_layout/header.php');
 
                                          <td>7/17/2021</td>
                                          <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
+                                         <td>
                                              <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
                                                      class="material-icons" data-toggle="tooltip"
                                                      title="Delete">&#xe872;</i></a>
@@ -299,97 +278,6 @@ include('../shared_layout/header.php');
                              </table>
                          </div>
 
-                         <!--Add modal-->
-                         <div id="addUserModal" class="modal fade">
-                             <div class="modal-dialog">
-                                 <div class="modal-content" style="color:black;">
-                                     <form action="">
-                                         <div class="modal-header">
-                                             <h5 class="modal-title">Add Rating
-                                             </h5>
-                                             <button type="button" class="close" data-dismiss="modal" aria-label="close"
-                                                 aria-hidden="true">&times;
-                                             </button>
-                                         </div>
-                                         <div class="modal-body">
-                                             <div class="form-group">
-                                                 <label for="userId">User Id</label>
-                                                 <input type="text" id="userId" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="courseId">Course Id</label>
-                                                 <input type="text" id="courseId" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="rateScore">Rate Score</label>
-                                                 <input type="text" id="rateScore" class="form-control" required>
-                                             </div>
-
-
-                                             <div class="form-group">
-                                                 <label for="createTime">Create Time</label>
-                                                 <input type="text" id="createTime" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="updateTime">Update Time</label>
-                                                 <input type="text" id="updateTime" class="form-control" required>
-                                             </div>
-
-                                         </div>
-                                         <div class="modal-footer">
-                                             <input type="button" class="btn btn-dafault" data-dismiss="modal"
-                                                 Value="Cancel">
-                                             <input type="button" id="add_user" class="btn btn-success" value="Add" />
-                                         </div>
-                                     </form>
-                                 </div>
-                             </div>
-                         </div>
-                         <!--Edit modal-->
-                         <div id="editUserModal" class="modal fade">
-                             <div class="modal-dialog">
-                                 <div class="modal-content" style="color:black;">
-                                     <form action="">
-                                         <div class="modal-header">
-                                             <h5 class="modal-title">Edit Rating Info
-                                             </h5>
-                                             <button type="button" class="close" data-dismiss="modal" aria-label="close"
-                                                 aria-hidden="true">&times;
-                                             </button>
-                                         </div>
-                                         <div class="modal-body">
-                                             <div class="form-group">
-                                                 <label for="userId">User Id</label>
-                                                 <input type="text" id="userId" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="courseId">Course Id</label>
-                                                 <input type="text" id="courseId" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="rateScore">Rate Score</label>
-                                                 <input type="text" id="rateScore" class="form-control" required>
-                                             </div>
-
-                                             <div class="form-group">
-                                                 <label for="createTime">Create Time</label>
-                                                 <input type="text" id="createTime" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="updateTime">Update Time</label>
-                                                 <input type="text" id="updateTime" class="form-control" required>
-                                             </div>
-
-                                         </div>
-                                         <div class="modal-footer">
-                                             <input type="button" class="btn btn-dafault" data-dismiss="modal"
-                                                 Value="Cancel">
-                                             <input type="button" id="add_user" class="btn btn-info" value="Save" />
-                                         </div>
-                                     </form>
-                                 </div>
-                             </div>
-                         </div>
 
 
                          <!--Delete modal-->

@@ -22,11 +22,13 @@ include('../shared_layout/header.php');
              <div class="profile-info col-lg-10">
                  <div class="panel">
                      <div class="bio-graph-heading">
-                         <h2>Administrator Dashboard</h2>
+                         <h1>Dashboard</h1>
 
                      </div>
-                     <div>
-                         <h2>Welcome to the adminisotrator dashboard.</h2>
+                     <div class="nav-body">
+                         <h3 class="body-welcome">Welcome to the adminisotrator dashboard.</h3>
+                         <p>Make your changes here.</p>
+                         <img src="https://miro.medium.com/max/1400/1*1-Q0tK0FkjlI_jMV_ywh6Q.jpeg" alt="img">
                      </div>
 
                  </div>
