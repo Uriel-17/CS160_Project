@@ -44,14 +44,26 @@ function insertData($connection, $userTable, $addressTable) {
     $zip = htmlentities($_POST['zipcode']); 
 
     //TODO need to implement move_uploaded_file! 
+    if (!empty($_FILES)) {
+        if ($_FILES['image']['name'] != "")
+        {
+        $uploaddir = '../images/user_img/';
+        $uploadfile = $uploaddir . $image;
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+        } else {
+            $_SESSION['message'] = 'failed';
+            $image = "default.jpg";
+        }
+    }
+}
 
     $query = "INSERT INTO $userTable (username, password, profileImage, fullname, dateofbirth, email, phonenumber, createtime, updatetime) VALUES ('$username', '$password', '$image', '$fullName', '$birthday', '$email', '$phone', '$time', '$time')"; 
 
     $result = $connection->query($query); 
 
     if(!$result) {
-        $result->close();
-        $_SESSION['message'] = 'failed';
+        $_SESSION['message'] = 'signup_failed';
         header("Location: ../signup_login/register.php");
     }
 

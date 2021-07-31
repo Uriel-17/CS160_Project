@@ -17,7 +17,9 @@ $phone = getPhone($connection, $userTable, $token);
 
 $DOB = getDOB($connection, $userTable, $token); 
 
-$address = getAddress($connection, $addressTable, $token); 
+$address = getAddress($connection, $addressTable, $token);
+
+$image = getImage($connection, $userTable, $token);
 
 
 function getAddress($connection, $addressTable, $token) {
@@ -88,11 +90,38 @@ function getPhone($connection, $userTable, $token) {
 
     $result->close(); //close
 
+
     return $row['phonenumber']; 
   }
   
 
 }
+
+function getImage($connection, $userTable, $token) {
+
+  $query = "SELECT * FROM $userTable WHERE userId LIKE '$token'";
+
+  $result = $connection->query($query);   
+
+  if(!$result) {
+    
+    $result->close(); //close
+
+    error(); 
+  
+  } else if($result->num_rows) {
+
+    $row = $result->fetch_assoc(); 
+
+    $result->close(); //close
+
+
+
+    return $row['profileImage']; 
+  }
+
+}
+
 
 function getEmail($connection, $userTable, $token) {
 
@@ -111,6 +140,7 @@ function getEmail($connection, $userTable, $token) {
     $row = $result->fetch_assoc(); 
 
     $result->close(); //close
+
 
     return $row['email']; 
   }
@@ -137,10 +167,14 @@ function getFullName($connection, $userTable, $token) {
     $result->close(); //close
 
    // print_r($row); 
+   
 
     return $row['fullname']; 
   }
 }
+
+
+
 
 
 /**

@@ -20,9 +20,8 @@ function authenticateUsername($connection, $userTable) {
   $result = $connection->query($query); 
 
   if(!$result) {
-    $result->close();
 
-    $_SESSION['message'] = 'error'; 
+    $_SESSION['message'] = 'username_error'; 
     header('Location: ../signup_login/login.php'); 
   
   } 
@@ -55,7 +54,7 @@ function authenticatePassword($connection, $userTable, $username) {
 
   } else { // if the input password does not match password from DB
     
-    $_SESSION['message'] = 'error'; 
+    $_SESSION['message'] = 'password_error'; 
     header('Location: ../signup_login/login.php'); 
      
   }
