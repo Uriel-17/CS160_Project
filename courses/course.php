@@ -4,7 +4,9 @@ if (!isset($_GET["id"])) {
     exit;
 }
 require_once('../repo/courseRepo.php');
+require_once('../repo/viewRepo.php');
 require_once("../repo/saveRepo.php");
+require_once('../repo/commentRepo.php');
 require_once('../Utilities/URL.php');
 $courseId = $_GET["id"];
 
@@ -18,6 +20,10 @@ if ($course == null || count($course) <= 0) {
 $title = 'Course-content page'; 
 $currentPage = 'Course Page';
 include('../shared_layout/header.php');
+if (isset($_SESSION["userId"])) {
+    $createtime = date('Y-m-d H:i:s');
+    createView($_SESSION["userId"], $courseId, $createtime);
+}
 ?>
 
 <head>
@@ -43,16 +49,24 @@ include('../shared_layout/header.php');
             }
             elseif (isEmbedYoutube($course["url"])) {
                 echo '<div class="iframe-container">
-                        <iframe class="embed-responsive-item"
+                        <iframe id="play" class="embed-responsive-item"
                             src="'.$course["url"].'"></iframe>
                     </div>';
             }
             else {
-                echo '<div>
+                if ($course["image"] != null || $course["image"] != "") {
+                    echo '<div class="text-center">
                         <img src="../images/course_img/'.$course["image"].'" alt="'.$course["courseTitle"].'">
                     </div>';
+                }
+                else {
+                    echo '<div class="text-center">
+                        <img src="../images/course_img/default.jpg" alt="'.$course["courseTitle"].'">
+                    </div>';
+                }
+                
                 echo '<div>
-                        <a href="'.$course["url"].'">'.$course["url"].'</a>
+                        <a id="play" href="'.$course["url"].'">URL: '.$course["url"].'</a>
                     </div>';
             }
             ?>
@@ -60,22 +74,26 @@ include('../shared_layout/header.php');
             <div class="video-description">
                 <div class="container">
                     <div class="row ">
+                        <div class="items float-right">
 
-                        <div class=" col-lg-6 text-center">
-
-                        </div>
-                        <div class="items col-lg-6">
-
-                            <ul class="buttons">
+                            <ul class="buttons" style="float: right;">
                                 <li>
-                                    <span>45 ratings</span> <span class="ratings"><i id="start-one"
-                                            class="fa fa-star"></i><i id="star-two" class="fa fa-star"></i><i
-                                            id="star-three" class="fa fa-star"></i><i id="star-four"
-                                            class="fa fa-star"></i><i id="star-five" class="fa fa-star"></i></span>
+                                    <?php
+                                    $rating_count = computeNumberOfRatings($courseId);
+                                    $avg_rating = computeAverageRating($courseId);
+                                    ?>
+                                    <span id="rating_count"><?php echo $rating_count; ?> rating(s)</span>
+                                    <span class="ratings">
+                                        <i id="start-one" class="fa fa-star" <?php if ($avg_rating >= 1) {echo 'style="color: yellow"';}?>></i>
+                                        <i id="star-two" class="fa fa-star" <?php if ($avg_rating >= 2) {echo 'style="color: yellow"';}?>></i>
+                                        <i id="star-three" class="fa fa-star" <?php if ($avg_rating >= 3) {echo 'style="color: yellow"';}?>></i>
+                                        <i id="star-four" class="fa fa-star" <?php if ($avg_rating >= 4) {echo 'style="color: yellow"';}?>></i>
+                                        <i id="star-five" class="fa fa-star" <?php if ($avg_rating >= 5) {echo 'style="color: yellow"';}?>></i>
+                                    </span>
                                 </li>
                                 <li>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-success" data-toggle="modal"
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
                                         data-target="#rate">
                                         Rate
                                     </button>
@@ -217,65 +235,50 @@ include('../shared_layout/header.php');
         </div>
         <div class="comment-box">
             <h4>Comment</h4>
-            <form action="" method="post">
                 <textarea name="comment" id="comment" cols="45" rows="10" placeholder="Add your comment"></textarea><br>
                 <div class="btn">
                     <input type="submit" class="submit" value='Comment' id="new_comment">
                     <button id='clear'>Clear</button>
                 </div>
-            </form>
 
         </div>
 
 
         <div class="all-comments">
-            <h4>All Comments</h4>
-            <div class="each-comment">
-                <h5>username</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque adipisci similique dolorem
-                    exercitationem excepturi sequi molestiae quos nihil est, quaerat officiis perferendis quasi
-                    dignissimos optio iste quia voluptate vitae ipsum.</p>
-            </div>
-            <div class="each-comment">
-                <h5>username</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque adipisci similique dolorem
-                    exercitationem excepturi sequi molestiae quos nihil est, quaerat officiis perferendis quasi
-                    dignissimos optio iste quia voluptate vitae ipsum.</p>
-            </div>
-            <div class="each-comment">
-                <h5>username</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque adipisci similique dolorem
-                    exercitationem excepturi sequi molestiae quos nihil est, quaerat officiis perferendis quasi
-                    dignissimos optio iste quia voluptate vitae ipsum.</p>
-            </div>
-            <div class="each-comment">
-                <h5>username</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque adipisci similique dolorem
-                    exercitationem excepturi sequi molestiae quos nihil est, quaerat officiis perferendis quasi
-                    dignissimos optio iste quia voluptate vitae ipsum.</p>
-            </div>
+            <h4>Comments</h4>
+            <?php
+            $index = 0;
+            $comments = getTenCommentsByCourseId($courseId, $index);
 
-            <nav aria-label="Page navigation">
-                <ul class="pagination m-2 justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            if ($comments != null && count($comments) > 0) {
+                foreach ($comments as $comment) {
+                    $user = getUser($comment["userId"]);
+                    $name = "Unknown";
+                    if ($user != null){
+                        $name = $user["fullname"];
+                    }
+                    echo '<div class="each-comment">
+                                <h5>'.$name.'</h5>
+                                <p>'.$comment["detail"].'<br>'.$comment["createtime"].'</p>
+                            </div>';
+                }
+            }
+            else {
+                echo '<div class="each-comment">
+                                <p>No Comment</p>
+                            </div>';
+            }
 
+            if (count($comments) == 10) {
+                $index += 10;
+                echo '<div class="loadbutton">
+                            <input id="comment_index" hidden value="'.$index.'"/>
+                            <button class="loadmore btn-primary" data-page="2">See More</button>
+                        </div>';
+            }
+            ?>
         </div>
+
     </div>
 </section>
 
@@ -293,6 +296,9 @@ $(document).ready(function() {
     var courseId = $("#courseId").val()
     var ratingNumber = 0
     var report_detail = ""
+    var comment_detail = ""
+
+
 
     $(".star-widget input").click(function() {
         ratingNumber = $(this).val()
@@ -338,10 +344,10 @@ $(document).ready(function() {
             success: function(result) {
                 $("#save_course").val(result)
             },
-            failure: function() {
+            failure: function(result) {
                 window.alert("Failed")
             },
-            error: function() {
+            error: function(result) {
                 window.alert("Error")
             }
         })
@@ -365,22 +371,77 @@ $(document).ready(function() {
                 $("#report_result").text(result)
                 $("#save_report").hide()
             },
-            failure: function() {
+            failure: function(result) {
                 $("#report_result").show()
                 $("#report_result").text(result)
             },
-            error: function() {
+            error: function(result) {
                 $("#report_result").show()
                 $("#report_result").text(result)
             }
         })
     })
 
-    $("#close_rate").click(function() {
+    $("#close_report").click(function() {
         $("#save_report").show()
         $("#report_result").hide()
     })
 
+    $("#new_comment").click(function() {
+        comment_detail = $("#comment").val()
+
+        if (comment_detail != "") {
+            $.ajax({
+            type: "POST",
+            url: "/CS160_Project/courseHandler/commentHandler.php",
+            data: {
+                "courseId": courseId,
+                "comment": comment_detail
+            },
+            success: function(result) {
+                $("#comment").val('')
+                $(".all-comments").empty()
+                $(".all-comments").append(result)
+            },
+            failure: function(result) {
+                alert(result)
+            },
+            error: function(result) {
+                alert(result)
+            }
+        })
+        }
+        
+    })
+
+    $("#clear").click(function() {
+        $("#comment").val('')
+    })
+
+    $(".loadmore").click(function() {
+        $.ajax({
+            type: "POST",
+            url: "/CS160_Project/courseHandler/loadmoreComment.php",
+            cache: false,
+            data: {
+                "index" : $("#comment_index").val(),
+                "courseId" : courseId
+            },
+            success: function(result) {
+                $(".loadbutton").remove()
+                $("#comment").val('')
+                $(".all-comments").append(result)
+            },
+            failure: function(result) {
+                alert(result)
+            },
+            error: function(result) {
+                alert(result)
+            }
+        })
+
+
+    })
 })
 </script>
 
