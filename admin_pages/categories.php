@@ -1,5 +1,5 @@
- <?php
-
+<?php
+require_once("../repo/categoryRepo.php");
 $title = '_admin_categories';
 $currentPage = 'categories';
 
@@ -28,34 +28,21 @@ include('../shared_layout/header.php');
                      <div class="table-wrapper text-light">
                          <div class="table-title">
                              <div class="row my-2">
-                                 <div class="col-sm-4">
+                                 <div class="col-sm-6">
                                      <h5>Manage <b>Categories</b></h5>
                                  </div>
-                                 <div class="search-container col-sm-4">
-                                     <form action="" method="post">
-                                         <input type="text" placeholder="Search.." name="search">
-                                         <button type="submit"><i class="fa fa-search"></i></button>
-                                     </form>
-                                 </div>
-                                 <div class="col-sm-4">
-                                     <a href="#deleteUserModal" class=" btn btn-danger" data-toggle="modal"><i
-                                             class="material-icons">&#xe15c;</i>Delete</a>
-                                     <a href="#addUserModal" class=" btn btn-success" data-toggle="modal"><i
+                                 <div class="col-sm-6 text-right">
+                                     <a href="#addCateModal" class=" btn btn-success" data-toggle="modal"><i
                                              class="material-icons">&#xe147;</i>Add New Category</a>
-
                                  </div>
                              </div>
                          </div>
                          <div style="overflow-x:auto;">
-                             <table class="table table-striped table-hover">
+                             <table id="example1" class="table table-striped table-hover">
                                  <thead>
                                      <tr>
                                          <th>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="selectAll">
-                                                 <label for="selectAll"></label>
-
-                                             </span>
+                                             No.
                                          </th>
                                          <th>Category Id</th>
                                          <th>Category Name</th>
@@ -68,253 +55,47 @@ include('../shared_layout/header.php');
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>description</td>
-                                         <td><img src="H.gif" alt="" border=1 height=100 width=100></img></td>
-                                         <td>priority</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td><a href="#editUserModal" class="edit" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Edit">&#xe254;</i></a>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
+                                    <?php
+                                    $cate_list = getAllCategories();
+                                    $i = 1;
+                                    if ($cate_list != null && count($cate_list) > 0) {
+                                        foreach($cate_list as $category) {
+                                            $image = $category["image"] == "" ? "default.jpg" : $category["image"];
+                                            echo '<tr data-id="'.$category['categoryId'].'">
+                                                     <td>'.$i++.'</td>
+                                                     <td>'.$category["categoryId"].'</td>
+                                                     <td>
+                                                        <a href="../courses/course_list.php?categoryId='.$category['categoryId'].'">
+                                                            '.$category["categoryname"].'
+                                                        </a>
+                                                    </td>
+                                                     <td>'.$category["description"].'</td>
+                                                     <td><img src="../images/category/'.$image.'" alt="" border=1 height=70 width=70></img></td>
+                                                     <td>'.$category["priority"].'</td>
+                                                     <td>'.$category["createtime"].'</td>
+                                                     <td>'.$category["updatetime"].'</td>
+
+                                                     <td>
+                                                        <button class="edit btn btn-outline-primary btn-sm">
+                                                            <i class="fas fa-pencil-alt" title="Edit"></i>
+                                                        </button>
+                                                        <button class="delete btn btn-outline-danger btn-sm">
+                                                            <i class="fas fa-trash" title="Delete"></i>
+                                                        </button>
+                                                     </td>
+                                                 </tr>';
+                                        }
+                                    }
+                                    ?>
                                  </tbody>
                              </table>
                          </div>
 
                          <!--Add modal-->
-                         <div id="addUserModal" class="modal fade">
+                         <div id="addCateModal" class="modal fade">
                              <div class="modal-dialog">
                                  <div class="modal-content" style="color:black;">
-                                     <form action="">
+                                     <form action="../admin_handler/addCate.php" method="post" enctype="multipart/form-data">
                                          <div class="modal-header">
                                              <h5 class="modal-title">Add Category
                                              </h5>
@@ -324,85 +105,69 @@ include('../shared_layout/header.php');
                                          </div>
                                          <div class="modal-body">
                                              <div class="form-group">
-                                                 <label for="courseId">Course Id</label>
-                                                 <input type="text" id="courseId" class="form-control" required>
+                                                 <label for="categoryname">Category Name</label>
+                                                 <input type="text" id="categoryname" name="categoryname" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="courseName">Course Name</label>
-                                                 <input type="text" id="courseName" class="form-control" required>
+                                                 <label for="description">Category Description</label>
+                                                 <input type="text" id="description" name="description" class="form-control" required>
                                              </div>
                                              <div class="form-group">
-                                                 <label for="description">Course Description</label>
-                                                 <input type="text" id="description" class="form-control" required>
+                                                 <label for="priority">Category Priority</label>
+                                                 <input type="number" id="priority" name="priority" class="form-control" required>
                                              </div>
                                              <div class="form-group">
                                                  <label for="image">Image</label>
-                                                 <input type="image" id="image" class="form-control" required>
-                                             </div>
-
-                                             <div class="form-group">
-                                                 <label for="createTime">Create Time</label>
-                                                 <input type="text" id="createTime" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="updateTime">Update Time</label>
-                                                 <input type="text" id="updateTime" class="form-control" required>
+                                                 <input type="file" id="image" name="image" accept="image/*" class="form-control" required>
                                              </div>
 
                                          </div>
                                          <div class="modal-footer">
                                              <input type="button" class="btn btn-dafault" data-dismiss="modal"
                                                  Value="Cancel">
-                                             <input type="button" id="add_user" class="btn btn-success" value="Add" />
+                                             <button type="submit" id="add_cate" class="btn btn-success">Add</button>
                                          </div>
                                      </form>
                                  </div>
                              </div>
                          </div>
+
                          <!--Edit modal-->
-                         <div id="editUserModal" class="modal fade">
+                         <div id="editCateModal" class="modal fade">
                              <div class="modal-dialog">
                                  <div class="modal-content" style="color:black;">
-                                     <form action="">
+                                     <form action="../admin_handler/updateCate.php" method="post" enctype="multipart/form-data">
                                          <div class="modal-header">
                                              <h5 class="modal-title">Edit Category Info
                                              </h5>
-                                             <button type="button" class="close" data-dismiss="modal" aria-label="close"
+                                             <button type="button" id="edit_close" class="close" data-dismiss="modal" aria-label="close"
                                                  aria-hidden="true">&times;
                                              </button>
                                          </div>
                                          <div class="modal-body">
+                                            <input type="text" id="edit_id" name="categoryId" class="form-control" required hidden>
                                              <div class="form-group">
-                                                 <label for="courseId">Course Id</label>
-                                                 <input type="text" id="courseId" class="form-control" required>
+                                                 <label for="categoryname">Category Name</label>
+                                                 <input type="text" id="categoryname" name="categoryname" class="form-control">
                                              </div>
                                              <div class="form-group">
-                                                 <label for="courseName">Course Name</label>
-                                                 <input type="text" id="courseName" class="form-control" required>
+                                                 <label for="description">Category Description</label>
+                                                 <input type="text" id="description" name="description" class="form-control">
                                              </div>
                                              <div class="form-group">
-                                                 <label for="description">Course Description</label>
-                                                 <input type="text" id="description" class="form-control" required>
+                                                 <label for="priority">Category Priority</label>
+                                                 <input type="number" id="priority" name="priority" class="form-control">
                                              </div>
                                              <div class="form-group">
                                                  <label for="image">Image</label>
-                                                 <input type="image" id="image" class="form-control" required>
-                                             </div>
-
-                                             <div class="form-group">
-                                                 <label for="createTime">Create Time</label>
-                                                 <input type="text" id="createTime" class="form-control" required>
-                                             </div>
-                                             <div class="form-group">
-                                                 <label for="updateTime">Update Time</label>
-                                                 <input type="text" id="updateTime" class="form-control" required>
+                                                 <input type="file" id="image" name="image" accept="image/*" class="form-control">
                                              </div>
 
                                          </div>
                                          <div class="modal-footer">
-                                             <input type="button" class="btn btn-dafault" data-dismiss="modal"
+                                             <input type="button" id="edit_close2" class="btn btn-dafault" data-dismiss="modal"
                                                  Value="Cancel">
-                                             <input type="button" id="add_user" class="btn btn-info" value="Save" />
+                                             <button type="submit" id="edit_cate" class="btn btn-success">Edit</button>
                                          </div>
                                      </form>
                                  </div>
@@ -411,24 +176,24 @@ include('../shared_layout/header.php');
 
 
                          <!--Delete modal-->
-                         <div id="deleteUserModal" class="modal fade">
+                         <div id="deleteCateModal" class="modal fade">
                              <div class="modal-dialog">
                                  <div class="modal-content" style="color:black;">
                                      <div class="modal-header">
                                          <h5 class="modal-title" style="color:black;">Delete Category
                                          </h5>
-                                         <button type="button" class="close" data-dismiss="modal" aria-label="close"
+                                         <button type="button" id="delete_close2" class="close" data-dismiss="modal" aria-label="close"
                                              aria-hidden="true">&times;
                                          </button>
                                      </div>
                                      <div class="modal-body">
-                                         <h6>Are you sure you want to delete these records?</h6>
+                                         <h6>Are you sure you want to delete this category?</h6>
                                          <p>This action cannot be undone</p>
                                      </div>
                                      <div class="modal-footer">
-                                         <input type="button" class="btn btn-dafault" data-dismiss="modal"
+                                         <input type="button" id="delete_close" class="btn btn-dafault" data-dismiss="modal"
                                              Value="Cancel">
-                                         <input type="button" id="add_user" class="btn btn-danger" value="Delete" />
+                                         <input type="button" id="delete_cate" class="btn btn-danger" value="Delete" />
                                      </div>
                                  </div>
 
@@ -456,7 +221,66 @@ include('../shared_layout/header.php');
      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
  </script>
 
+ 
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script defer type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+ <script>
+    $(document).ready(function () {
+        $('#example1').DataTable();
+
+        $('button.delete').on('click', function(e) {
+            e.preventDefault();
+            var id = $(this).closest('tr').data('id');
+            $("#deleteCateModal").data('id', id).modal('show');
+        })
+
+        $("#delete_close").click(function() {
+            $("#deleteCateModal").modal('toggle');
+        })
+
+        $("#delete_close2").click(function() {
+            $("#deleteCateModal").modal('toggle');
+        })
+
+        $('button.edit').on('click', function(e) {
+            e.preventDefault();
+            var id = $(this).closest('tr').data('id');
+            $("#edit_id").val(id);
+            $("#editCateModal").data('id', id).modal('show');
+        })
+
+        $("#edit_close").click(function() {
+            $("#editCateModal").modal('toggle');
+        })
+
+        $("#edit_close2").click(function() {
+            $("#editCateModal").modal('toggle');
+        })
+        
+        $("#delete_cate").click(function() {
+            var id = $("#deleteCateModal").data('id');
+            $.ajax({
+            type: "POST",
+            url: "/CS160_Project/admin_handler/deleteCate.php",
+            data: {
+                "categoryId": id
+            },
+            success: function(result) {
+                $("#deleteCateModal").modal('toggle');
+                location.reload();
+            },
+            failure: function(result) {
+                alert(result);
+            },
+            error: function(result) {
+                alert(result);
+            }
+        })
+        })
+    })
+</script>
 
 
  <?php

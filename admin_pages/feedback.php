@@ -1,5 +1,5 @@
  <?php
-
+require_once("../repo/feedbackRepo.php");
 $title = '_admin_feedback';
 $currentPage = 'feedback';
 
@@ -28,33 +28,17 @@ include('../shared_layout/header.php');
                      <div class="table-wrapper text-light">
                          <div class="table-title">
                              <div class="row my-2">
-                                 <div class="col-sm-4">
+                                 <div>
                                      <h5>Manage <b>Feedback</b></h5>
-                                 </div>
-                                 <div class="search-container col-sm-4">
-                                     <form action="" method="post">
-                                         <input type="text" placeholder="Search.." name="search">
-                                         <button type="submit"><i class="fa fa-search"></i></button>
-                                     </form>
-                                 </div>
-                                 <div class="col-sm-4">
-                                     <a href="#deleteUserModal" class=" btn btn-danger" data-toggle="modal"><i
-                                             class="material-icons">&#xe15c;</i>Delete</a>
-
-
                                  </div>
                              </div>
                          </div>
                          <div style="overflow-x:auto;">
-                             <table class="table table-striped table-hover">
+                             <table id="example1" class="table table-striped table-hover">
                                  <thead>
                                      <tr>
                                          <th>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="selectAll">
-                                                 <label for="selectAll"></label>
-
-                                             </span>
+                                             No.
                                          </th>
                                          <th>Feedback Id</th>
                                          <th>User Id</th>
@@ -63,261 +47,30 @@ include('../shared_layout/header.php');
                                          <th>Detail</th>
                                          <th>Create Time</th>
                                          <th>Update Time</th>
-                                         <th>Action</th>
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
+                                        <?php
+                                        $feedback_list = getAllFeedback();
+                                        $i = 1;
+                                        if ($feedback_list != null && count($feedback_list) > 0) {
+                                            foreach($feedback_list as $feedback) {
+                                                echo '<tr data-id="'.$feedback['userId'].'">
+                                                         <td>'.$i++.'</td>
+                                                         <td>'.$feedback["feedbackId"].'</td>
+                                                         <td>'.$feedback["userId"].'</td>
+                                                         <td>'.$feedback["name"].'</td>
+                                                         <td>'.$feedback["email"].'</td>
+                                                         <td>'.$feedback["detail"].'</td>
+                                                         <td>'.$feedback["createtime"].'</td>
+                                                     </tr>';
+                                            }
+                                        }
+                                        ?>
                                  </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                                 <tbody>
-                                     <tr>
-                                         <td>
-                                             <span class="custom-checkbox">
-                                                 <input type="checkbox" id="checkbox1" name="option[]" value="1">
-                                                 <label for="checkbox1"></label>
-                                             </span>
-                                         </td>
-                                         <td>1</td>
-                                         <td>1</td>
-                                         <td>name</td>
-                                         <td>email</td>
-                                         <td>detail</td>
-                                         <td>7/17/2021</td>
-                                         <td>7/17/2021</td>
-                                         <td>
-                                             <a href="#deleteUserModal" class="delete" data-toggle="modal"><i
-                                                     class="material-icons" data-toggle="tooltip"
-                                                     title="Delete">&#xe872;</i></a>
-                                         </td>
-                                     </tr>
-                                 </tbody>
+                                 
                              </table>
                          </div>
-
-
-
-                         <!--Delete modal-->
-                         <div id="deleteUserModal" class="modal fade">
-                             <div class="modal-dialog">
-                                 <div class="modal-content" style="color:black;">
-                                     <div class="modal-header">
-                                         <h5 class="modal-title" style="color:black;">Delete Feedback
-                                         </h5>
-                                         <button type="button" class="close" data-dismiss="modal" aria-label="close"
-                                             aria-hidden="true">&times;
-                                         </button>
-                                     </div>
-                                     <div class="modal-body">
-                                         <h6>Are you sure you want to delete these records?</h6>
-                                         <p>This action cannot be undone</p>
-                                     </div>
-                                     <div class="modal-footer">
-                                         <input type="button" class="btn btn-dafault" data-dismiss="modal"
-                                             Value="Cancel">
-                                         <input type="button" id="add_user" class="btn btn-danger" value="Delete" />
-                                     </div>
-                                 </div>
-
-                             </div>
-                         </div>
-
-
-
                      </div>
 
                  </div>
@@ -337,7 +90,15 @@ include('../shared_layout/header.php');
      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
  </script>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script defer type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+ <script>
+    $(document).ready(function () {
+        $('#example1').DataTable();
+    });
+</script>
 
 
  <?php

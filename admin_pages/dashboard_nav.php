@@ -1,3 +1,17 @@
+<?php
+require_once("../repo/userRepo.php");
+if (isset($_SESSION["userId"])) {
+    $user = getUserById($_SESSION["userId"]);
+    $image = "https://bootdey.com/img/Content/avatar/avatar3.png";
+    if ($user["profileImage"] != "") {
+        $image = "../images/user_img/".$user["profileImage"];
+    }
+}
+else {
+    header("Location: ../home/index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +20,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../my_css/dashboard.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!--Data table-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <title>Admin Dashboard</title>
 </head>
 
@@ -16,11 +33,11 @@
     <div class="panel">
         <div class="user-heading round">
             <a href="#">
-                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="dp"
+                <img src="<?php echo $image ?>" alt="dp"
                     style='width:100%;height:100%;' />
             </a>
             <h1>Administrator</h1>
-            <p>some@email</p>
+            <p><?php echo $user["fullname"] ?></p>
 
         </div>
 
@@ -52,6 +69,8 @@
             </li>
         </ul>
     </div>
+
+    
 </body>
 
 </html>
