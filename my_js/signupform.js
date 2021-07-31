@@ -80,12 +80,13 @@ function validateSecondAddress() {
   const secondaddress = document.getElementById("secondaddress");
   const re = /^[a-zA-Z0-9, ]+$/;
 
-  if (!re.test(secondaddress.value)) {
+  if (!re.test(secondaddress.value) && secondaddress.value != null && secondaddress.value != "") {
     setErrorFor(secondaddress, "invalid address");
   } else {
     setSuccessFor(secondaddress);
   }
 }
+
 function validateCity() {
   const city = document.getElementById("city");
   const re = /^[a-zA-Z ]+$/;

@@ -35,6 +35,7 @@
 }
 .profile-nav .user-heading p {
   font-size: 15px;
+  word-wrap: break-word;
 }
 .profile-nav .user-heading .file h4 {
   font-size: 20px;
@@ -157,9 +158,6 @@
 
 .card {
   margin: 1px;
-  width: 15rem;
-  height: 20rem;
-  overflow-y: auto;
   background-color: #5c5c5c;
   box-shadow: 0 0 10px 10px rgba(36, 36, 36, 0.2);
 }
@@ -177,13 +175,7 @@
 }
 
 .card-body a:hover {
-  color: rgb(8, 139, 8);
-}
-
-.upload-button {
-  margin-top: 20px;
-  border-radius: 4px;
-  padding: 5px;
+  color: darkgreen;
 }
 
 /*profile page*/
@@ -194,20 +186,9 @@
   font-weight: bold;
   padding-left: 20px;
 }
-.save-button {
-  border-radius: 4px;
-  padding: 5px;
-}
+
 .label {
   color: white;
-}
-.editBtn {
-  text-decoration: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  background-color: darkcyan;
-  color: white;
-  border-radius: 10px;
 }
 
 .panel-body form .row .input .col-sm-6 {
@@ -265,7 +246,8 @@
   padding-bottom: 10px;
 }
 
-.uploadBtn {
+.profile-button {
+  text-decoration: none;
   border: none;
   outline: none;
   height: 50px;
@@ -274,9 +256,27 @@
   color: white;
   border-radius: 30px;
   font-weight: bold;
+  margin-top: 20px;
+  border-radius: 30px;
+  padding: 10px 25px;
 }
-
-.uploadBtn:hover {
+.profile-button:hover {
+  background-color: #1b615a;
   color: black;
 }
-/*upload.php style ends*/
+.success-info {
+  color: white;
+  text-align: center;
+  background-color: #07b18c;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.fail-info {
+  color: white;
+  background-color: red;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+}

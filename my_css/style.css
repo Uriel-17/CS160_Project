@@ -116,7 +116,7 @@ section {
 
 /*register page*/
 .form-control {
-  background-color: #474747;
+  background-color: #575757;
   border-color: #474747;
   color: #e7e7e7;
 }
@@ -204,6 +204,7 @@ header h2 {
   size: 50;
 }
 .searchButton {
+  margin-top: 5px;
   padding: 7px;
   background-color: #02d9c5;
   color: #064942;
