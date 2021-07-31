@@ -7,7 +7,7 @@ if (isset($_SESSION["userId"])) {
 	$userId = $_SESSION["userId"];
 }
 else {
-	die("Failed to add new report");
+	die("You have to log in first!");
 }
 
 $courseId = "";
