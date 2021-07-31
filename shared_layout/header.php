@@ -1,5 +1,6 @@
 <?php
 require_once("../session/session_ini.php");
+require_once("../repo/userRepo.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +26,12 @@ require_once("../session/session_ini.php");
             d-flex
             justify-content-center justify-content-lg-between
             align-items-center">
-                <a class="navbar-brand col-lg-2" href="../home/index.php"><img src="../images/logo-alt.PNG"
-                        width="130px" alt="logo" width="150"></a>
-                <form class="col-lg-8 d-md-block d-none">
+                <a class="navbar-brand col-lg-2" href="../home/index.php"><img src="../images/logo.png" alt="logo"
+                        width="150"></a>
+                <form action="../courses/course_list.php" class="col-lg-8 d-md-block d-none" method="get">
                     <div class="row">
                         <div class="col-8">
-                            <input type="text" class="form-control input" placeholder="Search.." />
+                            <input type="text" name="key" class="form-control input" placeholder="Search.." />
                         </div>
                         <div class="col-4 text-center">
                             <button class="searchButton" type="submit">Search</button>
@@ -40,12 +41,16 @@ require_once("../session/session_ini.php");
                 <ul class="buttons col-lg-2">
 
                     <?php
-                if(isset($_SESSION['userId'])){
-                 echo '
-                 <div class="dropdownbtn">
-                        <a class="dropbtn" href="../user_profile/userprofile.php">'.$_SESSION['fullname'].'</a>
-                        <div class="dropdown-content">
-                            <a href="../user_profile/edit_profile.php"> Edit Profile</a>
+                    if(isset($_SESSION['userId'])){
+                        echo '<div class="dropdownbtn">
+                                <a class="dropbtn" href="../user_profile/userprofile.php">'.$_SESSION['fullname'].'</a>
+                                <div class="dropdown-content">';
+                        $user = getUserById($_SESSION['userId']);
+                        if ($user != null && $user["accountTypeId"] == '3') {
+                            echo '<a href="../admin_pages/dashboard.php">Admin Module</a>';
+                        } 
+                            
+                echo '<a href="../user_profile/edit_profile.php"> Edit Profile</a>
                             <a href="../user_profile/user_account.php">Account</a>
                             <a href="../user_profile/saved_courses.php">Saved Courses</a>
                             <a href="../user_profile/upload_course.php">Uploaded Courses</a>
