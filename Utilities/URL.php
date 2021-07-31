@@ -33,4 +33,26 @@ function toEmbed($url){
 	$embed_url = "https://".$url_parsed_arr['host']."/embed/".substr($url_parsed_arr['query'], 2);
 	return $embed_url;
 }
+
+function getVideoID($url) {
+	if (isYoutube($url)) {
+		$url_parsed_arr = parse_url($url);
+		return substr($url_parsed_arr['query'], 2);
+	}
+	if (isEmbedYoutube($url)) {
+		return substr($url_parsed_arr['path'], 6);
+	}
+
+	return "";
+}
+
+function getThumbnail($videoID){
+	if ($videoID == null || $videoID == "") {
+		return false;
+	}
+
+	$thumbnail = "http://img.youtube.com/vi/".$videoID."/maxresdefault.jpg";
+
+	return $thumbnail;
+}
 ?>
