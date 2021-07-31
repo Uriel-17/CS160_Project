@@ -30,7 +30,7 @@ include('../shared_layout/header.php');
                             <div class="col-sm-3">
                                 <label class="mb-0">Full Name</label>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 ">
                                 <?php echo $fullName; ?>
                             </div>
                         </div>
@@ -39,7 +39,7 @@ include('../shared_layout/header.php');
                             <div class="col-sm-3">
                                 <label class="mb-0">Email</label>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9">
                                 <?php echo $email; ?>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ include('../shared_layout/header.php');
                             <div class="col-sm-3">
                                 <label class="mb-0">Phone</label>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 ">
                                 <?php echo $phone; ?>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ include('../shared_layout/header.php');
                             <div class="col-sm-3">
                                 <label class="mb-0">Date of Birth</label>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 ">
                                 <?php echo $DOB; ?>
                             </div>
                         </div>
@@ -66,14 +66,14 @@ include('../shared_layout/header.php');
                             <div class="col-sm-3">
                                 <label class="mb-0">Address</label>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 ">
                                 <?php echo $address; ?>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-12">
-                                <a class="editBtn" href="edit_profile.php">Edit</a>
+                                <a class="profile-button" href="edit_profile.php">Edit</a>
                             </div>
                         </div>
 

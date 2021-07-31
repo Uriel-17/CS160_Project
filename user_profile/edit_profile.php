@@ -24,13 +24,13 @@
 
                             if($_SESSION['message'] === 'error') {
                             
-                                echo '<div>Sorry Try Again</div>'; 
+                                echo '<div class = "fail-info my-2">Sorry Try Again!</div>'; 
                                 
                                 unset($_SESSION['message']);  
 
                             } else {
 
-                                echo '<div>Profile Updated!</div>'; 
+                                echo '<div class="success-info my-2">Profile Updated!</div>'; 
                                 // success 
                                 
                                 unset($_SESSION['message']); 
@@ -136,7 +136,7 @@
 
                             <div class="form-group">
                                 <div class=" col-sm-12">
-                                    <button class="btn btn-success" type="submit">Save</button>
+                                    <button class="profile-button btn btn-success" type="submit">Save</button>
                                 </div>
                             </div>
                         </form>

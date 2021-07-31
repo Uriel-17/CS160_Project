@@ -42,10 +42,17 @@ require_once('../repo/saveRepo.php');
                             if ($count > 0) {
                                 $listCourse = getSavedCourses($userId, $index, $page_limit);
                                 foreach ($listCourse as $course) {
+                                    $image_path = "";
+                                    if ($course["image"] != null && $course["image"] != "") {
+                                        $image_path = '../images/course_img/'.$course["image"];
+                                    }
+                                    else {
+                                        $image_path = '../images/course_img/default.jpg';
+                                    }
                                     echo '<div class="col-sm-4 my-1">
                                             <div class="card text-center">
                                                 <a href="../courses/course.php?id='.$course["courseId"].'">
-                                                    <img class="card-img-top" src="../images/course_img/'.$course["image"].'" alt="Card image"
+                                                    <img class="card-img-top" src="'.$image_path.'" alt="Card image"
                                                     style="width:100%">
                                                 </a>
                                                 <div class="card-body">

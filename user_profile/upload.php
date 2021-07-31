@@ -76,7 +76,7 @@
 
                             <div class="form-group">
                                 <!-- <input class="submit" type="submit" value="Upload" /> -->
-                                <button class="uploadBtn" type="submit">Upload</button>
+                                <button class="profile-button" type="submit">Upload</button>
                             </div>
                         </form>
 

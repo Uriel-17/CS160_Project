@@ -1,6 +1,6 @@
 <?php
     require_once('../userHandler/userProfileBackend.php'); 
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +17,23 @@
 <body>
 
     <div class="panel">
-        <div class="user-heading round">
-            <a href="#">
-                <img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" alt="dp" />
+        <div class="user-heading round ">
+            <a href=" #">
+                <?php
+                    if ($image == null || $image == "") {
+                        echo '<img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" alt="dp" />';
+                    }
+                    else {
+                        echo '<img src="../images/user_img/'.$image.'" alt="dp" />';
+                    }
+                
+                ?>
+
             </a>
             <h1><?php echo $fullName; ?></h1>
             <p><?php echo $email; ?></p>
             <div class="file">
-                <h4>Change Photo</h4>
-                <input type="file" name="file" />
+                <button id="change_photo" style="background: transparent; border: none;">Change Photo</button>
             </div>
         </div>
 
@@ -51,6 +59,52 @@
             </li>
         </ul>
     </div>
+
+     <!--Edit modal-->
+                         <div id="editPhotoModal" class="modal fade">
+                             <div class="modal-dialog">
+                                 <div class="modal-content" style="color:black;">
+                                     <form action="../userHandler/change_photo.php" method="post" enctype="multipart/form-data">
+                                         <div class="modal-header">
+                                             <h5 class="modal-title">Edit Course Info
+                                             </h5>
+                                             <button type="button" id="edit_close1" class="close" data-dismiss="modal" aria-label="close"
+                                                 aria-hidden="true">&times;
+                                             </button>
+                                         </div>
+                                         <div class="modal-body">
+                                             <div class="form-group">
+                                                 <label for="image">Profile Image</label>
+                                                 <input type="file" id="photo" name="image" accept="image/*" class="form-control">
+                                             </div>
+
+                                         </div>
+                                         <div class="modal-footer">
+                                             <input type="button" id="edit_close3" class="btn btn-dafault" data-dismiss="modal"
+                                                 Value="Cancel">
+                                             <button type="submit" id="edit_photo" class="btn btn-success">Edit</button>
+                                         </div>
+                                     </form>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <script type="text/javascript">
+                            $(document).ready(function () {
+                                $('#change_photo').on('click', function(e) {
+                                    e.preventDefault();
+                                    $("#editPhotoModal").modal('toggle');
+                                })
+
+                                $("#edit_close1").click(function() {
+                                    $("#editPhotoModal").modal('toggle');
+                                })
+
+                                $("#edit_close3").click(function() {
+                                    $("#editPhotoModal").modal('toggle');
+                                })
+                            })
+                        </script>
 </body>
 
 </html>
