@@ -12,6 +12,18 @@ function getCommentsByCourseId($courseId) {
 	return executeResult($sql);
 }
 
+function getTenCommentsByCourseId($courseId, $index) {
+	$sql = 'SELECT * FROM comment WHERE courseId = '.$courseId.' ORDER BY createtime DESC LIMIT '.$index.', 10';
+
+	return executeResult($sql);
+}
+
+function getUser($userId) {
+	$sql = 'SELECT * FROM user WHERE userId = '.$userId;
+
+	return executeSingleResult($sql);
+}
+
 function getCommentsByUserId($userId) {
 	$sql = 'SELECT * FROM comment WHERE userId = '.$userId;
 	return executeResult($sql);

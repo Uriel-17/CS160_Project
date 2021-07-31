@@ -7,6 +7,12 @@ function getAllCourses() {
 	return executeResult($sql);
 }
 
+function searchCourses($key) {
+	$sql = 'SELECT * FROM course WHERE courseTitle LIKE "%'.$key.'%" OR description LIKE "%'.$key.'%" OR author LIKE "%'.$key.'%"';
+
+	return executeResult($sql);
+}
+
 function getCourseById($courseId) {
 	$sql = 'SELECT * FROM course WHERE courseId = '.$courseId;
 	return executeSingleResult($sql);
@@ -58,6 +64,9 @@ function deleteCourse($courseId) {
 
 function computeAverageRating($courseId) {
 	$ratings = getRatingByCourseId($courseId);
+	if ($ratings == null || count($ratings) == 0) {
+		return 0;
+	}
 	$count = count($ratings);
 	$total = 0;
 
@@ -70,5 +79,8 @@ function computeAverageRating($courseId) {
 
 function computeNumberOfRatings($courseId) {
 	$ratings = getRatingByCourseId($courseId);
+	if ($ratings == null || count($ratings) == 0){
+		return 0;
+	}
 	return count($ratings);
 }
