@@ -22,6 +22,18 @@ include('../shared_layout/header.php');
                     <!-- Leave comment-->
                     <h3 class="h3 mb-4 text-center">Sign Up Form</h3>
 
+                    <?php 
+                        if(isset($_SESSION['message'])) {
+
+                            if($_SESSION['message'] === 'signup_failed') {
+                            
+                                echo '<div class="text-center" style="color: red;">The username is already taken!</div>'; 
+                                
+                                unset($_SESSION['message']);  
+
+                            }
+                        }                   
+                   ?>
 
                     <form class="form mb-4" id="form" action="../userHandler/registerHandler.php" method="post"
                         enctype="multipart/form-data">
@@ -103,7 +115,7 @@ include('../shared_layout/header.php');
 
                                     <button class="btn1" id="signup" href="index.php" type="submit">Sign
                                         Up</button>
-                                    <a href="../home/index.php" style="float:right;" class="btn2 btn remove">Cancel</a>
+                                    <a href="../home/index.php" style="float:right;" class="btn2 btn remove text-center">Cancel</a>
                                 </div>
                             </div>
                         </div>

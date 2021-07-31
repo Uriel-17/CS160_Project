@@ -9,6 +9,25 @@ include('../shared_layout/header.php');
             <div class="col-lg-9 container">
                 <!-- Leave comment-->
                 <h3 class="h3 my-4 text-center">Welcome back</h3>
+                <?php 
+                        if(isset($_SESSION['message'])) {
+
+                            if($_SESSION['message'] === 'username_error') {
+                            
+                                echo '<div class="text-center" style="color: red;">username is invalid!</div>'; 
+                                
+                                unset($_SESSION['message']);  
+
+                            }
+                            if($_SESSION['message'] === 'password_error') {
+                            
+                                echo '<div class="text-center" style="color: red;">Wrong password!</div>'; 
+                                
+                                unset($_SESSION['message']);  
+
+                            }
+                        }                   
+                   ?>
                 <form class="mb-5" action="../userHandler/loginBackend.php" method="post" enctype="multipart/form-data">
                     <div class="row justify-content-center align-items-center">
 
