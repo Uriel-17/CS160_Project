@@ -1,5 +1,5 @@
 <?php
-if (session_name() == ""){
+if (session_status() != PHP_SESSION_ACTIVE){
     session_start();
 }
     
@@ -12,11 +12,9 @@ include('../shared_layout/header.php');
     <div class="container">
         <!--slides-->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-
             <div class="title col-12">
                 <i class="text-left">Categories</i>
-                <a class=" text-right">View All</a>
-
+                <a class=" text-right" href="../courses/course_list.php">View All</a>
             </div>
 
             <div class="carousel-inner">
@@ -40,21 +38,15 @@ include('../shared_layout/header.php');
 
                         // code...
                         foreach ($subCate[$i] as $cate) {
-
-                            // echo '<div class="categories col-3 text-center">
-                            //         <img src="../images/category/'.$cate["image"].'" class="d-block w-60" alt="..." />
-                            //         <a action="" href="#">'.$cate["categoryname"].'</a>
-                            //     </div>';
-                                echo '<div class="categories col-3 my-1">
-                                            <div class="card text-center">
-                                               <img class="card-img-top" src="../images/category/'.$cate["image"].'" class="d-block w-40" alt="..." />
+                           echo '<div class="categories col-lg-3 col-md-6 col-sm-6 my-1">
+                                            <div class="card text-center d-block w-40">
+                                               <a action="" href="../courses/course_list.php?categoryId='.$cate["categoryId"].'"><img class="card-img-top" src="../images/category/'.$cate["image"].'" alt="..." /></a>
                                                 <div class="card-body">
-                                                    <a action="" href="#">'.$cate["categoryname"].'</a>
+                                                    <a action="" href="../courses/course_list.php?categoryId='.$cate["categoryId"].'">'.$cate["categoryname"].'</a>
                                                     
                                                 </div>
                                             </div>
                                         </div>';
-
                         }
                         echo '</div>
                     </div>';
@@ -72,7 +64,6 @@ include('../shared_layout/header.php');
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-
         </div>
     </div>
 
