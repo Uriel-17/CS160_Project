@@ -378,3 +378,89 @@ footer .row {
   border-left: 2px solid #5babd1;
   margin-left: -3px;
 }
+
+/*about and contact page*/
+.contact-container {
+  background-color: rgb(72, 75, 78);
+  padding: 20px;
+  border-radius: 15px;
+}
+.contact-container .title {
+  text-align: center;
+}
+.contact-container .title h1,
+.contact-container .title p {
+  color: rgb(207, 207, 207);
+}
+
+.contact-row {
+  padding: 20px;
+}
+
+.contact-card {
+  background-color: teal;
+  color: #c5c4c4;
+  padding: 20px 30px;
+  border-radius: 15px;
+}
+.contact-card-body {
+  text-decoration: none;
+}
+.contact-card-body ul {
+  padding-left: 0;
+}
+
+.contact-card-body ul li {
+  list-style: none;
+  background-color: none;
+  border-top: none;
+  margin-top: 20px;
+}
+
+.contact-card-body ul li a {
+  color: rgb(207, 207, 207);
+  text-decoration: none;
+}
+.contact-card-body ul li a i {
+  margin-right: 10px;
+}
+.contact-card-footer a {
+  color: rgb(207, 207, 207);
+  margin: 10px;
+}
+.contact-card-footer a:hover {
+  color: black;
+}
+.contact-card-footer ul {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-form label {
+  color: rgb(207, 207, 207);
+}
+
+.contact-form button {
+  background-color: teal;
+  border: teal;
+  border-radius: 15px;
+}
+
+.contact-form button:hover {
+  background-color: teal;
+  border: teal;
+  color: black;
+}
+
+/*about us page style*/
+.about-us {
+  color: rgb(207, 207, 207);
+}
+
+.about-card {
+  color: white;
+  background-color: #495057;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 10px rgba(33, 116, 109, 0.2);
+}
