@@ -26,7 +26,16 @@ else {
     <link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <title>Admin Dashboard</title>
 </head>
-
+<style type="text/css">
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #383838;
+  display: flex;
+  flex-direction: column; /* creates rows out of the elements main and footer */
+  height: 100vh;
+  margin: 0;
+}
+</style>
 
 <body>
 

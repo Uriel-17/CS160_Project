@@ -27,7 +27,7 @@ include('../shared_layout/header.php');
                      </div>
                      <div class="nav-body">
                          <h3 class="body-welcome">Welcome to the adminisotrator dashboard.</h3>
-                         <p>Make your changes here.</p>
+                         <p style="color: white;">Make your changes here.</p>
                          <img src="https://miro.medium.com/max/1400/1*1-Q0tK0FkjlI_jMV_ywh6Q.jpeg" alt="img">
                      </div>
 

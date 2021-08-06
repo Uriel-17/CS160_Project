@@ -33,7 +33,7 @@ function getCourses($categoryID, $key) {
      echo '<div class="">
             <div class="d-flex flex-row mb-3">
                 <div class="d-flex flex-column ml-2">
-                    <h2>No Courses Available 🥴😮‍💨</h2> 
+                    <h2 style="color: white;">No Courses Available 🥴😮‍</h2> 
                 </div>
             </div>
            </div>';

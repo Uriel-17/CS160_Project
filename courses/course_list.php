@@ -25,7 +25,7 @@
         <div class="row">
             <div class="categories col-lg-2 text-lg-left">
                 <div class="title">
-                    <h4>Categories</h4>
+                    <a href="course_list.php" style="text-decoration: none;"><h4>Categories</h4></a>
                 </div>
                 <ul>
                     <?php 
