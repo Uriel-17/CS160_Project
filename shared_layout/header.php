@@ -28,7 +28,7 @@ require_once("../repo/userRepo.php");
             align-items-center">
                 <a class="navbar-brand col-lg-2" href="../home/index.php"><img src="../images/logo.png" alt="logo"
                         width="150"></a>
-                <form action="../courses/course_list.php" class="col-lg-8 d-md-block d-none" method="get">
+                <form action="../courses/course_list.php" class="col-lg-7 d-md-block d-none" method="get">
                     <div class="row">
                         <div class="col-8">
                             <input type="text" name="key" class="form-control input" placeholder="Search.." />
@@ -38,7 +38,7 @@ require_once("../repo/userRepo.php");
                         </div>
                     </div>
                 </form>
-                <ul class="buttons col-lg-2">
+                <ul class="buttons col-lg-3 d-block" style="float: right;">
 
                     <?php
                     if(isset($_SESSION['userId'])){
@@ -83,10 +83,11 @@ require_once("../repo/userRepo.php");
     </header>
 
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous">
+                    </script>
+                    <script src="../js/bootstrap.min.js"></script>
 </body>
 
 </html>

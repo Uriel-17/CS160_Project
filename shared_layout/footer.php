@@ -8,22 +8,22 @@
             <div class="row align-items-center">
                 <div class="items col-lg-3 text-lg-left">
                     <ul>
-                        <li><a href="index.php""> Home</a></li>
-                        <li ><a href=" #""> About</a></li>
-                        <li><a href="#""> Contact</a></li>
+                        <li><a href="../home/index.php""> Home</a></li>
+                        <li ><a href="../home/about.php"> About</a></li>
+                        <li><a href="../home/contact.php"> Contact</a></li>
                     </ul>
                 </div>
-             <div class=" col-lg-6 text-center">
-                                <div class=" icons d-flex align-items-center flex-wrap justify-content-center">
-                                    <ul class="list-inline small mb-0 text-white">
-                                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i
-                                                    class="fab fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
+                <div class=" col-lg-6 text-center">
+                    <div class=" icons d-flex align-items-center flex-wrap justify-content-center">
+                        <ul class="list-inline small mb-0 text-white">
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i
+                                        class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="copyrights col-lg-3 text-lg-right ">
 
